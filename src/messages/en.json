@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "contact": "Talk"
+  },
+  "hero": {
+    "eyebrow": "Kairos — by Jhon Escobar",
+    "headlineLine1": "Scale your business",
+    "headlineLine2": "without adding",
+    "headlineLine3": "headcount",
+    "sub": "One person, not an agency. Two real projects with numbers you can verify. You talk directly to the person who builds your solution.",
+    "ctaPrimary": "Book a call",
+    "ctaSecondary": "AI diagnosis →",
+    "cyclingWords": ["headcount", "time", "costs"]
+  },
+  "stats": {
+    "flagships": "Production flagships",
+    "roi": "Net ROI — Aurora",
+    "errors": "Errors — 6 months SURA"
+  },
+  "problem": {
+    "eyebrow": "The cost of staying manual",
+    "heading": "Four signs your business needs automation",
+    "items": {
+      "1": { "stat": "70%", "title": "After-hours inquiries", "body": "Clients write outside your work day and the answer lands 12 hours late — or never." },
+      "2": { "stat": "FAQs", "title": "Repetitive", "body": "Your team answers the same questions over and over. How much does it cost?, What do you sell?, Where are you located? An agent handles this in under 10 seconds." },
+      "3": { "stat": "2-3", "title": "Errors in key processes", "body": "Every mistake in billing, reports, or follow-up costs reputation, rework, and sometimes cash out of your own pocket." },
+      "4": { "stat": "ROI", "title": "Unclear", "body": "Without measurable results, the AI budget loses credibility. Proving its value becomes even harder as investments grow." }
+    }
+  },
+  "showcase": {
+    "eyebrow": "Work",
+    "heading": "We turn complexity into clear results.",
+    "viewCase": "View case",
+    "typeFlag": "Flagship",
+    "typeDemo": "Demo",
+    "aurora": {
+      "client": "Want2Peak",
+      "title": "Aurora",
+      "desc": "AI agent that answers leads' inquiries 24/7, qualifies them, and escalates to the team when they're ready.",
+      "stats": { "1": "119x ROI", "2": "$11.34M Generated", "3": "98.8% autonomy" }
+    },
+    "sura": {
+      "client": "SURA Insurance Agent",
+      "title": "CRM",
+      "desc": "Centralized system on SmartSuite with automated alerts and full payment traceability.",
+      "stats": { "1": "Centralized database", "2": "Automatic alerts", "3": "20h/mo" }
+    },
+    "onboarding": {
+      "client": "Demo — Agencies & Academies",
+      "title": "Auto Onboarding",
+      "desc": "Client fills the form — in 15 seconds they have their folder, welcome email, and your team gets the Slack alert. No manual tasks, no delays, no errors.",
+      "stats": { "1": "15s", "2": "0 manual tasks", "3": "3 systems in 1 flow" }
+    },
+    "conserje": {
+      "client": "Demo — PropTech / Airbnb",
+      "title": "24/7 Concierge",
+      "desc": "Guests get answers in seconds, at any hour. Questions, check-ins and coordination handled automatically — you only show up when something truly needs you.",
+      "stats": { "1": "24/7", "2": "Multi-channel", "3": "< 10 seconds" }
+    }
+  },
+  "process": {
+    "eyebrow": "How I work",
+    "heading": "Four steps. No surprises.",
+    "partnerTag": "Want to go further? → Partner Plan",
+    "steps": {
+      "1": { "title": "Audit", "body": "I analyze your operations in depth: I identify where hours and money are being lost, and prioritize what generates the most impact before it scales." },
+      "2": { "title": "Design", "body": "You get back a clear flow diagram, proposed stack, expected ROI, and a concrete timeline. Not a single line of code until you approve the plan." },
+      "3": { "title": "Custom build", "body": "I build the automation integrated into your existing systems with the right tools for your case. Documentation included — no black box." },
+      "4": { "title": "Delivery & optimization", "body": "Full documentation, team training, and I stay as support for the first 7 days. Launch is the beginning — not the end." }
+    }
+  },
+  "aboutPreview": {
+    "eyebrow": "Who builds",
+    "heading": "Jhon Edilson Escobar Vanegas",
+    "bio": "Technologist, automation consultant and builder. Two projects in production with auditable results. No intermediaries — you talk directly to the person who builds.",
+    "link": "Learn more"
+  },
+  "roi": {
+    "eyebrow": "Self-assessment",
+    "heading": "Can your process be automated?",
+    "criteria": {
+      "1": { "title": "Repetitive", "desc": "Are the steps deterministic and identical each time?" },
+      "2": { "title": "High volume", "desc": "Does it consume more than 2 hours per week?" },
+      "3": { "title": "Error prone", "desc": "Do human errors have a real, measurable cost?" },
+      "4": { "title": "Scalable", "desc": "Is your business growth limited by this manual process?" }
+    },
+    "result": {
+      "high": { "title": "Your process is highly automatable", "desc": "You meet the key criteria. A 20-minute call and I'll give you a concrete diagnosis with estimated ROI — no commitment." },
+      "mid": { "title": "There's potential — worth exploring", "desc": "You meet 2 of 4 criteria. That's enough to have a conversation and assess whether automation makes sense for your case." },
+      "low": { "title": "May not be the right time", "desc": "Fewer than 2 criteria covered. Before automating, document the process and digitalize your inputs." }
+    },
+    "cta": "Book a 20-min call"
+  },
+  "cta": {
+    "heading": "Your manual process has an expiration date.",
+    "sub": "A 20-minute call and you walk away with a concrete diagnosis — even if we never work together.",
+    "button": "Book a 20-min call"
+  },
+  "footer": {
+    "tagline": "Automations triggered at the right moment.",
+    "work": "Work",
+    "company": "Kairos",
+    "contact": "Contact",
+    "rights": "Kairos Studio. All rights reserved."
+  },
+  "nagi": {
+    "label": "Talk to Nagi",
+    "hint": "Live AI assistant",
+    "welcomeTitle": "Hi, I'm Nagi.",
+    "welcomeSubtitle": "Kairos AI Assistant",
+    "quickChips": ["What does Kairos do?", "How much does it cost?", "How do we start?"],
+    "chat": {
+      "placeholder": "Type your question...",
+      "welcome": "Hi, I'm Nagi. Ask me anything about automation for your business.",
+      "errorFallback": "Something went wrong. Try again or book a call directly.",
+      "bookCall": "Book a call",
+      "whatsApp": "Message on WhatsApp",
+      "close": "Close chat"
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Clients",
+    "heading": "What those who've lived it say.",
+    "items": {
+      "0": {
+        "quote": "Before, handling WhatsApp in real time meant having multiple people available all day — and messages still slipped through. Today it runs on its own, without adding headcount, and replies while we sleep. It's the single thing that freed up the most of our time.",
+        "name": "Juan Fernando Londoño",
+        "role": "Founder & CEO — Want2Peak academy"
+      },
+      "1": {
+        "quote": "We used to deal with manual errors in policy records and hours every week reviewing renewals. Now the process runs automatically, error-free, and the alerts reach us before a problem ever gets to the client.",
+        "name": "SURA Contact",
+        "role": "Insurance agent — SURA"
+      }
+    }
+  },
+  "trabajo": {
+    "eyebrow": "Work",
+    "heading": "We turn complexity into clear results.",
+    "flagships": "Production flagships",
+    "demos": "Demos",
+    "demoCta": "Book a call",
+    "finalHeading": "Want something like this for your business?",
+    "finalSub": "A 20-minute call and you walk away with a concrete diagnosis — even if we never work together."
+  },
+  "services": {
+    "eyebrow": "Services",
+    "hero": {
+      "heading": "Choose how you want to work with me.",
+      "sub": "From a simple FAQ bot to a long-term strategic partner. Pick the level your business needs right now."
+    },
+    "agents": {
+      "eyebrow": "AI Agents",
+      "heading": "What chatbot does your business need?",
+      "sub": "Choose your autonomy level",
+      "popular": "Most popular",
+      "footer": "All WhatsApp-integrated · No client code required · Technical support included",
+      "cta": "Get started",
+      "tiers": {
+        "1": {
+          "name": "FAQ Bot",
+          "tagline": "For repetitive questions",
+          "price": "$1.8M",
+          "currency": "COP",
+          "timeline": "3–5 days",
+          "autonomy": "~70% autonomous",
+          "features": [
+            "Answers 15–30 fixed questions",
+            "Escalates to human when stuck",
+            "No AI — decision tree logic"
+          ],
+          "ref": ""
+        },
+        "2": {
+          "name": "Smart Bot",
+          "tagline": "For lead capture",
+          "price": "$3.5M",
+          "currency": "COP",
+          "timeline": "1–2 weeks",
+          "autonomy": "~75% autonomous",
+          "features": [
+            "Understands without exact keywords (LLM)",
+            "Captures lead data → CRM",
+            "Remembers conversation (5–8 msgs)"
+          ],
+          "ref": ""
+        },
+        "3": {
+          "name": "Autonomous Agent",
+          "tagline": "For full autonomy",
+          "price": "$7M",
+          "currency": "COP",
+          "timeline": "3–5 weeks",
+          "autonomy": "95%+ autonomous",
+          "features": [
+            "Searches your documents (RAG)",
+            "Understands voice notes (Whisper)",
+            "Persistent memory + Auto reports"
+          ],
+          "ref": "Ref: Aurora → 119x ROI"
+        }
+      }
+    },
+    "consulting": {
+      "eyebrow": "Consulting",
+      "badge": "Free diagnosis",
+      "heading": "Before automating, you need to know what to automate.",
+      "desc": "A diagnostic session to identify which processes are costing you the most time and money, which ones are worth automating — and which aren't. Real bottlenecks, found with data — not guesses.",
+      "includes": "Includes:",
+      "features": [
+        "Analysis of your current operational flows",
+        "Map of automatable processes with estimated ROI",
+        "Real bottleneck identification",
+        "Stack and priority recommendations",
+        "Deliverable: written report"
+      ],
+      "cta": "Book free diagnosis"
+    },
+    "partner": {
+      "eyebrow": "Partner Plan",
+      "heading": "Your automation team, built into yours.",
+      "desc": "Not a one-off vendor — a long-term strategic partner. I work hand-in-hand with your business to scale processes month by month, with priority access and solutions always tailored to you.",
+      "benefits": [
+        "Priority access — response within 24h",
+        "Continuous deep business diagnostics",
+        "100% custom solutions for every challenge",
+        "Monthly follow-up meetings",
+        "Constant iteration and optimization",
+        "Scale without hiring"
+      ],
+      "price": "Custom pricing",
+      "cta": "Learn more",
+      "nagiMessage": "Hi, I'd like to learn more about the Kairos Partner Plan."
+    }
+  }
+}
