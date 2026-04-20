@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# --- Added by audit plan: operational / secrets ---
+# MCP server config holds live API tokens — NEVER commit
+.mcp.json
+
+# Internal planning docs — not for public repo
+session-summary.md
+MOODBOARD.md
+CONTEXT.md
+NAGI-WORKFLOW-PLAN.md
+nagi-partner-email.html
+nagi-workflow-d.json
+
+# Knowledge base source (contains business content, pricing, case-study internals)
+kairos-kb/
+
+# Claude Code scratch
+.claude/
+
+# Bundle analyzer output
+.next/analyze/
