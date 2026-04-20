@@ -6,6 +6,10 @@
     "contact": "Hablemos"
   },
   "hero": {
+    "meta": {
+      "title": "Kairos Studio — Automatización con IA para equipos operativos",
+      "description": "Jhon Escobar, consultor de automatización con IA. n8n + LLMs para eliminar trabajo manual en equipos operativos colombianos."
+    },
     "eyebrow": "Kairos — by Jhon Escobar",
     "headlineLine1": "Escala tu negocio",
     "headlineLine2": "sin incrementar",
@@ -203,6 +207,10 @@
     }
   },
   "trabajo": {
+    "meta": {
+      "title": "Trabajo — Casos reales de automatización | Kairos Studio",
+      "description": "Aurora (119x ROI) y CRM SURA — dos sistemas en producción con números auditables."
+    },
     "eyebrow": "Trabajo",
     "heading": "Transformamos complejidad en resultados claros.",
     "flagships": "Flagships productivos",
@@ -212,6 +220,10 @@
     "finalSub": "Una llamada de 20 minutos y sales con un diagnostico concreto — aunque no trabajemos juntos."
   },
   "services": {
+    "meta": {
+      "title": "Servicios — Agentes IA y Consultoría | Kairos Studio",
+      "description": "Bot FAQ, Agente Autónomo y Plan Partner. Elige el nivel de automatización que necesita tu negocio hoy."
+    },
     "eyebrow": "Servicios",
     "hero": {
       "heading": "Elige cómo quieres trabajar conmigo.",
@@ -299,6 +311,30 @@
       "price": "Personalizado",
       "cta": "Quiero saber más",
       "nagiMessage": "Hola, quiero saber más sobre el Plan Partner de Kairos."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Sobre Jhon Escobar — Kairos Studio",
+      "description": "Tecnólogo y consultor de automatización IA en Colombia. Dos proyectos en producción con resultados auditables. Sin intermediarios."
+    }
+  },
+  "contacto": {
+    "meta": {
+      "title": "Contacto — Agendar llamada | Kairos Studio",
+      "description": "Agenda una llamada de 20 minutos con Jhon Escobar y sal con un diagnóstico concreto para tu negocio."
+    }
+  },
+  "aurora": {
+    "meta": {
+      "title": "Aurora — Agente IA Want2Peak | Kairos Studio",
+      "description": "119x ROI, $11.34M generados, 98.8% de autonomía. Cómo automatizamos la atención de clientes potenciales 24/7 para Want2Peak."
+    }
+  },
+  "sura": {
+    "meta": {
+      "title": "CRM SURA — Automatización de seguros | Kairos Studio",
+      "description": "Sistema centralizado que eliminó errores manuales en pólizas y redujo 20 horas/mes de trabajo operativo en SURA."
     }
   }
 }

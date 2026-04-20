@@ -6,6 +6,10 @@
     "contact": "Talk"
   },
   "hero": {
+    "meta": {
+      "title": "Kairos Studio — AI Automation for Operational Teams",
+      "description": "Jhon Escobar, AI automation consultant. n8n + LLMs to eliminate manual work for operational teams in Colombia."
+    },
     "eyebrow": "Kairos — by Jhon Escobar",
     "headlineLine1": "Scale your business",
     "headlineLine2": "without adding",
@@ -138,6 +142,10 @@
     }
   },
   "trabajo": {
+    "meta": {
+      "title": "Work — Real Automation Cases | Kairos Studio",
+      "description": "Aurora (119x ROI) and SURA CRM — two production systems with auditable numbers."
+    },
     "eyebrow": "Work",
     "heading": "We turn complexity into clear results.",
     "flagships": "Production flagships",
@@ -147,6 +155,10 @@
     "finalSub": "A 20-minute call and you walk away with a concrete diagnosis — even if we never work together."
   },
   "services": {
+    "meta": {
+      "title": "Services — AI Agents & Consulting | Kairos Studio",
+      "description": "FAQ Bot, Autonomous Agent and Partner Plan. Choose the automation level your business needs today."
+    },
     "eyebrow": "Services",
     "hero": {
       "heading": "Choose how you want to work with me.",
@@ -234,6 +246,30 @@
       "price": "Custom pricing",
       "cta": "Learn more",
       "nagiMessage": "Hi, I'd like to learn more about the Kairos Partner Plan."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Jhon Escobar — Kairos Studio",
+      "description": "Technologist and AI automation consultant in Colombia. Two production systems with auditable results. No intermediaries."
+    }
+  },
+  "contacto": {
+    "meta": {
+      "title": "Contact — Schedule a Call | Kairos Studio",
+      "description": "Schedule a 20-minute call with Jhon Escobar and get a concrete diagnosis for your business."
+    }
+  },
+  "aurora": {
+    "meta": {
+      "title": "Aurora — AI Agent Want2Peak | Kairos Studio",
+      "description": "119x ROI, $11.34M generated, 98.8% autonomy. How we automated 24/7 prospect engagement for Want2Peak."
+    }
+  },
+  "sura": {
+    "meta": {
+      "title": "SURA CRM — Insurance Automation | Kairos Studio",
+      "description": "Centralized system that eliminated manual errors in policies and reduced 20h/month of operational work."
     }
   }
 }

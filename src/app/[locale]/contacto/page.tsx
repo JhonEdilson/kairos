@@ -1,13 +1,18 @@
-import { setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Eyebrow } from "@/components/ui/Section";
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contacto" });
+  return { title: t("meta.title"), description: t("meta.description") };
+}
 
 // Contacto — dos CTA: Calendly embed (fase 2 del build) y chatbot Nagi.
 // Por ahora muestra el embed con el URL desde env + fallback link.
-export default async function ContactoPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function ContactoPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;

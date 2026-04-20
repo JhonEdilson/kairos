@@ -17,17 +17,27 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kairos — by Jhon Escobar",
-  description:
-    "Automatizaciones disparadas en el momento exacto. One builder, two real flagships, auditable numbers.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
-  ),
-  openGraph: {
-    title: "Kairos — by Jhon Escobar",
-    description: "Automations triggered at the right moment.",
-    type: "website",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  title: {
+    default: "Kairos Studio — Automatización con IA para equipos operativos",
+    template: "%s | Kairos Studio",
   },
+  description:
+    "Jhon Escobar, consultor de automatización con IA. n8n + LLMs para eliminar trabajo manual en equipos operativos.",
+  openGraph: {
+    title: "Kairos Studio",
+    description: "Automatización con IA para equipos operativos.",
+    type: "website",
+    images: ["/opengraph-image"],
+    locale: "es_CO",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kairos Studio",
+    description: "Automatización con IA para equipos operativos.",
+    images: ["/opengraph-image"],
+  },
+  robots: { index: true, follow: true },
 };
 
 // Next.js 16 exige <html> y <body> en el root layout.
