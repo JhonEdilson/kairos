@@ -1,0 +1,304 @@
+{
+  "nav": {
+    "work": "Trabajo",
+    "services": "Servicios",
+    "about": "Sobre mi",
+    "contact": "Hablemos"
+  },
+  "hero": {
+    "eyebrow": "Kairos — by Jhon Escobar",
+    "headlineLine1": "Escala tu negocio",
+    "headlineLine2": "sin incrementar",
+    "headlineLine3": "personal",
+    "sub": "Soy una sola persona, no una agencia. Dos proyectos reales con números que puedes auditar. Hablas directamente con quien construye tu solución.",
+    "ctaPrimary": "Agendar llamada",
+    "ctaSecondary": "Diagnóstico con IA →",
+    "cyclingWords": ["personal", "tiempo", "dinero"]
+  },
+  "stats": {
+    "flagships": "Flagships productivos",
+    "roi": "ROI neto — Aurora",
+    "errors": "Errores — 6 meses en SURA"
+  },
+  "problem": {
+    "eyebrow": "El costo del proceso manual",
+    "heading": "Cuatro señales de que tu negocio necesita automatización",
+    "items": {
+      "1": {
+        "stat": "70%",
+        "title": "Consultas fuera de horario",
+        "body": "Tus clientes escriben fuera de tu jornada y la respuesta llega 12 horas tarde — o nunca."
+      },
+      "2": {
+        "stat": "FAQs",
+        "title": "Repetitivas",
+        "body": "Tu equipo responde a las mismas preguntas una y otra vez. ¿Cuánto vale?, ¿Qué venden?, ¿Dónde están ubicados?. Un agente responde esto en -10 segundos."
+      },
+      "3": {
+        "stat": "2-3",
+        "title": "Errores en procesos clave",
+        "body": "Cada error en facturación, reportes o seguimiento cuesta reputación, reprocesos y, a veces, plata de tu bolsillo."
+      },
+      "4": {
+        "stat": "ROI",
+        "title": "Poco claro",
+        "body": "Sin resultados medibles, el presupuesto para IA pierde credibilidad. Probar su valor se vuelve aún más dificíl mientras las inversiones crecen."
+      }
+    }
+  },
+  "showcase": {
+    "eyebrow": "Trabajo",
+    "heading": "Transformamos complejidad en resultados claros.",
+    "viewCase": "Ver caso",
+    "typeFlag": "Flagship",
+    "typeDemo": "Demo",
+    "aurora": {
+      "client": "Want2Peak",
+      "title": "Aurora",
+      "desc": "Agente de IA que responde consultas de clientes potenciales 24/7, califica y deriva al equipo cuando ya están listos.",
+      "stats": {
+        "1": "119x ROI",
+        "2": "$11.34M Generados",
+        "3": "98.8% Autonomia"
+      }
+    },
+    "sura": {
+      "client": "Agente de seguro SURA",
+      "title": "CRM",
+      "desc": "Sistema centralizado en SmartSuite con alertas automáticas, vistas personalizadas y seguimiento completo de clientes.",
+      "stats": {
+        "1": "Base de datos centralizada",
+        "2": "Alertas automaticas",
+        "3": "20h/mes"
+      }
+    },
+    "onboarding": {
+      "client": "Demo — Agencias & Academias",
+      "title": "Onboarding Automatico",
+      "desc": "Tu cliente llena el formulario — en 15 segundos ya tiene su carpeta, su bienvenida por correo y tu equipo recibe la alerta en Slack. Sin tareas manuales, sin demoras, sin errores.",
+      "stats": {
+        "1": "15s",
+        "2": "0 pasos manuales",
+        "3": "3 sisteas en 1 flujo"
+      }
+    },
+    "conserje": {
+      "client": "Demo — PropTech / Airbnb",
+      "title": "Conserje 24/7",
+      "desc": "Tus huéspedes reciben respuesta en segundos, a cualquier hora. Preguntas, check-ins y coordinación manejados solos — tú solo apareces cuando algo realmente lo necesita.",
+      "stats": {
+        "1": "24/7",
+        "2": "Multi-canal",
+        "3": "< 10 segundos"
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Como trabajo",
+    "heading": "Cuatro pasos, sin sorpresas.",
+    "partnerTag": "¿Quieres ir más lejos? → Plan Partner",
+    "steps": {
+      "1": {
+        "title": "Auditoría",
+        "body": "Analizo tus operaciones en profundidad: identifico dónde se pierden horas y dinero, y priorizo lo que genera mayor impacto antes de que escale."
+      },
+      "2": {
+        "title": "Diseño",
+        "body": "Te devuelvo un diagrama claro del flujo, stack propuesto, ROI estimado y timeline concreto. Sin una línea de código hasta que apruebes el plan."
+      },
+      "3": {
+        "title": "Construcción a medida",
+        "body": "Construyo la automatización integrada a tus sistemas existentes con las herramientas correctas para tu caso. Documentación incluida — sin caja negra."
+      },
+      "4": {
+        "title": "Entrega y optimización",
+        "body": "Te entrego documentación completa, entreno a tu equipo y quedo como soporte los primeros 7 días. El lanzamiento es el inicio — no el final."
+      }
+    }
+  },
+  "aboutPreview": {
+    "eyebrow": "Quien construye",
+    "heading": "Jhon Edilson Escobar Vanegas",
+    "bio": "Tecnólogo, consultor de automatización y constructor. Dos proyectos en producción con resultados auditables. Sin intermediarios — hablas directo con quien construye.",
+    "link": "Conocer más"
+  },
+  "roi": {
+    "eyebrow": "Autoevaluación",
+    "heading": "¿Tu proceso se puede automatizar?",
+    "criteria": {
+      "1": {
+        "title": "Repetitivo",
+        "desc": "¿Los pasos son determinísticos y se repiten igual cada vez?"
+      },
+      "2": {
+        "title": "Alto volumen",
+        "desc": "¿El proceso consume más de 2 horas por semana?"
+      },
+      "3": {
+        "title": "Propenso a error",
+        "desc": "¿Los errores humanos tienen un costo real y medible?"
+      },
+      "4": {
+        "title": "Escalable",
+        "desc": "¿El crecimiento de tu negocio está limitado por este proceso manual?"
+      }
+    },
+    "result": {
+      "high": {
+        "title": "Tu proceso es altamente automatizable",
+        "desc": "Cumples los criterios clave. Una llamada de 20 minutos y te doy un diagnóstico concreto con ROI estimado — sin compromiso."
+      },
+      "mid": {
+        "title": "Hay potencial — vale la pena explorarlo",
+        "desc": "Cumples 2 de 4 criterios. Eso es suficiente para conversar y evaluar si la automatización tiene sentido en tu caso."
+      },
+      "low": {
+        "title": "Puede que no sea el momento",
+        "desc": "Menos de 2 criterios cubiertos. Antes de automatizar, documenta el proceso y digitaliza tus inputs."
+      }
+    },
+    "cta": "Agendar llamada de 20 min"
+  },
+  "cta": {
+    "heading": "Tu proceso manual tiene fecha de vencimiento.",
+    "sub": "Una llamada de 20 minutos y sales con un diagnostico concreto — aunque no trabajemos juntos.",
+    "button": "Agendar llamada de 20 min"
+  },
+  "footer": {
+    "tagline": "Automatizaciones disparadas en el momento exacto.",
+    "work": "Trabajo",
+    "company": "Kairos",
+    "contact": "Contacto",
+    "rights": "Kairos Studio. Todos los derechos reservados."
+  },
+  "nagi": {
+    "label": "Habla con Nagi",
+    "hint": "Asistente IA en vivo",
+    "welcomeTitle": "Hola, soy Nagi.",
+    "welcomeSubtitle": "Asistente IA de Kairos",
+    "quickChips": ["¿Qué hace Kairos?", "¿Cuánto cuesta?", "¿Cómo empezamos?"],
+    "chat": {
+      "placeholder": "Escribe tu pregunta...",
+      "welcome": "Hola, soy Nagi. Pregúntame lo que quieras sobre automatización para tu negocio.",
+      "errorFallback": "Algo salió mal. Intenta de nuevo o agenda una llamada.",
+      "bookCall": "Agendar llamada",
+      "whatsApp": "Escribir por WhatsApp",
+      "close": "Cerrar chat"
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Clientes",
+    "heading": "Lo que dicen quienes ya lo vivieron.",
+    "items": {
+      "0": {
+        "quote": "Antes, atender WhatsApp en tiempo real requería tener varias personas disponibles todo el día — y aun así se escapaban mensajes. Hoy funciona solo, sin aumentar el equipo, y responde mientras dormimos. Es lo que más tiempo nos ha liberado.",
+        "name": "Juan Fernando Londoño",
+        "role": "Fundador & CEO — Want2Peak academy"
+      },
+      "1": {
+        "quote": "Antes operábamos con errores manuales en pólizas y horas semanales revisando vigencias. Hoy el proceso corre solo, sin errores, y las alertas nos avisan antes de que el problema llegue al cliente.",
+        "name": "Contacto SURA",
+        "role": "Agente de seguros — SURA"
+      }
+    }
+  },
+  "trabajo": {
+    "eyebrow": "Trabajo",
+    "heading": "Transformamos complejidad en resultados claros.",
+    "flagships": "Flagships productivos",
+    "demos": "Demos",
+    "demoCta": "Agendar llamada",
+    "finalHeading": "¿Quieres algo así para tu negocio?",
+    "finalSub": "Una llamada de 20 minutos y sales con un diagnostico concreto — aunque no trabajemos juntos."
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "hero": {
+      "heading": "Elige cómo quieres trabajar conmigo.",
+      "sub": "Desde un chatbot básico hasta un socio estratégico a largo plazo. Elige el nivel que necesita tu negocio hoy."
+    },
+    "agents": {
+      "eyebrow": "Agentes IA",
+      "heading": "¿Qué chatbot necesita tu negocio?",
+      "sub": "Elige según el nivel de autonomía que necesitas",
+      "popular": "Más popular",
+      "footer": "Todos integrados con WhatsApp · Sin código del cliente · Soporte técnico incluido",
+      "cta": "Empezar",
+      "tiers": {
+        "1": {
+          "name": "Bot FAQ",
+          "tagline": "Para preguntas repetitivas",
+          "price": "$1.8M",
+          "currency": "COP",
+          "timeline": "3–5 días",
+          "autonomy": "~70% autónomo",
+          "features": [
+            "Responde 15–30 preguntas fijas",
+            "Escala a humano si no sabe",
+            "Sin IA — árbol de decisiones"
+          ],
+          "ref": ""
+        },
+        "2": {
+          "name": "Bot Inteligente",
+          "tagline": "Para capturar leads",
+          "price": "$3.5M",
+          "currency": "COP",
+          "timeline": "1–2 semanas",
+          "autonomy": "~75% autónomo",
+          "features": [
+            "Entiende sin palabras exactas (LLM)",
+            "Captura datos de leads → CRM",
+            "Recuerda conversación (5–8 msgs)"
+          ],
+          "ref": ""
+        },
+        "3": {
+          "name": "Agente Autónomo",
+          "tagline": "Para autonomía total",
+          "price": "$7M",
+          "currency": "COP",
+          "timeline": "3–5 semanas",
+          "autonomy": "95%+ autónomo",
+          "features": [
+            "Busca en tus documentos (RAG)",
+            "Entiende notas de voz (Whisper)",
+            "Memoria persistente + Reportes automáticos"
+          ],
+          "ref": "Ref: Aurora → 119x ROI"
+        }
+      }
+    },
+    "consulting": {
+      "eyebrow": "Consultoría",
+      "badge": "Diagnóstico gratuito",
+      "heading": "Antes de automatizar, necesitas saber qué automatizar.",
+      "desc": "Una sesión de diagnóstico para identificar los procesos que más tiempo y dinero te están costando, cuáles vale la pena automatizar — y cuáles no. Detectamos cuellos de botella reales con datos, no suposiciones.",
+      "includes": "Incluye:",
+      "features": [
+        "Análisis de flujos operativos actuales",
+        "Mapa de procesos automatizables con ROI estimado",
+        "Identificación de cuellos de botella reales",
+        "Recomendación de stack y prioridades",
+        "Entregable: reporte escrito"
+      ],
+      "cta": "Agendar diagnóstico gratuito"
+    },
+    "partner": {
+      "eyebrow": "Plan Partner",
+      "heading": "Tu equipo de automatización, integrado al tuyo.",
+      "desc": "No un proveedor puntual — un socio estratégico a largo plazo. Trabajo mano a mano con tu empresa para escalar procesos mes a mes, con acceso prioritario y soluciones siempre a medida.",
+      "benefits": [
+        "Acceso prioritario — respuesta en menos de 24h",
+        "Diagnóstico profundo y continuo del negocio",
+        "Soluciones 100% a medida para cada reto",
+        "Reuniones de seguimiento mensuales",
+        "Iteración y optimización constante",
+        "Escalabilidad sin necesidad de contratar"
+      ],
+      "price": "Personalizado",
+      "cta": "Quiero saber más",
+      "nagiMessage": "Hola, quiero saber más sobre el Plan Partner de Kairos."
+    }
+  }
+}
