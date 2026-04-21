@@ -28,6 +28,9 @@ export function LoaderWrapper() {
     } catch {
       /* ignore */
     }
+    // Layout shift: liberar overflow cambia la altura del documento.
+    // Notificar a ScrollTrigger (ScrollShowcase) para que re-mida sus triggers.
+    window.dispatchEvent(new Event("intro:complete"));
   };
 
   if (!showLoader) return null;

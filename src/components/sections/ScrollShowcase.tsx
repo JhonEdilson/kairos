@@ -58,9 +58,28 @@ export function ScrollShowcase() {
       },
     });
 
-    // Cleanup: matar solo este trigger, sin tocar el DOM de React
+    // Re-medir cuando el layout se estabiliza. En carga fresca, ScrollTrigger
+    // mide con fonts a medio cargar y con el IntroLoader bloqueando el body
+    // (overflow:hidden). Cuando el loader termina y el overflow se libera,
+    // el documento se re-flowea y las mediciones iniciales quedan stale.
+    // Al navegar via SPA esto no ocurre porque el layout ya está estable.
+    const refresh = () => ScrollTrigger.refresh();
+
+    const rafId = requestAnimationFrame(() => {
+      requestAnimationFrame(refresh);
+    });
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(refresh).catch(() => {});
+    }
+    window.addEventListener("load", refresh);
+    window.addEventListener("intro:complete", refresh);
+
     return () => {
       st.kill();
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("intro:complete", refresh);
     };
   }, []);
 
