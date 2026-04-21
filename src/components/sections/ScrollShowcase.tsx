@@ -65,10 +65,13 @@ export function ScrollShowcase() {
   }, []);
 
   return (
-    // Wrapper externo — alto = n panels × 100vh, provee scroll space sin que GSAP lo pise
+    // Wrapper externo — alto = (n + 1) × 100vh.
+    // Rango de scroll útil (top-top → bottom-bottom) = wrapperH - viewportH = n × 100vh,
+    // por lo que cada proyecto obtiene exactamente 100vh de scroll. Si usas n × 100vh cada
+    // proyecto solo recibiría (n-1)/n × 100vh y la transición se dispara demasiado pronto.
     <div
       ref={wrapperRef}
-      style={{ height: `${PROJECT_KEYS.length * 100}vh` }}
+      style={{ height: `${(PROJECT_KEYS.length + 1) * 100}vh` }}
       className="relative"
     >
       {/* Sticky inner — queda fijo via CSS, React puede desmontarlo libremente */}
