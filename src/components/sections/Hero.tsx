@@ -4,17 +4,7 @@ import { Marquee } from "@/components/ui/marquee";
 import { CyclingWord } from "@/components/ui/CyclingWord";
 import HeroCtaSecondary from "./HeroCtaSecondary";
 
-// Métricas clave para el marquee — datos reales de proyectos Aurora + SURA.
-// Los números no cambian por locale, solo el formato de las labels.
-const METRICS = [
-  { value: "119×", label: "ROI — Aurora" },
-  { value: "55h", label: "/ mes ahorradas" },
-  { value: "$10M+", label: "en inscripciones" },
-  { value: "43 días", label: "de implementación" },
-  { value: "98.8%", label: "autonomía — Aurora" },
-  { value: "24/7", label: "disponibilidad" },
-  { value: "Sistema centralizado", label: "en un solo lugar" },
-];
+type MetricItem = { value: string; label: string };
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -60,7 +50,7 @@ export function Hero() {
       {/* ROW 3 — Métricas en marquee */}
       <div className="w-full hairline-t py-4 bg-[color:var(--bg-primary)]/60 backdrop-blur-sm">
         <Marquee pauseOnHover repeat={3} className="[--duration:30s] [--gap:3rem]">
-          {METRICS.map((m) => (
+          {(t.raw("metrics") as MetricItem[]).map((m) => (
             <MetricChip key={m.value + m.label} value={m.value} label={m.label} />
           ))}
         </Marquee>

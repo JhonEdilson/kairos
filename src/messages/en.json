@@ -17,7 +17,16 @@
     "sub": "One person, not an agency. Two real projects with numbers you can verify. You talk directly to the person who builds your solution.",
     "ctaPrimary": "Book a call",
     "ctaSecondary": "AI diagnosis →",
-    "cyclingWords": ["headcount", "time", "costs"]
+    "cyclingWords": ["headcount", "time", "costs"],
+    "metrics": [
+      { "value": "119×", "label": "ROI — Aurora" },
+      { "value": "55h", "label": "/ month saved" },
+      { "value": "$10M+", "label": "in registrations" },
+      { "value": "43 days", "label": "to implement" },
+      { "value": "98.8%", "label": "autonomy — Aurora" },
+      { "value": "24/7", "label": "availability" },
+      { "value": "Centralized system", "label": "in one place" }
+    ]
   },
   "stats": {
     "flagships": "Production flagships",
@@ -171,47 +180,60 @@
       "popular": "Most popular",
       "footer": "All WhatsApp-integrated · No client code required · Technical support included",
       "cta": "Get started",
+      "drawerSchedule": "Book a call",
+      "drawerNagi": "Ask Nagi",
       "tiers": {
         "1": {
           "name": "FAQ Bot",
-          "tagline": "For repetitive questions",
+          "tagline": "Answers on its own — no one needs to be there",
           "price": "$1.8M",
           "currency": "COP",
           "timeline": "3–5 days",
           "autonomy": "~70% autonomous",
           "features": [
-            "Answers 15–30 fixed questions",
-            "Escalates to human when stuck",
-            "No AI — decision tree logic"
+            "Available 24/7 — no office hours, no waiting",
+            "Instantly answers your 15–30 most common questions",
+            "Escalates to your team when it doesn't know",
+            "No AI — simple, fast, and predictable"
           ],
+          "comparison": "",
+          "nagiMessage": "Hi Nagi, I'm looking at the FAQ Bot at Kairos. Can you help me understand if it's the right fit for my business?",
           "ref": ""
         },
         "2": {
           "name": "Smart Bot",
-          "tagline": "For lead capture",
+          "tagline": "Captures leads while you sleep",
           "price": "$3.5M",
           "currency": "COP",
           "timeline": "1–2 weeks",
           "autonomy": "~75% autonomous",
           "features": [
-            "Understands without exact keywords (LLM)",
-            "Captures lead data → CRM",
-            "Remembers conversation (5–8 msgs)"
+            "Understands what customers mean, not just exact keywords",
+            "Logs name, email, and intent directly to your CRM",
+            "Remembers the conversation thread (up to 8 messages)",
+            "Qualifies prospects before passing them to your sales team"
           ],
+          "comparison": "Vs. FAQ Bot: also understands natural language and captures leads in your CRM",
+          "nagiMessage": "Hi Nagi, I'm looking at the Smart Bot at Kairos. Can you help me understand if it's the right fit for my business?",
           "ref": ""
         },
         "3": {
           "name": "Autonomous Agent",
-          "tagline": "For full autonomy",
+          "tagline": "Like an employee who never sleeps",
           "price": "$7M",
           "currency": "COP",
           "timeline": "3–5 weeks",
           "autonomy": "95%+ autonomous",
           "features": [
-            "Searches your documents (RAG)",
-            "Understands voice notes (Whisper)",
-            "Persistent memory + Auto reports"
+            "Knows your business: searches your manuals, catalogs, and internal FAQs",
+            "Understands voice notes — never miss an audio message again",
+            "Remembers every customer: history and prior conversations",
+            "Qualifies, manages, and routes to the right channel automatically",
+            "Generates automatic weekly reports: leads and escalations",
+            "Never leaves a conversation unanswered — built-in error recovery"
           ],
+          "comparison": "Vs. Smart Bot: also knows your documents, understands voice, and remembers every customer",
+          "nagiMessage": "Hi Nagi, I'm looking at the Autonomous Agent at Kairos. Can you help me understand if it's the right fit for my business?",
           "ref": "Ref: Aurora → 119x ROI"
         }
       }

@@ -17,7 +17,16 @@
     "sub": "Soy una sola persona, no una agencia. Dos proyectos reales con números que puedes auditar. Hablas directamente con quien construye tu solución.",
     "ctaPrimary": "Agendar llamada",
     "ctaSecondary": "Diagnóstico con IA →",
-    "cyclingWords": ["personal", "tiempo", "dinero"]
+    "cyclingWords": ["personal", "tiempo", "dinero"],
+    "metrics": [
+      { "value": "119×", "label": "ROI — Aurora" },
+      { "value": "55h", "label": "/ mes ahorradas" },
+      { "value": "$10M+", "label": "en inscripciones" },
+      { "value": "43 días", "label": "de implementación" },
+      { "value": "98.8%", "label": "autonomía — Aurora" },
+      { "value": "24/7", "label": "disponibilidad" },
+      { "value": "Sistema centralizado", "label": "en un solo lugar" }
+    ]
   },
   "stats": {
     "flagships": "Flagships productivos",
@@ -236,47 +245,60 @@
       "popular": "Más popular",
       "footer": "Todos integrados con WhatsApp · Sin código del cliente · Soporte técnico incluido",
       "cta": "Empezar",
+      "drawerSchedule": "Agendar llamada",
+      "drawerNagi": "Preguntarle a Nagi",
       "tiers": {
         "1": {
           "name": "Bot FAQ",
-          "tagline": "Para preguntas repetitivas",
+          "tagline": "Responde solo, sin que nadie lo atienda",
           "price": "$1.8M",
           "currency": "COP",
           "timeline": "3–5 días",
           "autonomy": "~70% autónomo",
           "features": [
-            "Responde 15–30 preguntas fijas",
-            "Escala a humano si no sabe",
-            "Sin IA — árbol de decisiones"
+            "Disponible 24/7 — sin horarios ni esperas",
+            "Responde al instante las 15–30 preguntas más frecuentes",
+            "Si no sabe, escala directo a tu equipo",
+            "Sin IA — simple, rápido y predecible"
           ],
+          "comparison": "",
+          "nagiMessage": "Hola Nagi, estoy viendo el Bot FAQ en Kairos. ¿Puedes ayudarme a entender si es el correcto para mi empresa?",
           "ref": ""
         },
         "2": {
           "name": "Bot Inteligente",
-          "tagline": "Para capturar leads",
+          "tagline": "Captura leads mientras duermes",
           "price": "$3.5M",
           "currency": "COP",
           "timeline": "1–2 semanas",
           "autonomy": "~75% autónomo",
           "features": [
-            "Entiende sin palabras exactas (LLM)",
-            "Captura datos de leads → CRM",
-            "Recuerda conversación (5–8 msgs)"
+            "Entiende lo que escriben, aunque no usen las palabras exactas",
+            "Registra nombre, correo e intención directo en tu CRM",
+            "Recuerda el hilo de la conversación (hasta 8 mensajes)",
+            "Califica prospectos antes de pasarlos a tu equipo"
           ],
+          "comparison": "Vs. Bot FAQ: también entiende lenguaje natural y captura leads en tu CRM",
+          "nagiMessage": "Hola Nagi, estoy viendo el Bot Inteligente en Kairos. ¿Puedes ayudarme a entender si es el correcto para mi empresa?",
           "ref": ""
         },
         "3": {
           "name": "Agente Autónomo",
-          "tagline": "Para autonomía total",
+          "tagline": "Como un empleado que nunca descansa",
           "price": "$7M",
           "currency": "COP",
           "timeline": "3–5 semanas",
           "autonomy": "95%+ autónomo",
           "features": [
-            "Busca en tus documentos (RAG)",
-            "Entiende notas de voz (Whisper)",
-            "Memoria persistente + Reportes automáticos"
+            "Conoce tu negocio: busca en manuales, catálogos y FAQs internos",
+            "Entiende notas de voz — no más mensajes de audio sin responder",
+            "Recuerda cada cliente: historial y conversaciones anteriores",
+            "Califica, gestiona y deriva al canal correcto de forma autónoma",
+            "Genera reportes semanales automáticos: leads y escalaciones",
+            "Nunca deja una conversación sin respuesta, ni se rompe ante fallos"
           ],
+          "comparison": "Vs. Bot Inteligente: además conoce tus documentos, entiende voz y recuerda a cada cliente",
+          "nagiMessage": "Hola Nagi, estoy viendo el Agente Autónomo en Kairos. ¿Puedes ayudarme a entender si es el correcto para mi empresa?",
           "ref": "Ref: Aurora → 119x ROI"
         }
       }

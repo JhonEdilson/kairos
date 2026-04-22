@@ -2,6 +2,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LocaleToggle } from "./LocaleToggle";
 import { NavScrollIsland } from "./NavScrollIsland";
+import { LogoLink } from "./LogoLink";
 
 // Nav fija con backdrop blur que se activa al scrollear.
 // El "K" wordmark reemplaza el logo completo — patron de Linear/Vercel/basement.
@@ -13,7 +14,7 @@ export async function Nav() {
     <NavScrollIsland>
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Wordmark — K con acento. Simple, memorable, 0 horas de diseño. */}
-        <Link href="/" className="group flex items-center gap-2">
+        <LogoLink>
           <span className="font-display text-2xl font-medium tracking-tight text-[color:var(--fg-primary)]">
             Kairos
           </span>
@@ -21,7 +22,7 @@ export async function Nav() {
           <span className="hidden sm:inline text-xs font-mono uppercase tracking-[0.2em] text-[color:var(--fg-muted)]">
             studio
           </span>
-        </Link>
+        </LogoLink>
 
         <nav className="hidden md:flex items-center gap-10 text-sm">
           <NavLink href="/trabajo">{t("work")}</NavLink>

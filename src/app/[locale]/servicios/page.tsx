@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Section, Eyebrow, Heading } from "@/components/ui/Section";
 import { PartnerCTAButton } from "@/components/ui/PartnerCTAButton";
-import { cn } from "@/lib/cn";
+import { TierSection } from "@/components/sections/TierSection";
 
 const Check = () => (
   <svg
@@ -55,6 +55,8 @@ export default async function ServiciosPage({ params }: Props) {
       autonomy: t("agents.tiers.1.autonomy"),
       features: tier1Features,
       popular: false,
+      comparison: t("agents.tiers.1.comparison"),
+      nagiMessage: t("agents.tiers.1.nagiMessage"),
       ref: t("agents.tiers.1.ref"),
     },
     {
@@ -67,6 +69,8 @@ export default async function ServiciosPage({ params }: Props) {
       autonomy: t("agents.tiers.2.autonomy"),
       features: tier2Features,
       popular: true,
+      comparison: t("agents.tiers.2.comparison"),
+      nagiMessage: t("agents.tiers.2.nagiMessage"),
       ref: t("agents.tiers.2.ref"),
     },
     {
@@ -79,6 +83,8 @@ export default async function ServiciosPage({ params }: Props) {
       autonomy: t("agents.tiers.3.autonomy"),
       features: tier3Features,
       popular: false,
+      comparison: t("agents.tiers.3.comparison"),
+      nagiMessage: t("agents.tiers.3.nagiMessage"),
       ref: t("agents.tiers.3.ref"),
     },
   ];
@@ -116,123 +122,17 @@ export default async function ServiciosPage({ params }: Props) {
           </p>
         </div>
 
-        {/* Pricing cards — items-stretch para que las 3 cards tengan la misma altura */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:pb-3">
-          {tiers.map((tier) => (
-            <div
-              key={tier.num}
-              className={cn(
-                "relative flex flex-col rounded-2xl p-8 border transition-all duration-500",
-                tier.popular
-                  ? "border-[color:var(--accent)] md:-translate-y-3 shadow-[0_0_80px_-20px_rgba(217,119,6,0.3)] z-10"
-                  : "border-[color:var(--border)] hover:border-[color:var(--border-strong)] hover:scale-[1.01]"
-              )}
-              style={
-                tier.popular
-                  ? {
-                      background:
-                        "linear-gradient(160deg, rgba(120,53,15,0.18) 0%, rgba(19,33,58,0.95) 50%)",
-                    }
-                  : { background: "var(--bg-secondary)" }
-              }
-            >
-              {/* "Más popular" badge */}
-              {tier.popular && (
-                <div className="absolute -top-[14px] left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span className="px-4 py-1.5 text-[10px] font-mono uppercase tracking-widest bg-[color:var(--accent)] text-[color:var(--fg-primary)] rounded-full">
-                    {t("agents.popular")}
-                  </span>
-                </div>
-              )}
-
-              {/* Tier number */}
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)] mb-7">
-                /{" "}{tier.num}
-              </p>
-
-              {/* Name + tagline */}
-              <h3 className="font-display font-medium text-[2.2rem] leading-[1.0] tracking-[-0.025em] mb-2">
-                {tier.name}
-              </h3>
-              <p className="text-sm text-[color:var(--fg-muted)] mb-7">
-                {tier.tagline}
-              </p>
-
-              {/* Price block */}
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="font-display font-medium text-4xl tracking-[-0.03em]">
-                  {tier.price}
-                </span>
-                <span className="text-xs text-[color:var(--fg-muted)] font-mono">
-                  {tier.currency}
-                </span>
-              </div>
-              <p className="font-mono text-[11px] text-[color:var(--fg-muted)] mb-6">
-                {tier.timeline}
-              </p>
-
-              {/* Autonomy pill */}
-              <div className="mb-7">
-                <span
-                  className={cn(
-                    "inline-block px-3 py-1 rounded-full text-[11px] font-mono border",
-                    tier.popular
-                      ? "bg-[color:var(--accent)]/15 text-[color:var(--accent)] border-[color:var(--accent)]/30"
-                      : "bg-[color:var(--bg-primary)]/80 text-[color:var(--fg-muted)] border-[color:var(--border)]"
-                  )}
-                >
-                  {tier.autonomy}
-                </span>
-              </div>
-
-              {/* Divider */}
-              <div className="h-px bg-[color:var(--border)] mb-6" />
-
-              {/* Features */}
-              <ul className="space-y-3 mb-8 flex-1">
-                {tier.features.map((feat, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-sm leading-snug text-[color:var(--fg-muted)]"
-                  >
-                    <span className="text-[color:var(--accent)]">
-                      <Check />
-                    </span>
-                    {feat}
-                  </li>
-                ))}
-                {tier.ref && (
-                  <li className="pt-2 font-mono text-[10px] text-[color:var(--accent)]/70 tracking-wide">
-                    ★ {tier.ref}
-                  </li>
-                )}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "flex items-center justify-center gap-3 w-full py-3.5 text-sm font-medium transition-all duration-300 group",
-                  tier.popular
-                    ? "bg-[color:var(--accent)] text-[color:var(--fg-primary)] hover:bg-[color:var(--accent-hover)]"
-                    : "border border-[color:var(--border-strong)] text-[color:var(--fg-primary)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
-                )}
-              >
-                {t("agents.cta")}
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            </div>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <p className="text-center font-mono text-[11px] text-[color:var(--fg-muted)] mt-10 tracking-wide">
-          {t("agents.footer")}
-        </p>
+        <TierSection
+          tiers={tiers}
+          calendlyUrl={calendlyUrl}
+          labels={{
+            cta: t("agents.cta"),
+            popular: t("agents.popular"),
+            footer: t("agents.footer"),
+            drawerSchedule: t("agents.drawerSchedule"),
+            drawerNagi: t("agents.drawerNagi"),
+          }}
+        />
       </Section>
 
       {/* ── CONSULTORÍA ── */}
