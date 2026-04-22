@@ -98,7 +98,14 @@ export function TierDrawer({ tier, calendlyUrl, labels, onClose }: Props) {
         {tier && (
           <>
             {/* Scrollable content */}
-            <div className="flex-1 min-h-0 overflow-y-auto px-8 pt-8 pb-4 md:px-10 md:pt-10 flex flex-col gap-6">
+            <div
+              className="flex-1 min-h-0 overflow-y-auto px-8 pt-8 pb-4 md:px-10 md:pt-10 flex flex-col gap-6
+                         [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.1)_transparent]
+                         [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent
+                         [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/[0.1]
+                         [&::-webkit-scrollbar-thumb:hover]:bg-white/[0.2]"
+              onWheel={(e) => e.stopPropagation()}
+            >
               {/* Header */}
               <div className="flex items-start justify-between gap-4">
                 <div>
