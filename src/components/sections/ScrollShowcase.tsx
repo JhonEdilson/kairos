@@ -52,6 +52,8 @@ export function ScrollShowcase() {
         ease: "power2.inOut",
         delay: 0.1,
       },
+      onEnter: () => setActiveIndex(0),
+      onLeaveBack: () => setActiveIndex(0),
       onUpdate: (self) => {
         const idx = Math.round(self.progress * (PROJECT_KEYS.length - 1));
         setActiveIndex(idx);

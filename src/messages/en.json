@@ -182,6 +182,7 @@
       "cta": "Get started",
       "drawerSchedule": "Book a call",
       "drawerNagi": "Ask Nagi",
+      "drawerWhy": "Why this tier?",
       "tiers": {
         "1": {
           "name": "FAQ Bot",
@@ -213,7 +214,7 @@
             "Remembers the conversation thread (up to 8 messages)",
             "Qualifies prospects before passing them to your sales team"
           ],
-          "comparison": "Vs. FAQ Bot: also understands natural language and captures leads in your CRM",
+          "comparison": "The FAQ Bot only handles fixed questions. The Smart Bot understands how any customer writes, logs their data to your CRM, and qualifies the lead — all without any human stepping in.",
           "nagiMessage": "Hi Nagi, I'm looking at the Smart Bot at Kairos. Can you help me understand if it's the right fit for my business?",
           "ref": ""
         },
@@ -232,7 +233,7 @@
             "Generates automatic weekly reports: leads and escalations",
             "Never leaves a conversation unanswered — built-in error recovery"
           ],
-          "comparison": "Vs. Smart Bot: also knows your documents, understands voice, and remembers every customer",
+          "comparison": "The Smart Bot captures leads. The Autonomous Agent works like a real employee: it searches your internal docs, understands voice notes, remembers every customer's history, and never leaves a conversation unanswered.",
           "nagiMessage": "Hi Nagi, I'm looking at the Autonomous Agent at Kairos. Can you help me understand if it's the right fit for my business?",
           "ref": "Ref: Aurora → 119x ROI"
         }

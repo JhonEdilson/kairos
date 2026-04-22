@@ -247,6 +247,7 @@
       "cta": "Empezar",
       "drawerSchedule": "Agendar llamada",
       "drawerNagi": "Preguntarle a Nagi",
+      "drawerWhy": "¿Por qué este tier?",
       "tiers": {
         "1": {
           "name": "Bot FAQ",
@@ -278,7 +279,7 @@
             "Recuerda el hilo de la conversación (hasta 8 mensajes)",
             "Califica prospectos antes de pasarlos a tu equipo"
           ],
-          "comparison": "Vs. Bot FAQ: también entiende lenguaje natural y captura leads en tu CRM",
+          "comparison": "Con el Bot FAQ solo puedes responder preguntas fijas. El Bot Inteligente entiende cómo escribe cualquier cliente, registra sus datos en tu CRM y califica al prospecto — todo sin intervención humana.",
           "nagiMessage": "Hola Nagi, estoy viendo el Bot Inteligente en Kairos. ¿Puedes ayudarme a entender si es el correcto para mi empresa?",
           "ref": ""
         },
@@ -297,7 +298,7 @@
             "Genera reportes semanales automáticos: leads y escalaciones",
             "Nunca deja una conversación sin respuesta, ni se rompe ante fallos"
           ],
-          "comparison": "Vs. Bot Inteligente: además conoce tus documentos, entiende voz y recuerda a cada cliente",
+          "comparison": "El Bot Inteligente captura leads. El Agente Autónomo opera como un empleado real: busca en tus documentos internos, entiende notas de voz, recuerda el historial de cada cliente y nunca deja una conversación sin respuesta.",
           "nagiMessage": "Hola Nagi, estoy viendo el Agente Autónomo en Kairos. ¿Puedes ayudarme a entender si es el correcto para mi empresa?",
           "ref": "Ref: Aurora → 119x ROI"
         }

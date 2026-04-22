@@ -131,6 +131,7 @@ export default async function ServiciosPage({ params }: Props) {
             footer: t("agents.footer"),
             drawerSchedule: t("agents.drawerSchedule"),
             drawerNagi: t("agents.drawerNagi"),
+            drawerWhy: t("agents.drawerWhy"),
           }}
         />
       </Section>

@@ -21,7 +21,7 @@ export type TierData = {
 type Props = {
   tier: TierData | null;
   calendlyUrl: string;
-  labels: { drawerSchedule: string; drawerNagi: string };
+  labels: { drawerSchedule: string; drawerNagi: string; drawerWhy: string };
   onClose: () => void;
 };
 
@@ -56,6 +56,11 @@ export function TierDrawer({ tier, calendlyUrl, labels, onClose }: Props) {
     return () => window.removeEventListener("keydown", handler);
   }, [open, onClose]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <>
       {/* Backdrop */}
@@ -71,7 +76,8 @@ export function TierDrawer({ tier, calendlyUrl, labels, onClose }: Props) {
       {/* Panel — bottom sheet on mobile, right drawer on desktop */}
       <div
         className={cn(
-          "fixed z-50 bg-[color:var(--bg-primary)] border-[color:var(--border-strong)]",
+          "fixed z-50 flex flex-col",
+          "bg-[color:var(--bg-primary)] border-[color:var(--border-strong)]",
           "transition-transform duration-300 ease-in-out",
           "inset-x-0 bottom-0 h-[85vh] rounded-t-2xl border-t",
           "md:inset-x-auto md:right-0 md:top-0 md:bottom-0 md:h-full md:w-[420px]",
@@ -85,90 +91,96 @@ export function TierDrawer({ tier, calendlyUrl, labels, onClose }: Props) {
         aria-label={tier?.name ?? ""}
       >
         {/* Drag handle — mobile only */}
-        <div className="md:hidden flex justify-center pt-3 pb-1">
+        <div className="md:hidden shrink-0 flex justify-center pt-3 pb-1">
           <div className="w-10 h-1 rounded-full bg-[color:var(--border-strong)]" />
         </div>
 
         {tier && (
-          <div className="h-full overflow-y-auto p-8 md:p-10 flex flex-col gap-6">
-            {/* Header */}
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)] mb-2">
-                  / {tier.num}
-                </p>
-                <h2 className="font-display font-medium text-3xl leading-[1.0] tracking-[-0.025em]">
-                  {tier.name}
-                </h2>
-                <p className="text-sm text-[color:var(--fg-muted)] mt-2">{tier.tagline}</p>
-              </div>
-              <button
-                onClick={onClose}
-                className="shrink-0 text-[color:var(--fg-muted)] hover:text-[color:var(--fg-primary)] transition-colors mt-1"
-                aria-label="Close"
-              >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M15 5L5 15M5 5l10 10"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            {/* Price card */}
-            <div className="p-5 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-secondary)]">
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="font-display font-medium text-3xl tracking-[-0.03em]">
-                  {tier.price}
-                </span>
-                <span className="text-xs text-[color:var(--fg-muted)] font-mono">
-                  {tier.currency}
-                </span>
-              </div>
-              <p className="font-mono text-[11px] text-[color:var(--fg-muted)]">{tier.timeline}</p>
-              <div className="mt-3">
-                <span className="inline-block px-3 py-1 rounded-full text-[11px] font-mono border bg-[color:var(--bg-primary)]/80 text-[color:var(--fg-muted)] border-[color:var(--border)]">
-                  {tier.autonomy}
-                </span>
-              </div>
-            </div>
-
-            {/* Features */}
-            <ul className="space-y-3">
-              {tier.features.map((feat, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 text-sm leading-snug text-[color:var(--fg-muted)]"
+          <>
+            {/* Scrollable content */}
+            <div className="flex-1 min-h-0 overflow-y-auto px-8 pt-8 pb-4 md:px-10 md:pt-10 flex flex-col gap-6">
+              {/* Header */}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)] mb-2">
+                    / {tier.num}
+                  </p>
+                  <h2 className="font-display font-medium text-3xl leading-[1.0] tracking-[-0.025em]">
+                    {tier.name}
+                  </h2>
+                  <p className="text-sm text-[color:var(--fg-muted)] mt-2">{tier.tagline}</p>
+                </div>
+                <button
+                  onClick={onClose}
+                  className="shrink-0 text-[color:var(--fg-muted)] hover:text-[color:var(--fg-primary)] transition-colors mt-1"
+                  aria-label="Close"
                 >
-                  <span className="text-[color:var(--accent)]">
-                    <Check />
-                  </span>
-                  {feat}
-                </li>
-              ))}
-            </ul>
-
-            {/* Comparison vs. previous tier */}
-            {tier.comparison && (
-              <div className="pt-4 border-t border-[color:var(--border)]">
-                <p className="text-xs text-[color:var(--fg-muted)] italic leading-relaxed">
-                  {tier.comparison}
-                </p>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M15 5L5 15M5 5l10 10"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
               </div>
-            )}
 
-            {/* Case reference */}
-            {tier.ref && (
-              <p className="font-mono text-[10px] text-[color:var(--accent)]/70 tracking-wide">
-                ★ {tier.ref}
-              </p>
-            )}
+              {/* Price card */}
+              <div className="p-5 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-secondary)]">
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="font-display font-medium text-3xl tracking-[-0.03em]">
+                    {tier.price}
+                  </span>
+                  <span className="text-xs text-[color:var(--fg-muted)] font-mono">
+                    {tier.currency}
+                  </span>
+                </div>
+                <p className="font-mono text-[11px] text-[color:var(--fg-muted)]">{tier.timeline}</p>
+                <div className="mt-3">
+                  <span className="inline-block px-3 py-1 rounded-full text-[11px] font-mono border bg-[color:var(--bg-primary)]/80 text-[color:var(--fg-muted)] border-[color:var(--border)]">
+                    {tier.autonomy}
+                  </span>
+                </div>
+              </div>
 
-            {/* CTAs */}
-            <div className="mt-auto pt-4 flex flex-col gap-3">
+              {/* Features */}
+              <ul className="space-y-3">
+                {tier.features.map((feat, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-sm leading-snug text-[color:var(--fg-muted)]"
+                  >
+                    <span className="text-[color:var(--accent)]">
+                      <Check />
+                    </span>
+                    {feat}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Comparison callout */}
+              {tier.comparison && (
+                <div className="rounded-xl border border-[color:var(--accent)]/25 bg-[color:var(--accent)]/[0.06] p-5">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--accent)]/70 mb-2.5">
+                    {labels.drawerWhy}
+                  </p>
+                  <p className="text-sm text-[color:var(--fg-muted)] leading-relaxed">
+                    {tier.comparison}
+                  </p>
+                </div>
+              )}
+
+              {/* Case reference */}
+              {tier.ref && (
+                <p className="font-mono text-[10px] text-[color:var(--accent)]/70 tracking-wide pb-2">
+                  ★ {tier.ref}
+                </p>
+              )}
+            </div>
+
+            {/* Fixed CTAs — outside scroll area */}
+            <div className="shrink-0 px-8 pb-8 pt-5 md:px-10 md:pb-10 border-t border-[color:var(--border)] flex flex-col gap-3">
               <a
                 href={calendlyUrl}
                 target="_blank"
@@ -200,7 +212,7 @@ export function TierDrawer({ tier, calendlyUrl, labels, onClose }: Props) {
                 </span>
               </button>
             </div>
-          </div>
+          </>
         )}
       </div>
     </>

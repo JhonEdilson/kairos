@@ -12,6 +12,7 @@ type Labels = {
   footer: string;
   drawerSchedule: string;
   drawerNagi: string;
+  drawerWhy: string;
 };
 
 type Props = {
