@@ -9,8 +9,15 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
+// HSTS and upgrade-insecure-requests must NOT be sent in dev — the HTTP localhost
+// dev server has no TLS, so the browser caches the HSTS rule and upgrades all RSC
+// payload fetches to https://localhost, causing ERR_SSL_PROTOCOL_ERROR.
+const isDev = process.env.NODE_ENV === "development";
+
 const securityHeaders = [
-  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+  ...(!isDev
+    ? [{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" }]
+    : []),
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -30,7 +37,7 @@ const securityHeaders = [
       "base-uri 'self'",
       "form-action 'self'",
       "frame-ancestors 'self'",
-      "upgrade-insecure-requests",
+      ...(!isDev ? ["upgrade-insecure-requests"] : []),
     ].join("; "),
   },
 ];
