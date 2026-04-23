@@ -340,7 +340,25 @@
     "meta": {
       "title": "Sobre Jhon Escobar — Kairos Studio",
       "description": "Tecnólogo y consultor de automatización IA en Colombia. Dos proyectos en producción con resultados auditables. Sin intermediarios."
-    }
+    },
+    "eyebrow": "Sobre mí",
+    "hero": {
+      "line1": "Una persona.",
+      "accentWord": "Dos",
+      "line2rest": " sistemas en produccion.",
+      "line3": "Cero caja negra."
+    },
+    "bio": {
+      "location": "Barbosa, Antioquia.",
+      "p1": "Jhon Edilson Escobar Vanegas — tecnólogo en programación y consultor de automatización IA.",
+      "p2": "Trabajo desde Barbosa, Antioquia, con clientes que necesitan que sus operaciones escalen sin duplicar personal. En menos de un año construí dos sistemas en producción: un agente de IA que procesa 992 mensajes/mes con 98.8% de autonomía, y un CRM que eliminó errores de cálculo en una operación de seguros.",
+      "p3": "No soy una agencia. No hay account manager, no hay equipo de ventas. Si decidimos trabajar juntos, hablas directamente con la persona que diseña, construye y entrega tu solución. Eso se nota en la velocidad, la profundidad del diagnóstico y el precio."
+    },
+    "stack": {
+      "eyebrow": "Stack habitual",
+      "heading": "Herramientas que uso todos los dias."
+    },
+    "imgAlt": "Jhon Escobar — Consultor de automatización"
   },
   "contacto": {
     "meta": {

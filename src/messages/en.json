@@ -275,7 +275,25 @@
     "meta": {
       "title": "About Jhon Escobar — Kairos Studio",
       "description": "Technologist and AI automation consultant in Colombia. Two production systems with auditable results. No intermediaries."
-    }
+    },
+    "eyebrow": "About",
+    "hero": {
+      "line1": "One person.",
+      "accentWord": "Two",
+      "line2rest": " systems in production.",
+      "line3": "Zero black box."
+    },
+    "bio": {
+      "location": "Barbosa, Antioquia.",
+      "p1": "Jhon Edilson Escobar Vanegas — software technologist and AI automation consultant.",
+      "p2": "I work from Barbosa, Antioquia, with clients who need their operations to scale without adding headcount. In under a year I built two production systems: an AI agent that processes 992 messages/month at 98.8% autonomy, and a CRM that eliminated calculation errors in an insurance operation.",
+      "p3": "I'm not an agency. No account manager, no sales team. If we decide to work together, you talk directly to the person who designs, builds, and delivers your solution. That shows in the speed, the depth of the diagnosis, and the price."
+    },
+    "stack": {
+      "eyebrow": "Usual stack",
+      "heading": "Tools I use every day."
+    },
+    "imgAlt": "Jhon Escobar — Automation Consultant"
   },
   "contacto": {
     "meta": {
