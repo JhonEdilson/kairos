@@ -11,7 +11,7 @@ export function ProblemGrid() {
   return (
     <section className="relative min-h-screen flex flex-col bg-[color:var(--bg-secondary)]">
       {/* Header */}
-      <div className="mx-auto max-w-[1400px] w-full px-6 md:px-10 pt-24 pb-12 shrink-0">
+      <div className="mx-auto max-w-[1400px] w-full px-6 md:px-10 pt-16 pb-8 md:pt-24 md:pb-12 shrink-0">
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl leading-[1.05]
                        tracking-[-0.03em] text-balance max-w-3xl">
@@ -20,8 +20,8 @@ export function ProblemGrid() {
       </div>
 
       {/* Grid */}
-      <div className="mx-auto max-w-[1400px] w-full px-6 md:px-10 pb-24">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[color:var(--border)]">
+      <div className="mx-auto max-w-[1400px] w-full px-6 md:px-10 pb-28 md:pb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[color:var(--border)]">
           {items.map((i) => (
             <div
               key={i}

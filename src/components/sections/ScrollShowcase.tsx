@@ -163,7 +163,7 @@ function ProjectPanel({
 }: PanelProps) {
   return (
     <div
-      className={`absolute inset-0 flex flex-col justify-end
+      className={`absolute inset-0 flex flex-col justify-center md:justify-end
                   transition-opacity duration-700 ease-in-out
                   bg-gradient-to-br ${gradientClass}
                   ${active ? "opacity-100 z-10" : "opacity-0 z-0"}`}
@@ -180,7 +180,7 @@ function ProjectPanel({
       </div>
 
       {/* Contenido del panel — alineado al bottom */}
-      <div className="relative z-10 mx-auto max-w-[1400px] w-full px-6 md:px-10 pb-14 pt-20">
+      <div className="relative z-10 mx-auto max-w-[1400px] w-full px-6 md:px-10 pb-8 pt-8 md:pb-14 md:pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           {/* Left — info del proyecto */}
           <div className="lg:col-span-8">
@@ -205,10 +205,10 @@ function ProjectPanel({
             </p>
 
             {/* Stats row */}
-            <div className="flex gap-8 md:gap-12 hairline-t pt-6">
+            <div className="flex gap-3 sm:gap-6 md:gap-12 hairline-t pt-6 overflow-hidden">
               {stats.map((stat, i) => (
-                <div key={i}>
-                  <div className="font-display text-2xl md:text-3xl font-medium tracking-[-0.02em]"
+                <div key={i} className="flex-1 min-w-0">
+                  <div className="font-display text-base sm:text-xl md:text-2xl lg:text-3xl font-medium tracking-[-0.02em]"
                        style={{ color: i === 0 ? accentColor : "var(--fg-primary)" }}>
                     {stat}
                   </div>

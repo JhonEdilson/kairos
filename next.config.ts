@@ -26,11 +26,11 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://vercel.live https://*.vercel.live",
       "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.fontshare.com https://assets.calendly.com",
       "img-src 'self' data: blob: https:",
       "font-src 'self' data: https://api.fontshare.com https://cdn.fontshare.com",
-      "connect-src 'self'",
+      "connect-src 'self' https://vercel.live https://*.vercel.live wss://*.pusher.com",
       "frame-src https://calendly.com https://*.calendly.com",
       "media-src 'self'",
       "object-src 'none'",

@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { LocaleToggle } from "./LocaleToggle";
 import { NavScrollIsland } from "./NavScrollIsland";
 import { LogoLink } from "./LogoLink";
+import { MobileMenu } from "./MobileMenu";
 
 // Nav fija con backdrop blur que se activa al scrollear.
 // El "K" wordmark reemplaza el logo completo — patron de Linear/Vercel/basement.
@@ -30,7 +31,7 @@ export async function Nav() {
           <NavLink href="/about">{t("about")}</NavLink>
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3 md:gap-5">
           <LocaleToggle currentLocale={locale} />
           <Link
             href="/contacto"
@@ -39,6 +40,7 @@ export async function Nav() {
             {t("contact")}
             <span aria-hidden>→</span>
           </Link>
+          <MobileMenu labels={{ work: t("work"), services: t("services"), about: t("about"), contact: t("contact") }} />
         </div>
       </div>
     </NavScrollIsland>
