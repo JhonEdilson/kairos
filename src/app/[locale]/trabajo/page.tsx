@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Section, Eyebrow, Heading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { DemosSection } from "@/components/trabajo/DemosSection";
 
 // /trabajo — galería de todos los proyectos de Kairos Studio.
 // Muestra flagships (con enlace al caso) y demos (con CTA a contacto).
@@ -13,14 +14,16 @@ type ProjectKey = "aurora" | "sura" | "onboarding" | "conserje";
 type ProjectConfig = {
   key: ProjectKey;
   type: "flagship" | "demo";
-  href?: string; // si existe página dedicada
+  href?: string;      // si existe página dedicada (flagships)
+  videoUrl?: string;  // URL embed Loom — vacío = placeholder elegante hasta grabar
+  showDrawer?: boolean;
 };
 
 const PROJECTS: ProjectConfig[] = [
-  { key: "aurora",    type: "flagship", href: "/casos/aurora" },
-  { key: "sura",      type: "flagship", href: "/casos/sura" },
+  { key: "aurora",     type: "flagship", href: "/casos/aurora" },
+  { key: "sura",       type: "flagship", href: "/casos/sura" },
   { key: "onboarding", type: "demo" },
-  { key: "conserje",  type: "demo" },
+  { key: "conserje",   type: "demo", videoUrl: "https://www.loom.com/embed/1b4a727107b54a9c810dd593a7a12021", showDrawer: true },
 ];
 
 type Props = { params: Promise<{ locale: string }> };
@@ -82,21 +85,10 @@ function TrabajoContent() {
       {/* Demos */}
       <Section className="hairline-t">
         <Eyebrow>{t("demos")}</Eyebrow>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-[color:var(--border)]">
-          {demos.map(({ key }) => (
-            <ProjectCard
-              key={key}
-              type="demo"
-              typeLabel={s("typeDemo")}
-              client={s(`${key}.client`)}
-              title={s(`${key}.title`)}
-              desc={s(`${key}.desc`)}
-              stats={[s(`${key}.stats.1`), s(`${key}.stats.2`), s(`${key}.stats.3`)]}
-              ctaLabel={t("demoCta")}
-              ctaHref="/contacto"
-            />
-          ))}
-        </div>
+        <DemosSection
+          demos={demos.map(({ key, videoUrl, showDrawer }) => ({ key, videoUrl, showDrawer }))}
+          calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL ?? "#"}
+        />
       </Section>
 
       {/* CTA final */}

@@ -225,6 +225,11 @@
     "flagships": "Flagships productivos",
     "demos": "Demos",
     "demoCta": "Agendar llamada",
+    "verDemo": "Ver demo",
+    "demoDrawerSchedule": "Agendar llamada",
+    "demoDrawerNagi": "Habla con Nagi",
+    "demoVideoPlaceholder": "Video de demo próximamente",
+    "demoFeaturesHeading": "¿Qué resuelve?",
     "finalHeading": "¿Quieres algo así para tu negocio?",
     "finalSub": "Una llamada de 20 minutos y sales con un diagnostico concreto — aunque no trabajemos juntos."
   },
@@ -376,6 +381,17 @@
     "meta": {
       "title": "CRM SURA — Automatización de seguros | Kairos Studio",
       "description": "Sistema centralizado que eliminó errores manuales en pólizas y redujo 20 horas/mes de trabajo operativo en SURA."
+    }
+  },
+  "demos": {
+    "conserje": {
+      "nagiMessage": "Hola, vi el demo de Conserje 24/7 en tu portfolio. ¿Podemos hablar sobre esto para mi propiedad en Airbnb?",
+      "features": [
+        "Responde WhatsApp de huéspedes en menos de 10 segundos, a cualquier hora",
+        "Base de conocimiento por propiedad: WiFi, check-in, normas de convivencia",
+        "Escalación automática — solo te llega cuando algo realmente lo necesita",
+        "Dashboard para revisar todas las conversaciones en un solo lugar"
+      ]
     }
   }
 }

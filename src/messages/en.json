@@ -160,6 +160,11 @@
     "flagships": "Production flagships",
     "demos": "Demos",
     "demoCta": "Book a call",
+    "verDemo": "See demo",
+    "demoDrawerSchedule": "Book a call",
+    "demoDrawerNagi": "Talk to Nagi",
+    "demoVideoPlaceholder": "Demo video coming soon",
+    "demoFeaturesHeading": "What does it solve?",
     "finalHeading": "Want something like this for your business?",
     "finalSub": "A 20-minute call and you walk away with a concrete diagnosis — even if we never work together."
   },
@@ -311,6 +316,17 @@
     "meta": {
       "title": "SURA CRM — Insurance Automation | Kairos Studio",
       "description": "Centralized system that eliminated manual errors in policies and reduced 20h/month of operational work."
+    }
+  },
+  "demos": {
+    "conserje": {
+      "nagiMessage": "Hi, I saw the Concierge 24/7 demo on your portfolio. Can we talk about this for my Airbnb property?",
+      "features": [
+        "Replies to guest WhatsApp messages in under 10 seconds, around the clock",
+        "Property-specific knowledge base: WiFi, check-in, house rules",
+        "Automatic escalation — you only get notified when something truly needs you",
+        "Dashboard to review all conversations in one place"
+      ]
     }
   }
 }

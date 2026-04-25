@@ -31,7 +31,7 @@ const securityHeaders = [
       "img-src 'self' data: blob: https:",
       "font-src 'self' data: https://api.fontshare.com https://cdn.fontshare.com",
       "connect-src 'self' https://vercel.live https://*.vercel.live wss://*.pusher.com",
-      "frame-src https://calendly.com https://*.calendly.com",
+      "frame-src https://calendly.com https://*.calendly.com https://www.loom.com",
       "media-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",
