@@ -34,13 +34,22 @@ export async function Nav() {
         <div className="flex items-center gap-3 md:gap-5">
           <LocaleToggle currentLocale={locale} />
           <Link
+            href="/diagnostico"
+            className="hidden md:inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-[color:var(--fg-muted)] hover:text-[color:var(--fg-primary)] transition-colors border border-[color:var(--border)] hover:border-[color:var(--border-strong)]"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
+            </svg>
+            {t("diagnostic")}
+          </Link>
+          <Link
             href="/contacto"
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-[color:var(--border-strong)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] transition-colors"
           >
             {t("contact")}
             <span aria-hidden>→</span>
           </Link>
-          <MobileMenu labels={{ work: t("work"), services: t("services"), about: t("about"), contact: t("contact") }} />
+          <MobileMenu labels={{ work: t("work"), services: t("services"), about: t("about"), contact: t("contact"), diagnostic: t("diagnostic") }} />
         </div>
       </div>
     </NavScrollIsland>

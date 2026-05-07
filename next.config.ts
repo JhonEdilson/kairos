@@ -30,7 +30,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.fontshare.com https://assets.calendly.com",
       "img-src 'self' data: blob: https:",
       "font-src 'self' data: https://api.fontshare.com https://cdn.fontshare.com",
-      "connect-src 'self' https://vercel.live https://*.vercel.live wss://*.pusher.com",
+      "connect-src 'self' https://vercel.live https://*.vercel.live wss://*.pusher.com https://*.supabase.co",
       "frame-src https://calendly.com https://*.calendly.com https://www.loom.com",
       "media-src 'self'",
       "object-src 'none'",
@@ -50,6 +50,10 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
   },
+  // Prevent Turbopack/webpack from bundling these server-only packages.
+  // @react-pdf/renderer uses Node.js native APIs (canvas, fontkit, etc.)
+  // @anthropic-ai/sdk uses Node.js streams and TLS internals.
+  serverExternalPackages: ["@react-pdf/renderer", "@anthropic-ai/sdk", "openai"],
   experimental: {
     optimizePackageImports: ["framer-motion", "gsap"],
   },

@@ -3,7 +3,8 @@
     "work": "Work",
     "services": "Services",
     "about": "About",
-    "contact": "Talk"
+    "contact": "Talk",
+    "diagnostic": "My Diagnosis"
   },
   "hero": {
     "meta": {
@@ -110,7 +111,8 @@
   "cta": {
     "heading": "Your manual process has an expiration date.",
     "sub": "A 20-minute call and you walk away with a concrete diagnosis — even if we never work together.",
-    "button": "Book a 20-min call"
+    "button": "Book a 20-min call",
+    "buttonSecondary": "Free AI Diagnosis"
   },
   "footer": {
     "tagline": "Automations triggered at the right moment.",
@@ -257,7 +259,8 @@
         "Stack and priority recommendations",
         "Deliverable: written report"
       ],
-      "cta": "Book free diagnosis"
+      "cta": "Book free diagnosis",
+      "ctaAi": "AI Diagnosis"
     },
     "partner": {
       "eyebrow": "Partner Plan",
@@ -328,5 +331,156 @@
         "Dashboard to review all conversations in one place"
       ]
     }
+  },
+  "diagnostico": {
+    "meta": {
+      "title": "Free AI Automation Diagnosis — Kairos Studio",
+      "description": "Discover in 5 minutes which of your business processes can be automated with AI. Free personalized report."
+    },
+    "badge": "FREE DIAGNOSIS",
+    "heading": "Find out what's",
+    "headingAccent": "costing you most.",
+    "sub": "5 minutes. No password. AI identifies which manual processes are holding you back and what you're losing.",
+    "includes": {
+      "label": "INCLUDES:",
+      "1": "Identified automatable processes",
+      "2": "Estimated ROI per process",
+      "3": "Recommended stack for your case",
+      "4": "Concrete next steps"
+    },
+    "step1": {
+      "title": "Tell us about your company",
+      "sub": "This information personalizes your analysis.",
+      "name": "YOUR NAME",
+      "namePlaceholder": "John Smith",
+      "company": "COMPANY NAME",
+      "companyPlaceholder": "My Company LLC",
+      "email": "EMAIL ADDRESS",
+      "emailPlaceholder": "you@company.com",
+      "industry": "INDUSTRY / SECTOR",
+      "industryOptions": {
+        "tech": "Technology / SaaS",
+        "ecommerce": "E-commerce / Retail",
+        "health": "Healthcare",
+        "logistics": "Logistics / Transport",
+        "education": "Education",
+        "services": "Professional services",
+        "realestate": "Real estate",
+        "finance": "Finance / Fintech",
+        "other": "Other"
+      },
+      "employees": "NUMBER OF EMPLOYEES",
+      "employeeOptions": {
+        "1-5": "1 - 5 people",
+        "6-20": "6 - 20 people",
+        "21-50": "21 - 50 people",
+        "51-200": "51 - 200 people",
+        "200+": "More than 200 people"
+      },
+      "consent": "I agree that my data may be stored to analyze trends and contact me if relevant. No spam."
+    },
+    "step2": {
+      "title": "What processes steal your time?",
+      "sub": "Select all that apply.",
+      "processes": {
+        "crm": "Client follow-up / manual CRM",
+        "reports": "Report or data generation",
+        "billing": "Invoicing or quoting",
+        "onboarding": "Client onboarding",
+        "support": "Customer support",
+        "inventory": "Inventory management",
+        "scheduling": "Appointment scheduling",
+        "other": "Other manual process"
+      },
+      "hoursTitle": "HOURS/WEEK ON THESE PROCESSES",
+      "hoursOptions": {
+        "lt5": "Less than 5 hours",
+        "5-15": "5 - 15 hours",
+        "15-30": "15 - 30 hours",
+        "gt30": "More than 30 hours"
+      },
+      "peopleTitle": "PEOPLE INVOLVED",
+      "peopleOptions": {
+        "solo": "Just me",
+        "2-5": "2 - 5 people",
+        "6-15": "6 - 15 people",
+        "gt15": "More than 15 people"
+      }
+    },
+    "step3": {
+      "title": "Let's find your biggest friction",
+      "sub": "This calibrates recommendations to your reality.",
+      "bottleneckTitle": "MAIN OPERATIONAL BOTTLENECK",
+      "bottleneckOptions": {
+        "repeat": "I answer the same questions repeatedly",
+        "errors": "Manual processes generate costly errors",
+        "scale": "I can't grow without hiring more people",
+        "scattered": "Data is scattered across multiple tools",
+        "followup": "I lose clients due to lack of follow-up",
+        "slow": "My processes are slower than competitors"
+      },
+      "goalTitle": "IF YOU RECOVERED 15H/WEEK, YOU'D USE THEM ON:",
+      "goalOptions": {
+        "sales": "Getting more clients or sales",
+        "product": "Improving the product or service",
+        "strategy": "Strategic work and innovation",
+        "rest": "Rest and balance",
+        "notsure": "Not sure, but I need them"
+      },
+      "experienceTitle": "HAVE YOU TRIED AUTOMATING BEFORE?",
+      "experienceOptions": {
+        "no": "No, never",
+        "failed": "Yes, but it didn't work well",
+        "partial": "I have some things automated"
+      }
+    },
+    "step4": {
+      "title": "Your current tech stack",
+      "sub": "Select all tools you use today.",
+      "toolsTitle": "ACTIVE TOOLS (SELECT ALL)",
+      "tools": {
+        "google": "Google Workspace",
+        "microsoft": "Microsoft 365",
+        "slack": "Slack / Teams",
+        "whatsapp": "WhatsApp Business",
+        "crm": "CRM (HubSpot, Pipedrive, etc.)",
+        "pm": "Project management (Trello, Asana, Monday)",
+        "accounting": "Accounting software",
+        "ecommerce": "E-commerce (Shopify, WooCommerce)",
+        "none": "No specific tools"
+      },
+      "aiTitle": "AI ADOPTION",
+      "aiOptions": {
+        "none": "Don't use AI",
+        "personal": "Use it personally (ChatGPT, etc.)",
+        "partial": "Some AI in processes",
+        "integrated": "Formally integrated"
+      }
+    },
+    "generating": {
+      "title": "Generating your diagnosis...",
+      "sub": "AI is analyzing your processes. This takes a few seconds."
+    },
+    "report": {
+      "title": "Your automation diagnosis",
+      "sectionPainPoint": "YOUR BIGGEST OPPORTUNITY",
+      "sectionProcesses": "IDENTIFIED AUTOMATABLE PROCESSES",
+      "sectionRoi": "ESTIMATED ROI",
+      "sectionStack": "RECOMMENDED STACK",
+      "sectionSteps": "NEXT STEPS",
+      "oneShot": "Download the report before closing this page — you won't be able to recover it.",
+      "ctaBook": "Book a call with Jhon",
+      "ctaDownload": "Download PDF report",
+      "ctaBookSub": "Bring your report to the call for a deeper, more direct analysis."
+    },
+    "errors": {
+      "rateLimit": "You already have a recent diagnosis. You can request a new one in 7 days.",
+      "ipLimit": "Too many requests. Please try again in a few minutes.",
+      "invalid": "This field is required.",
+      "server": "Something went wrong. Please try again or contact us via WhatsApp."
+    },
+    "next": "Next",
+    "back": "Previous",
+    "submit": "Generate my diagnosis"
   }
 }

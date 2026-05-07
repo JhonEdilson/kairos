@@ -21,9 +21,12 @@ export function FinalCTA() {
         <p className="mt-8 text-lg md:text-xl text-[color:var(--fg-muted)] max-w-2xl mx-auto text-balance">
           {t("sub")}
         </p>
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href="/contacto" variant="accent" size="xl">
             {t("button")}
+          </Button>
+          <Button href="/diagnostico" variant="ghost" size="xl">
+            {t("buttonSecondary")}
           </Button>
         </div>
       </div>

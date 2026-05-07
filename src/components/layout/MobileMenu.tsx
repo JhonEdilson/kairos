@@ -8,6 +8,7 @@ type Labels = {
   services: string;
   about: string;
   contact: string;
+  diagnostic: string;
 };
 
 export function MobileMenu({ labels }: { labels: Labels }) {
@@ -27,9 +28,10 @@ export function MobileMenu({ labels }: { labels: Labels }) {
   }, [open]);
 
   const links = [
-    { href: "/trabajo",  label: labels.work },
-    { href: "/servicios", label: labels.services },
-    { href: "/about",    label: labels.about },
+    { href: "/trabajo",     label: labels.work },
+    { href: "/servicios",   label: labels.services },
+    { href: "/about",       label: labels.about },
+    { href: "/diagnostico", label: labels.diagnostic },
   ] as const;
 
   return (

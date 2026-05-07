@@ -3,7 +3,8 @@
     "work": "Trabajo",
     "services": "Servicios",
     "about": "Sobre mi",
-    "contact": "Hablemos"
+    "contact": "Hablemos",
+    "diagnostic": "Mi Diagnóstico"
   },
   "hero": {
     "meta": {
@@ -175,7 +176,8 @@
   "cta": {
     "heading": "Tu proceso manual tiene fecha de vencimiento.",
     "sub": "Una llamada de 20 minutos y sales con un diagnostico concreto — aunque no trabajemos juntos.",
-    "button": "Agendar llamada de 20 min"
+    "button": "Agendar llamada de 20 min",
+    "buttonSecondary": "Diagnóstico gratis con IA"
   },
   "footer": {
     "tagline": "Automatizaciones disparadas en el momento exacto.",
@@ -322,7 +324,8 @@
         "Recomendación de stack y prioridades",
         "Entregable: reporte escrito"
       ],
-      "cta": "Agendar diagnóstico gratuito"
+      "cta": "Agendar diagnóstico gratuito",
+      "ctaAi": "Diagnóstico con IA"
     },
     "partner": {
       "eyebrow": "Plan Partner",
@@ -393,5 +396,156 @@
         "Dashboard para revisar todas las conversaciones en un solo lugar"
       ]
     }
+  },
+  "diagnostico": {
+    "meta": {
+      "title": "Diagnóstico de Automatización Gratuito con IA — Kairos Studio",
+      "description": "Descubre en 5 minutos cuáles procesos de tu empresa se pueden automatizar con IA. Informe personalizado gratuito."
+    },
+    "badge": "DIAGNÓSTICO GRATUITO",
+    "heading": "Descubre qué está",
+    "headingAccent": "costándote más.",
+    "sub": "5 minutos. Sin contraseña. La IA identifica qué procesos manuales te están frenando y cuánto estás perdiendo.",
+    "includes": {
+      "label": "INCLUYE:",
+      "1": "Procesos automatizables identificados",
+      "2": "ROI estimado por proceso",
+      "3": "Stack recomendado para tu caso",
+      "4": "Próximos pasos concretos"
+    },
+    "step1": {
+      "title": "Cuéntanos sobre tu empresa",
+      "sub": "Esta información personaliza tu análisis.",
+      "name": "TU NOMBRE",
+      "namePlaceholder": "Jhon Escobar",
+      "company": "NOMBRE DE LA EMPRESA",
+      "companyPlaceholder": "Mi Empresa S.A.S.",
+      "email": "CORREO ELECTRÓNICO",
+      "emailPlaceholder": "tu@empresa.com",
+      "industry": "INDUSTRIA / SECTOR",
+      "industryOptions": {
+        "tech": "Tecnología / SaaS",
+        "ecommerce": "E-commerce / Retail",
+        "health": "Salud",
+        "logistics": "Logística / Transporte",
+        "education": "Educación",
+        "services": "Servicios profesionales",
+        "realestate": "Bienes raíces",
+        "finance": "Finanzas / Fintech",
+        "other": "Otro"
+      },
+      "employees": "NÚMERO DE EMPLEADOS",
+      "employeeOptions": {
+        "1-5": "1 - 5 personas",
+        "6-20": "6 - 20 personas",
+        "21-50": "21 - 50 personas",
+        "51-200": "51 - 200 personas",
+        "200+": "Más de 200 personas"
+      },
+      "consent": "Acepto que mis datos sean guardados para analizar tendencias y contactarme si es pertinente. No spam."
+    },
+    "step2": {
+      "title": "¿Qué procesos te roban más tiempo?",
+      "sub": "Selecciona todos los que aplican.",
+      "processes": {
+        "crm": "Seguimiento de clientes / CRM manual",
+        "reports": "Generación de reportes e informes",
+        "billing": "Facturación o cotizaciones",
+        "onboarding": "Onboarding de clientes",
+        "support": "Atención al cliente / soporte",
+        "inventory": "Gestión de inventario",
+        "scheduling": "Programación de citas o reuniones",
+        "other": "Otro proceso manual"
+      },
+      "hoursTitle": "HORAS/SEMANA EN ESTOS PROCESOS",
+      "hoursOptions": {
+        "lt5": "Menos de 5 horas",
+        "5-15": "5 - 15 horas",
+        "15-30": "15 - 30 horas",
+        "gt30": "Más de 30 horas"
+      },
+      "peopleTitle": "PERSONAS INVOLUCRADAS",
+      "peopleOptions": {
+        "solo": "Solo yo",
+        "2-5": "2 - 5 personas",
+        "6-15": "6 - 15 personas",
+        "gt15": "Más de 15 personas"
+      }
+    },
+    "step3": {
+      "title": "Identifiquemos tu mayor fricción",
+      "sub": "Esto calibra las recomendaciones a tu realidad.",
+      "bottleneckTitle": "PRINCIPAL CUELLO DE BOTELLA",
+      "bottleneckOptions": {
+        "repeat": "Respondo las mismas preguntas constantemente",
+        "errors": "Los procesos manuales generan errores costosos",
+        "scale": "No puedo crecer sin contratar más gente",
+        "scattered": "Los datos están dispersos en varias herramientas",
+        "followup": "Pierdo clientes por falta de seguimiento",
+        "slow": "Mis procesos son más lentos que la competencia"
+      },
+      "goalTitle": "SI RECUPERARAS 15H/SEMANA, LAS USARÍAS EN:",
+      "goalOptions": {
+        "sales": "Conseguir más clientes o ventas",
+        "product": "Mejorar el producto o servicio",
+        "strategy": "Trabajo más estratégico e innovación",
+        "rest": "Descanso y balance",
+        "notsure": "No sé, pero las necesito"
+      },
+      "experienceTitle": "¿HAS INTENTADO AUTOMATIZAR ANTES?",
+      "experienceOptions": {
+        "no": "No, nunca",
+        "failed": "Sí, pero no funcionó bien",
+        "partial": "Tengo algunas cosas automatizadas"
+      }
+    },
+    "step4": {
+      "title": "Tu stack tecnológico actual",
+      "sub": "Selecciona todas las herramientas que usas hoy.",
+      "toolsTitle": "HERRAMIENTAS ACTIVAS (SELECCIONA TODAS)",
+      "tools": {
+        "google": "Google Workspace",
+        "microsoft": "Microsoft 365",
+        "slack": "Slack / Teams",
+        "whatsapp": "WhatsApp Business",
+        "crm": "CRM (HubSpot, Pipedrive, etc.)",
+        "pm": "Gestión de proyectos (Trello, Asana, Monday)",
+        "accounting": "Contabilidad (Siigo, Alegra, QuickBooks)",
+        "ecommerce": "E-commerce (Shopify, WooCommerce)",
+        "none": "Sin herramientas específicas"
+      },
+      "aiTitle": "ADOPCIÓN DE IA",
+      "aiOptions": {
+        "none": "No uso IA",
+        "personal": "La uso personalmente (ChatGPT, etc.)",
+        "partial": "Tenemos algo de IA en procesos",
+        "integrated": "Está integrada formalmente"
+      }
+    },
+    "generating": {
+      "title": "Generando tu diagnóstico...",
+      "sub": "La IA está analizando tus procesos. Esto toma unos segundos."
+    },
+    "report": {
+      "title": "Tu diagnóstico de automatización",
+      "sectionPainPoint": "TU MAYOR OPORTUNIDAD",
+      "sectionProcesses": "PROCESOS AUTOMATIZABLES IDENTIFICADOS",
+      "sectionRoi": "ROI ESTIMADO",
+      "sectionStack": "STACK RECOMENDADO",
+      "sectionSteps": "PRÓXIMOS PASOS",
+      "oneShot": "Descarga el informe antes de cerrar esta página — no podrás recuperarlo.",
+      "ctaBook": "Agendar llamada con Jhon",
+      "ctaDownload": "Descargar informe PDF",
+      "ctaBookSub": "Lleva tu informe a la llamada para que el análisis sea más profundo y directo."
+    },
+    "errors": {
+      "rateLimit": "Ya tienes un diagnóstico reciente. Puedes solicitar uno nuevo en 7 días.",
+      "ipLimit": "Demasiadas solicitudes. Intenta en unos minutos.",
+      "invalid": "Este campo es requerido.",
+      "server": "Algo salió mal. Intenta de nuevo o contáctanos por WhatsApp."
+    },
+    "next": "Siguiente",
+    "back": "Anterior",
+    "submit": "Generar mi diagnóstico"
   }
 }

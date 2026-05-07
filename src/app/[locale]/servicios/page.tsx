@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Section, Eyebrow, Heading } from "@/components/ui/Section";
 import { PartnerCTAButton } from "@/components/ui/PartnerCTAButton";
 import { TierSection } from "@/components/sections/TierSection";
+import { Link } from "@/i18n/navigation";
 
 const Check = () => (
   <svg
@@ -176,20 +177,30 @@ export default async function ServiciosPage({ params }: Props) {
                   ))}
                 </ul>
               </div>
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-7 py-4 text-sm font-medium
-                           bg-[color:var(--fg-primary)] text-[color:var(--bg-primary)]
-                           hover:bg-[color:var(--accent)] hover:text-[color:var(--fg-primary)]
-                           transition-all duration-300 group self-start"
-              >
-                {t("consulting.cta")}
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-7 py-4 text-sm font-medium
+                             bg-[color:var(--fg-primary)] text-[color:var(--bg-primary)]
+                             hover:bg-[color:var(--accent)] hover:text-[color:var(--fg-primary)]
+                             transition-all duration-300 group"
+                >
+                  {t("consulting.cta")}
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+                <Link
+                  href="/diagnostico"
+                  className="inline-flex items-center gap-3 px-7 py-4 text-sm font-medium
+                             border border-[color:var(--border-strong)]
+                             hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]
+                             transition-all duration-300 group"
+                >
+                  {t("consulting.ctaAi")}
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

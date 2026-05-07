@@ -77,6 +77,16 @@ export function Footer() {
               >
                 GitHub ↗
               </a>
+              {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
+                <a
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-[color:var(--fg-muted)] hover:text-[color:var(--accent)] transition-colors block mt-2"
+                >
+                  WhatsApp ↗
+                </a>
+              )}
             </FooterCol>
           </div>
         </div>
