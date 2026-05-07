@@ -28,6 +28,8 @@ export function createAdminClient() {
     contact_name TEXT NOT NULL,
     company_name TEXT NOT NULL,
     email TEXT NOT NULL,
+    website_url TEXT,
+    business_type TEXT,
     industry TEXT,
     employee_count TEXT,
     manual_processes TEXT[],
@@ -42,6 +44,10 @@ export function createAdminClient() {
     locale TEXT DEFAULT 'es',
     ip_hash TEXT
   );
+
+  -- If the table already exists, add the new columns:
+  -- ALTER TABLE diagnostics ADD COLUMN website_url TEXT;
+  -- ALTER TABLE diagnostics ADD COLUMN business_type TEXT;
 
   CREATE INDEX idx_diagnostics_email ON diagnostics(email);
   CREATE INDEX idx_diagnostics_created_at ON diagnostics(created_at);

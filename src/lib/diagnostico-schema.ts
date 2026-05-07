@@ -7,6 +7,8 @@ export const diagnosticoSchema = z.object({
   contact_name: str(100),
   company_name: str(150),
   email: z.string().trim().email().max(254),
+  website_url: z.string().trim().max(500).optional(),
+  business_type: z.enum(["b2b", "b2c"]).optional(),
   industry: optStr(80),
   employee_count: optStr(20),
   manual_processes: z.array(z.string().trim().max(80)).max(10).default([]),

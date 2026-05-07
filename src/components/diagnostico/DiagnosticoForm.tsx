@@ -11,6 +11,8 @@ import type { DiagnosticoReport } from "@/lib/claude-diagnostico";
 // ──────────────── Types ────────────────
 
 interface FormData {
+  website_url: string;
+  business_type: string;
   contact_name: string;
   company_name: string;
   email: string;
@@ -28,6 +30,7 @@ interface FormData {
 }
 
 const EMPTY_FORM: FormData = {
+  website_url: "", business_type: "",
   contact_name: "", company_name: "", email: "", industry: "",
   employee_count: "", consent: false,
   manual_processes: [], hours_per_week: "", people_involved: "",
@@ -109,6 +112,112 @@ function RadioCard({
       />
       {label}
     </button>
+  );
+}
+
+// ──────────────── New step components ────────────────
+
+function StepWebsite({
+  data, set, errors,
+}: { data: FormData; set: (k: keyof FormData, v: string) => void; errors: Record<string, string> }) {
+  const t = useTranslations("diagnostico");
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <label className="block text-sm font-medium text-[color:var(--fg-muted)] uppercase tracking-widest text-xs">
+            {t("stepWebsite.label")}
+          </label>
+          <span className="text-xs text-[color:var(--fg-muted)] normal-case tracking-normal font-normal">
+            {t("stepWebsite.optional")}
+          </span>
+        </div>
+        <div className="relative flex items-center">
+          <span className="absolute left-3.5 text-[color:var(--fg-muted)] pointer-events-none">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </span>
+          <input
+            type="url"
+            value={data.website_url}
+            onChange={(e) => set("website_url", e.target.value)}
+            placeholder={t("stepWebsite.placeholder")}
+            className="w-full pl-10 pr-4 py-3 text-sm bg-transparent border border-[color:var(--border)]
+                       focus:border-[color:var(--accent)] focus:outline-none transition-colors
+                       text-[color:var(--fg-primary)] placeholder:text-[color:var(--fg-muted)]"
+          />
+        </div>
+        <FieldError msg={errors.website_url} />
+      </div>
+    </div>
+  );
+}
+
+function BizTypeCard({
+  icon, label, sublabel, selected, onClick,
+}: { icon: React.ReactNode; label: string; sublabel: string; selected: boolean; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex flex-col items-center gap-3 px-6 py-8 border transition-all duration-200 cursor-pointer active:scale-[0.98] hover:scale-[1.02]
+                  ${selected
+                    ? "border-[color:var(--accent)] bg-[color:var(--accent)]/10"
+                    : "border-[color:var(--border)] hover:border-[color:var(--border-strong)]"
+                  }`}
+    >
+      <span className={`flex items-center justify-center w-14 h-14 rounded-xl transition-colors duration-200
+                        ${selected ? "bg-[color:var(--accent)]/20 text-[color:var(--accent)]" : "bg-[color:var(--border)] text-[color:var(--fg-muted)]"}`}>
+        {icon}
+      </span>
+      <span className={`text-base font-semibold tracking-tight transition-colors ${selected ? "text-[color:var(--fg-primary)]" : "text-[color:var(--fg-muted)]"}`}>
+        {label}
+      </span>
+      <span className="text-xs text-[color:var(--fg-muted)]">{sublabel}</span>
+    </button>
+  );
+}
+
+function StepBizType({
+  data, set,
+}: { data: FormData; set: (k: keyof FormData, v: string) => void }) {
+  const t = useTranslations("diagnostico");
+
+  const b2bIcon = (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+
+  const b2cIcon = (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      <BizTypeCard
+        icon={b2bIcon}
+        label={t("stepBizType.b2b")}
+        sublabel={t("stepBizType.b2bSub")}
+        selected={data.business_type === "b2b"}
+        onClick={() => set("business_type", data.business_type === "b2b" ? "" : "b2b")}
+      />
+      <BizTypeCard
+        icon={b2cIcon}
+        label={t("stepBizType.b2c")}
+        sublabel={t("stepBizType.b2cSub")}
+        selected={data.business_type === "b2c"}
+        onClick={() => set("business_type", data.business_type === "b2c" ? "" : "b2c")}
+      />
+    </div>
   );
 }
 
@@ -365,7 +474,7 @@ function Step4({
 
 // ──────────────── Main component ────────────────
 
-const TOTAL_STEPS = 4;
+const TOTAL_STEPS = 6;
 const slideVariants = {
   enter: (dir: number) => ({ x: dir > 0 ? 40 : -40, opacity: 0 }),
   center: { x: 0, opacity: 1 },
@@ -397,7 +506,7 @@ export function DiagnosticoForm() {
 
   const validate = (): boolean => {
     const errs: Record<string, string> = {};
-    if (step === 1) {
+    if (step === 3) {
       if (!data.contact_name.trim()) errs.contact_name = t("errors.invalid");
       if (!data.company_name.trim()) errs.company_name = t("errors.invalid");
       if (!data.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
@@ -436,6 +545,8 @@ export function DiagnosticoForm() {
           contact_name: data.contact_name,
           company_name: data.company_name,
           email: data.email,
+          website_url: data.website_url || undefined,
+          business_type: data.business_type || undefined,
           industry: data.industry || undefined,
           employee_count: data.employee_count || undefined,
           manual_processes: data.manual_processes,
@@ -470,6 +581,8 @@ export function DiagnosticoForm() {
   };
 
   const stepLabels = [
+    t("stepWebsite.title"),
+    t("stepBizType.title"),
     t("step1.title"),
     t("step2.title"),
     t("step3.title"),
@@ -502,10 +615,12 @@ export function DiagnosticoForm() {
           {stepLabels[step - 1]}
         </h2>
         <p className="mt-1 text-sm text-[color:var(--fg-muted)]">
-          {step === 1 && t("step1.sub")}
-          {step === 2 && t("step2.sub")}
-          {step === 3 && t("step3.sub")}
-          {step === 4 && t("step4.sub")}
+          {step === 1 && t("stepWebsite.sub")}
+          {step === 2 && t("stepBizType.sub")}
+          {step === 3 && t("step1.sub")}
+          {step === 4 && t("step2.sub")}
+          {step === 5 && t("step3.sub")}
+          {step === 6 && t("step4.sub")}
         </p>
       </div>
 
@@ -519,10 +634,12 @@ export function DiagnosticoForm() {
           exit="exit"
           transition={{ duration: 0.25, ease: "easeInOut" }}
         >
-          {step === 1 && <Step1 data={data} set={setField} errors={errors} />}
-          {step === 2 && <Step2 data={data} set={setField} toggle={toggleMulti} />}
-          {step === 3 && <Step3 data={data} set={setField} />}
-          {step === 4 && <Step4 data={data} set={setField} toggle={toggleMulti} />}
+          {step === 1 && <StepWebsite data={data} set={setField} errors={errors} />}
+          {step === 2 && <StepBizType data={data} set={setField} />}
+          {step === 3 && <Step1 data={data} set={setField} errors={errors} />}
+          {step === 4 && <Step2 data={data} set={setField} toggle={toggleMulti} />}
+          {step === 5 && <Step3 data={data} set={setField} />}
+          {step === 6 && <Step4 data={data} set={setField} toggle={toggleMulti} />}
         </motion.div>
       </AnimatePresence>
 

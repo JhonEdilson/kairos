@@ -121,6 +121,8 @@ export async function POST(req: NextRequest) {
         contact_name:          data.contact_name,
         company_name:          data.company_name,
         email:                 data.email.toLowerCase(),
+        website_url:           data.website_url,
+        business_type:         data.business_type,
         industry:              data.industry,
         employee_count:        data.employee_count,
         manual_processes:      data.manual_processes,

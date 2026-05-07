@@ -348,6 +348,21 @@
       "3": "Recommended stack for your case",
       "4": "Concrete next steps"
     },
+    "stepWebsite": {
+      "title": "What's your website?",
+      "sub": "Enter your site URL. We'll analyze performance, SEO, technologies, robots.txt, sitemap and more.",
+      "label": "YOUR WEBSITE URL",
+      "placeholder": "https://yourcompany.com",
+      "optional": "(optional)"
+    },
+    "stepBizType": {
+      "title": "Who do you sell to?",
+      "sub": "Select your business type. This completely changes the analysis framework.",
+      "b2b": "B2B",
+      "b2bSub": "I sell to companies",
+      "b2c": "B2C",
+      "b2cSub": "I sell to consumers"
+    },
     "step1": {
       "title": "Tell us about your company",
       "sub": "This information personalizes your analysis.",

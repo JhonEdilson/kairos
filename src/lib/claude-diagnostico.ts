@@ -15,10 +15,17 @@ export interface DiagnosticoReport {
 }
 
 function buildUserMessage(data: DiagnosticoInput, locale: string): string {
+  const bizTypeLabel =
+    data.business_type === "b2b" ? "B2B (sells to companies)" :
+    data.business_type === "b2c" ? "B2C (sells to consumers)" :
+    "Not specified";
+
   return `Analyze this company and respond in ${locale === "en" ? "English" : "Spanish"}:
 
 <user_data>
 Company: ${data.company_name}
+Website: ${data.website_url ?? "Not provided"}
+Business type: ${bizTypeLabel}
 Industry: ${data.industry ?? "Not specified"}
 Employees: ${data.employee_count ?? "Not specified"}
 Manual processes consuming most time: ${data.manual_processes.join(", ") || "None specified"}

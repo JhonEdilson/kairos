@@ -413,11 +413,26 @@
       "3": "Stack recomendado para tu caso",
       "4": "Próximos pasos concretos"
     },
+    "stepWebsite": {
+      "title": "¿Cuál es tu sitio web?",
+      "sub": "Ingresa la URL de tu sitio. Analizaremos rendimiento, SEO, tecnologías, robots.txt, sitemap y más.",
+      "label": "URL DE TU SITIO WEB",
+      "placeholder": "https://tuempresa.com",
+      "optional": "(opcional)"
+    },
+    "stepBizType": {
+      "title": "¿A quién le vendes?",
+      "sub": "Selecciona tu tipo de negocio. Esto cambia completamente el framework de análisis.",
+      "b2b": "B2B",
+      "b2bSub": "Vendo a empresas",
+      "b2c": "B2C",
+      "b2cSub": "Vendo a personas"
+    },
     "step1": {
       "title": "Cuéntanos sobre tu empresa",
       "sub": "Esta información personaliza tu análisis.",
       "name": "TU NOMBRE",
-      "namePlaceholder": "Jhon Escobar",
+      "namePlaceholder": "Nombre completo",
       "company": "NOMBRE DE LA EMPRESA",
       "companyPlaceholder": "Mi Empresa S.A.S.",
       "email": "CORREO ELECTRÓNICO",

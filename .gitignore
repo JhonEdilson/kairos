@@ -1,5 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Windows reserved device name — causes Turbopack FATAL on dev server
+# See docs/troubleshooting/turbopack-nul-file.md
+nul
+
 # dependencies
 /node_modules
 /.pnp
