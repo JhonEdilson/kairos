@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kairos — K Monogram Explorations</title>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin/>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,700&display=swap"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"/>
+
+  <style>
+    :root {
+      --navy:   #0B0F1A;
+      --navy-2: #13213A;
+      --cream:  #FAF3E7;
+      --muted:  #A8B0BD;
+      --orange: #D97706;
+      --border: rgba(250,243,231,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background: #080c14;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 60px 24px 80px;
+    }
+
+    body {
+      width: 100%;
+      max-width: 1160px;
+      font-family: 'JetBrains Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .header {
+      margin-bottom: 64px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--orange);
+    }
+
+    .header-title {
+      font-family: 'Neue Montreal', sans-serif;
+      font-size: 40px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .header-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+
+    .header-instructions {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-left: 2px solid var(--orange);
+      background: rgba(217,119,6,0.06);
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    /* ── Variant column ── */
+    .variant {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+
+    .variant-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .variant-num {
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+
+    .variant-name {
+      font-family: 'Neue Montreal', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .variant-dir {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── Display contexts ── */
+    .context {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 28px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .context-label {
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* Dark bg — K in cream */
+    .ctx-dark {
+      background: var(--navy);
+      color: var(--cream);
+    }
+    .ctx-dark .context-label { color: var(--muted); }
+
+    /* Light bg — K in navy */
+    .ctx-light {
+      background: var(--cream);
+      color: var(--navy);
+    }
+    .ctx-light .context-label { color: #6b7280; }
+
+    /* Monochrome — K in cream, dark bg */
+    .ctx-mono {
+      background: var(--navy-2);
+      color: var(--cream);
+    }
+    .ctx-mono .context-label { color: var(--muted); }
+
+    /* Small test — favicon simulation */
+    .ctx-small {
+      background: var(--navy);
+      color: var(--cream);
+      min-height: 100px;
+    }
+    .ctx-small .context-label { color: var(--muted); }
+
+    .k-large {
+      width: 130px;
+      height: 130px;
+    }
+
+    .k-medium {
+      width: 64px;
+      height: 64px;
+    }
+
+    .k-favicon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .k-appicon {
+      width: 48px;
+      height: 48px;
+    }
+
+    /* ── Lockup preview ── */
+    .lockup-preview {
+      padding: 22px 20px;
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .lockup-label {
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lockup-wordmark {
+      font-family: 'Neue Montreal', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+    }
+
+    /* ── Description ── */
+    .variant-desc {
+      padding: 18px 20px;
+      flex: 1;
+    }
+
+    .variant-desc p {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+    }
+
+    .variant-tag {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 3px 8px;
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* ── Row labels ── */
+    .row-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+
+    .row-label {
+      padding: 8px 20px;
+      font-size: 8px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: rgba(217,119,6,0.06);
+      border: 1px solid var(--border);
+    }
+
+    .row-label-full {
+      grid-column: 1 / -1;
+      padding: 10px 20px;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border-bottom: 1px solid rgba(217,119,6,0.2);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .row-label-full::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--orange);
+    }
+
+    /* ── AI placeholder ── */
+    .ai-placeholder {
+      height: 130px;
+      border: 1px dashed rgba(250,243,231,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: rgba(250,243,231,0.2);
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 8px;
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-l {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-r {
+      font-size: 9px;
+      color: rgba(250,243,231,0.25);
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════════════ -->
+<div class="header">
+  <div class="header-eyebrow">Fase 3 — Logo Explorations</div>
+  <h1 class="header-title">Kairos — K Monogram</h1>
+  <div class="header-sub">
+    4 conceptos · 2 direcciones — A: Anthropic-style geométrico · B: Momentum/Movimiento<br/>
+    Wordmark: "Kairos" (sin "studio") + monograma K como derivativo
+  </div>
+  <div class="header-instructions">
+    → CÓMO ELEGIR: Mira los 4 en dark bg primero. ¿Cuál se ve más como "Kairos Studio" en tu cabeza? Después revisa el lockup.<br/>
+    → SIGUIENTE PASO: Dime cuál te gusta más (A1, A2, B1, B2) y si hay algo de alguno que quieras combinar.
+  </div>
+</div>
+
+<!-- ══ COMPARISON GRID ════════════════════════════════════════════════ -->
+
+<!-- Headers -->
+<div class="grid">
+  <div class="variant-header" style="border:1px solid var(--border);">
+    <div class="variant-num">A · Dirección 1 · 01</div>
+    <div class="variant-name">K Geométrica</div>
+    <div class="variant-dir">Pura · Anthropic-style</div>
+  </div>
+  <div class="variant-header" style="border:1px solid var(--border);">
+    <div class="variant-num">A · Dirección 1 · 02</div>
+    <div class="variant-name">K Stencil</div>
+    <div class="variant-dir">Gaps · Técnico · Preciso</div>
+  </div>
+  <div class="variant-header" style="border:1px solid var(--border);">
+    <div class="variant-num">B · Dirección 2 · 01</div>
+    <div class="variant-name">K Arrow</div>
+    <div class="variant-dir">Momentum · Forward →</div>
+  </div>
+  <div class="variant-header" style="border:1px solid var(--border);">
+    <div class="variant-num">B · Dirección 2 · 02</div>
+    <div class="variant-name">K Italic</div>
+    <div class="variant-dir">Forward lean · 8° skew</div>
+  </div>
+</div>
+
+<!-- Dark bg — large -->
+<div class="row-label-full">Dark Background (uso principal)</div>
+<div class="grid">
+
+  <!-- A1 dark -->
+  <div class="context ctx-dark">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+      <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+      <polygon points="28,50 80,75 80,92 28,67" fill="currentColor"/>
+    </svg>
+    <div class="context-label">Cream on Navy</div>
+  </div>
+
+  <!-- A2 dark -->
+  <div class="context ctx-dark">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+      <polygon points="32,31 80,8 80,25 32,48" fill="currentColor"/>
+      <polygon points="32,52 80,75 80,92 32,69" fill="currentColor"/>
+    </svg>
+    <div class="context-label">Cream on Navy</div>
+  </div>
+
+  <!-- B1 dark -->
+  <div class="context ctx-dark">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+      <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+      <polygon points="28,50 28,67 80,92 93,83 80,74" fill="currentColor"/>
+    </svg>
+    <div class="context-label">Cream on Navy</div>
+  </div>
+
+  <!-- B2 dark -->
+  <div class="context ctx-dark">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <polygon points="15.9,8 33.9,8 22.1,92 4.1,92" fill="currentColor"/>
+      <polygon points="30.4,33 85.9,8 83.5,25 28,50" fill="currentColor"/>
+      <polygon points="28,50 76.5,75 74.1,92 25.6,67" fill="currentColor"/>
+    </svg>
+    <div class="context-label">Cream on Navy</div>
+  </div>
+
+</div>
+
+<!-- Light bg — large -->
+<div class="row-label-full" style="margin-top:2px;">Light Background (knockout)</div>
+<div class="grid">
+
+  <!-- A1 light -->
+  <div class="context ctx-light">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+      <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+      <polygon points="28,50 80,75 80,92 28,67" fill="currentColor"/>
+    </svg>
+    <div class="context-label" style="color:#9ca3af;">Navy on Cream</div>
+  </div>
+
+  <!-- A2 light -->
+  <div class="context ctx-light">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+      <polygon points="32,31 80,8 80,25 32,48" fill="currentColor"/>
+      <polygon points="32,52 80,75 80,92 32,69" fill="currentColor"/>
+    </svg>
+    <div class="context-label" style="color:#9ca3af;">Navy on Cream</div>
+  </div>
+
+  <!-- B1 light -->
+  <div class="context ctx-light">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+      <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+      <polygon points="28,50 28,67 80,92 93,83 80,74" fill="currentColor"/>
+    </svg>
+    <div class="context-label" style="color:#9ca3af;">Navy on Cream</div>
+  </div>
+
+  <!-- B2 light -->
+  <div class="context ctx-light">
+    <svg class="k-large" viewBox="0 0 100 100" fill="none">
+      <polygon points="15.9,8 33.9,8 22.1,92 4.1,92" fill="currentColor"/>
+      <polygon points="30.4,33 85.9,8 83.5,25 28,50" fill="currentColor"/>
+      <polygon points="28,50 76.5,75 74.1,92 25.6,67" fill="currentColor"/>
+    </svg>
+    <div class="context-label" style="color:#9ca3af;">Navy on Cream</div>
+  </div>
+
+</div>
+
+<!-- Lockup preview -->
+<div class="row-label-full" style="margin-top:2px;">Lockup — [K monograma] + wordmark "Kairos"</div>
+<div class="grid">
+
+  <!-- A1 lockup -->
+  <div class="lockup-preview">
+    <div class="lockup-label">Horizontal</div>
+    <div class="lockup-row">
+      <svg style="width:36px;height:36px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 80,75 80,92 28,67" fill="currentColor"/>
+      </svg>
+      <span class="lockup-wordmark">Kairos</span>
+    </div>
+    <div class="lockup-row" style="gap:8px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 80,75 80,92 28,67" fill="currentColor"/>
+      </svg>
+      <span style="font-family:'Neue Montreal',sans-serif;font-size:14px;font-weight:500;letter-spacing:-0.02em;color:var(--cream);">Kairos</span>
+    </div>
+  </div>
+
+  <!-- A2 lockup -->
+  <div class="lockup-preview">
+    <div class="lockup-label">Horizontal</div>
+    <div class="lockup-row">
+      <svg style="width:36px;height:36px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="32,31 80,8 80,25 32,48" fill="currentColor"/>
+        <polygon points="32,52 80,75 80,92 32,69" fill="currentColor"/>
+      </svg>
+      <span class="lockup-wordmark">Kairos</span>
+    </div>
+    <div class="lockup-row" style="gap:8px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="32,31 80,8 80,25 32,48" fill="currentColor"/>
+        <polygon points="32,52 80,75 80,92 32,69" fill="currentColor"/>
+      </svg>
+      <span style="font-family:'Neue Montreal',sans-serif;font-size:14px;font-weight:500;letter-spacing:-0.02em;color:var(--cream);">Kairos</span>
+    </div>
+  </div>
+
+  <!-- B1 lockup -->
+  <div class="lockup-preview">
+    <div class="lockup-label">Horizontal</div>
+    <div class="lockup-row">
+      <svg style="width:36px;height:36px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 28,67 80,92 93,83 80,74" fill="currentColor"/>
+      </svg>
+      <span class="lockup-wordmark">Kairos</span>
+    </div>
+    <div class="lockup-row" style="gap:8px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 28,67 80,92 93,83 80,74" fill="currentColor"/>
+      </svg>
+      <span style="font-family:'Neue Montreal',sans-serif;font-size:14px;font-weight:500;letter-spacing:-0.02em;color:var(--cream);">Kairos</span>
+    </div>
+  </div>
+
+  <!-- B2 lockup -->
+  <div class="lockup-preview">
+    <div class="lockup-label">Horizontal</div>
+    <div class="lockup-row">
+      <svg style="width:36px;height:36px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <polygon points="15.9,8 33.9,8 22.1,92 4.1,92" fill="currentColor"/>
+        <polygon points="30.4,33 85.9,8 83.5,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 76.5,75 74.1,92 25.6,67" fill="currentColor"/>
+      </svg>
+      <span class="lockup-wordmark">Kairos</span>
+    </div>
+    <div class="lockup-row" style="gap:8px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;flex-shrink:0;" viewBox="0 0 100 100" fill="none">
+        <polygon points="15.9,8 33.9,8 22.1,92 4.1,92" fill="currentColor"/>
+        <polygon points="30.4,33 85.9,8 83.5,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 76.5,75 74.1,92 25.6,67" fill="currentColor"/>
+      </svg>
+      <span style="font-family:'Neue Montreal',sans-serif;font-size:14px;font-weight:500;letter-spacing:-0.02em;color:var(--cream);">Kairos</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Small / favicon -->
+<div class="row-label-full" style="margin-top:2px;">Test de escala — Favicon (32px) · App Icon (48px) · Nav (24px)</div>
+<div class="grid">
+
+  <!-- A1 small -->
+  <div class="context ctx-small" style="gap:20px;flex-direction:row;justify-content:center;align-items:center;flex-wrap:wrap;padding:20px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-favicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 80,75 80,92 28,67" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">32px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-appicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 80,75 80,92 28,67" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">48px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 80,75 80,92 28,67" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">24px</span>
+    </div>
+  </div>
+
+  <!-- A2 small -->
+  <div class="context ctx-small" style="gap:20px;flex-direction:row;justify-content:center;align-items:center;flex-wrap:wrap;padding:20px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-favicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="32,31 80,8 80,25 32,48" fill="currentColor"/>
+        <polygon points="32,52 80,75 80,92 32,69" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">32px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-appicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="32,31 80,8 80,25 32,48" fill="currentColor"/>
+        <polygon points="32,52 80,75 80,92 32,69" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">48px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="32,31 80,8 80,25 32,48" fill="currentColor"/>
+        <polygon points="32,52 80,75 80,92 32,69" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">24px</span>
+    </div>
+  </div>
+
+  <!-- B1 small -->
+  <div class="context ctx-small" style="gap:20px;flex-direction:row;justify-content:center;align-items:center;flex-wrap:wrap;padding:20px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-favicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 28,67 80,92 93,83 80,74" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">32px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-appicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 28,67 80,92 93,83 80,74" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">48px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="8" width="18" height="84" fill="currentColor"/>
+        <polygon points="28,33 80,8 80,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 28,67 80,92 93,83 80,74" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">24px</span>
+    </div>
+  </div>
+
+  <!-- B2 small -->
+  <div class="context ctx-small" style="gap:20px;flex-direction:row;justify-content:center;align-items:center;flex-wrap:wrap;padding:20px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-favicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <polygon points="15.9,8 33.9,8 22.1,92 4.1,92" fill="currentColor"/>
+        <polygon points="30.4,33 85.9,8 83.5,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 76.5,75 74.1,92 25.6,67" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">32px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg class="k-appicon" viewBox="0 0 100 100" fill="none" style="color:#FAF3E7;">
+        <polygon points="15.9,8 33.9,8 22.1,92 4.1,92" fill="currentColor"/>
+        <polygon points="30.4,33 85.9,8 83.5,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 76.5,75 74.1,92 25.6,67" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">48px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <svg style="width:24px;height:24px;color:#FAF3E7;" viewBox="0 0 100 100" fill="none">
+        <polygon points="15.9,8 33.9,8 22.1,92 4.1,92" fill="currentColor"/>
+        <polygon points="30.4,33 85.9,8 83.5,25 28,50" fill="currentColor"/>
+        <polygon points="28,50 76.5,75 74.1,92 25.6,67" fill="currentColor"/>
+      </svg>
+      <span style="font-size:7px;color:var(--muted);letter-spacing:0.1em;">24px</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- AI Placeholder row -->
+<div class="row-label-full" style="margin-top:2px;">NanoBanana / Gemini Imagen — guardar outputs en explorations/ai/</div>
+<div class="grid">
+  <div class="context ctx-dark" style="min-height:130px;">
+    <div class="ai-placeholder">A1-style<br/>ejecutar prompt 1<br/>en NanoBanana</div>
+  </div>
+  <div class="context ctx-dark" style="min-height:130px;">
+    <div class="ai-placeholder">A2-style<br/>ejecutar prompt 1<br/>en NanoBanana</div>
+  </div>
+  <div class="context ctx-dark" style="min-height:130px;">
+    <div class="ai-placeholder">B1-style<br/>ejecutar prompt 2<br/>en NanoBanana</div>
+  </div>
+  <div class="context ctx-dark" style="min-height:130px;">
+    <div class="ai-placeholder">B2-style<br/>ejecutar prompt 2<br/>en NanoBanana</div>
+  </div>
+</div>
+
+<!-- Descriptions -->
+<div class="row-label-full" style="margin-top:2px;">Descripción de cada concepto</div>
+<div class="grid" style="border:1px solid var(--border);">
+
+  <div class="variant-desc" style="border-right:1px solid var(--border);">
+    <p><strong style="color:#FAF3E7;">K Geométrica Pura.</strong> Letterform reducido a su esencia: stem + 2 parallelogram arms, peso uniforme. Sin trucos. La versión más directa del "AI" de Anthropic pero para K. Monolítica y atemporal.</p>
+    <span class="variant-tag">Máxima legibilidad</span>
+    <span class="variant-tag">Más conservador</span>
+  </div>
+
+  <div class="variant-desc" style="border-right:1px solid var(--border);">
+    <p><strong style="color:#FAF3E7;">K Stencil.</strong> Misma geometría, pero con 4px de espacio entre el stem y los brazos. Los gaps son intencionales — precisión quirúrgica. Look industrial/técnico. Sugiere "construido con precisión".</p>
+    <span class="variant-tag">Más técnico</span>
+    <span class="variant-tag">Más distintivo</span>
+  </div>
+
+  <div class="variant-desc" style="border-right:1px solid var(--border);">
+    <p><strong style="color:#FAF3E7;">K Arrow.</strong> El brazo inferior termina en una punta de flecha. La K tiene momentum incorporado — sugiere dirección, automatización como vector. El "→" está dentro del logomark.</p>
+    <span class="variant-tag">Máximo momentum</span>
+    <span class="variant-tag">Más narrativo</span>
+  </div>
+
+  <div class="variant-desc">
+    <p><strong style="color:#FAF3E7;">K Italic.</strong> La K completa inclinada hacia adelante 8°. La forma no cambia — solo el ángulo. Sugiere velocidad, acción, la K "en movimiento". Más sutil que B1 pero igual de dinámico.</p>
+    <span class="variant-tag">Sutil momentum</span>
+    <span class="variant-tag">Más editorial</span>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-l">brand-assets/logo/explorations — Fase 3.1</div>
+  <div class="footer-r" id="exp-date">—</div>
+</div>
+
+<script>
+  document.getElementById('exp-date').textContent =
+    new Date().toLocaleDateString('es-CO', {year:'numeric',month:'long',day:'numeric'});
+</script>
+
+</body>
+</html>

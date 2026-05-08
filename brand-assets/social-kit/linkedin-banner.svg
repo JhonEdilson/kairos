@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" font-family="system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif">
+
+  <!-- Background -->
+  <rect width="1584" height="396" fill="#0B0F1A"/>
+
+  <!-- Ghost K — decorative background right -->
+  <svg x="1060" y="-90" width="580" height="580" viewBox="0 0 600 600" opacity="0.05">
+    <g transform="translate(0,600) scale(0.1,-0.1)" fill="#D97706" stroke="none">
+      <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+      <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+    </g>
+  </svg>
+
+  <!-- Accent left bar -->
+  <rect x="0" y="0" width="4" height="396" fill="#D97706"/>
+
+  <!-- Subtle grid dots (decorative, right side) -->
+  <g fill="#FAF3E7" opacity="0.04">
+    <circle cx="1480" cy="80"  r="2"/>
+    <circle cx="1520" cy="80"  r="2"/>
+    <circle cx="1560" cy="80"  r="2"/>
+    <circle cx="1480" cy="120" r="2"/>
+    <circle cx="1520" cy="120" r="2"/>
+    <circle cx="1560" cy="120" r="2"/>
+    <circle cx="1480" cy="160" r="2"/>
+    <circle cx="1520" cy="160" r="2"/>
+    <circle cx="1560" cy="160" r="2"/>
+    <circle cx="1480" cy="200" r="2"/>
+    <circle cx="1520" cy="200" r="2"/>
+    <circle cx="1560" cy="200" r="2"/>
+    <circle cx="1480" cy="240" r="2"/>
+    <circle cx="1520" cy="240" r="2"/>
+    <circle cx="1560" cy="240" r="2"/>
+    <circle cx="1480" cy="280" r="2"/>
+    <circle cx="1520" cy="280" r="2"/>
+    <circle cx="1560" cy="280" r="2"/>
+    <circle cx="1480" cy="320" r="2"/>
+    <circle cx="1520" cy="320" r="2"/>
+    <circle cx="1560" cy="320" r="2"/>
+  </g>
+
+  <!-- K monogram -->
+  <svg x="72" y="118" width="160" height="160" viewBox="0 0 600 600">
+    <g transform="translate(0,600) scale(0.1,-0.1)" fill="#D97706" stroke="none">
+      <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+      <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+    </g>
+  </svg>
+
+  <!-- Wordmark -->
+  <text x="260" y="234" font-weight="700" font-size="124" fill="#FAF3E7" letter-spacing="-3">Kairos</text>
+
+  <!-- Tagline -->
+  <text x="264" y="284" font-size="19" fill="#A8B0BD" letter-spacing="0.02em">Automatización con IA para equipos operativos</text>
+
+  <!-- Separator -->
+  <line x1="72" y1="346" x2="1512" y2="346" stroke="rgba(250,243,231,0.06)" stroke-width="1"/>
+
+  <!-- Bottom bar -->
+  <text x="72" y="372" font-size="12" fill="#555E6E" font-family="'JetBrains Mono',monospace" letter-spacing="1.5">KAIROS · kairos.studio</text>
+  <text x="1512" y="372" font-size="12" fill="#555E6E" font-family="'JetBrains Mono',monospace" letter-spacing="1" text-anchor="end">Jhon Escobar · Automatización con IA</text>
+
+</svg>

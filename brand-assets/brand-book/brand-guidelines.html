@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kairos Studio — Brand Guidelines</title>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin/>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,700&display=swap"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"/>
+
+  <style>
+    /* ── Tokens ──────────────────────────── */
+    :root {
+      --bg:     #0B0F1A;
+      --bg-2:   #13213A;
+      --bg-3:   #1C1C1C;
+      --fg:     #FAF3E7;
+      --muted:  #A8B0BD;
+      --accent: #D97706;
+      --accent2:#F59E0B;
+      --border: rgba(250,243,231,0.10);
+      --border2:rgba(250,243,231,0.20);
+
+      --d: 'Neue Montreal', ui-sans-serif, sans-serif;
+      --b: 'Inter', ui-sans-serif, sans-serif;
+      --m: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background: #0a0d15;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px 60px;
+      min-height: 100vh;
+    }
+
+    /* ── Document wrapper ─────────────────── */
+    .doc {
+      width: 1080px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--b);
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle grain */
+    .doc::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.03;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── Header ──────────────────────────── */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 52px 56px 44px;
+      border-bottom: 1px solid var(--border2);
+      position: relative;
+    }
+
+    /* Decorative glow behind header */
+    .doc-header::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 400px; height: 300px;
+      background: radial-gradient(ellipse 60% 60% at 80% 20%, rgba(217,119,6,0.06), transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-title-line {
+      font-family: var(--d);
+      font-size: 64px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.88;
+      color: var(--fg);
+    }
+
+    .header-title-line span {
+      color: var(--accent);
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      padding-top: 4px;
+    }
+
+    .header-wordmark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hw-name {
+      font-family: var(--d);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+    }
+
+    .hw-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .hw-studio {
+      font-family: var(--m);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .header-url {
+      font-family: var(--m);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    /* ── Body 2-col ──────────────────────── */
+    .doc-body {
+      display: grid;
+      grid-template-columns: 58fr 42fr;
+      align-items: start;
+    }
+
+    .col-left {
+      border-right: 1px solid var(--border);
+      padding: 0 40px 48px 56px;
+    }
+
+    .col-right {
+      padding: 0 56px 48px 40px;
+    }
+
+    /* ── Section ─────────────────────────── */
+    .section {
+      padding-top: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--m);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── Wordmark demo ────────────────────── */
+    .wordmark-demo {
+      background: var(--bg-2);
+      border: 1px solid var(--border2);
+      padding: 36px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .wd-name {
+      font-family: var(--d);
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+    }
+
+    .wd-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .wd-studio {
+      font-family: var(--m);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .wordmark-meta {
+      font-family: var(--m);
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Clearspace ───────────────────────── */
+    .clearspace-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 8px 0 12px;
+    }
+
+    .clearspace-zone {
+      position: relative;
+      border: 1px dashed var(--border2);
+      padding: 28px 40px;
+    }
+
+    .clearspace-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border2);
+      padding: 12px 20px;
+    }
+
+    /* Measurement markers */
+    .cs-marker {
+      position: absolute;
+      font-family: var(--m);
+      font-size: 9px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .cs-top    { top: 8px; left: 50%; transform: translateX(-50%); }
+    .cs-bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
+    .cs-left   { left: 8px; top: 50%; transform: translateY(-50%); }
+    .cs-right  { right: 8px; top: 50%; transform: translateY(-50%); }
+
+    /* Arrow lines */
+    .cs-line-h {
+      position: absolute;
+      height: 1px;
+      background: rgba(217,119,6,0.3);
+      top: 50%;
+    }
+
+    .cs-note {
+      font-family: var(--m);
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* ── Typography specimens ─────────────── */
+    .type-block {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 20px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .type-ab {
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--fg);
+      width: 96px;
+      text-align: center;
+      padding-top: 4px;
+    }
+
+    .type-info { display: flex; flex-direction: column; gap: 6px; }
+
+    .type-name {
+      font-family: var(--m);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg);
+    }
+
+    .type-weight {
+      font-family: var(--m);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .type-alpha {
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    .type-meta {
+      font-family: var(--m);
+      font-size: 9px;
+      color: var(--muted);
+      opacity: 0.6;
+      margin-top: 2px;
+    }
+
+    /* ── Logo variations ──────────────────── */
+    .variations-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .variation {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 80px;
+    }
+
+    .var-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .var-label {
+      font-family: var(--m);
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ── Palette ──────────────────────────── */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .swatch {
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .swatch-color {
+      height: 52px;
+    }
+
+    .swatch-info {
+      padding: 8px 10px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .sw-token {
+      font-family: var(--m);
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .sw-hex {
+      font-family: var(--m);
+      font-size: 10px;
+      color: var(--fg);
+      margin-bottom: 2px;
+    }
+
+    .sw-use {
+      font-size: 9px;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    /* Accent swatch highlight */
+    .swatch.is-accent {
+      border-color: var(--accent);
+      box-shadow: 0 0 16px rgba(217,119,6,0.15);
+    }
+
+    /* ── Components ───────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      font-family: var(--b);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--fg);
+      border: 1px solid var(--border2);
+      cursor: pointer;
+      background: transparent;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-accent {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-ghost {
+      border: none;
+      color: var(--muted);
+      padding: 9px 0;
+    }
+
+    .comp-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comp-row:last-child { border-bottom: none; }
+
+    .comp-label {
+      font-family: var(--m);
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-width: 80px;
+    }
+
+    .hairline-demo {
+      flex: 1;
+      border-top: 1px solid var(--border2);
+    }
+
+    .ticker-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--m);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .ticker-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+
+    /* ── Voice ────────────────────────────── */
+    .voice-item {
+      display: flex;
+      gap: 10px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--muted);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .voice-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .vi-arrow {
+      color: var(--accent);
+      font-family: var(--m);
+      font-size: 9px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ──────────────────────────── */
+    .doc-footer {
+      padding: 20px 56px;
+      border-top: 1px solid var(--border2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-l {
+      font-family: var(--m);
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-version {
+      font-family: var(--m);
+      font-size: 9px;
+      color: var(--muted);
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      text-align: right;
+    }
+
+    /* ── Print ───────────────────────────── */
+    @media print {
+      html { background: white; padding: 0; }
+      .doc {
+        width: 100%;
+        background: #0B0F1A;
+      }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="doc">
+
+  <!-- ═══ HEADER ════════════════════════════════════════════════════════ -->
+  <header class="doc-header">
+    <div>
+      <div class="header-title-line">BRAND</div>
+      <div class="header-title-line"><span>GUIDE</span>LINES</div>
+    </div>
+    <div class="header-right">
+      <div class="header-wordmark">
+        <svg width="16" height="16" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;margin-right:5px;" fill="#D97706"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+        <span class="hw-name">Kairos</span>
+      </div>
+      <div class="header-url">kairos.studio</div>
+    </div>
+  </header>
+
+  <!-- ═══ BODY 2-COL ════════════════════════════════════════════════════ -->
+  <div class="doc-body">
+
+    <!-- ── LEFT COLUMN ─────────────────────────────────────────────── -->
+    <div class="col-left">
+
+      <!-- WORDMARK -->
+      <div class="section">
+        <div class="section-label">Wordmark</div>
+
+        <div class="wordmark-demo" style="gap:10px;">
+          <svg width="26" height="26" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;" fill="#D97706"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+          <span class="wd-name">Kairos</span>
+        </div>
+        <div class="wordmark-meta">PP NEUE MONTREAL 700 &nbsp;·&nbsp; tracking -0.03em</div>
+
+        <div style="margin-top: 10px; padding: 8px 12px; background: rgba(217,119,6,0.06); border-left: 2px solid var(--accent);">
+          <p style="font-family:var(--m); font-size:9px; color:var(--muted); line-height:1.5; letter-spacing:0.05em;">
+            LOGOTIPO APROBADO — FASE 3 COMPLETA<br/>
+            K monogram geométrico · brand-assets/logo/kairos-logo.svg<br/>
+            Lockup: monograma + wordmark "Kairos" (sin "studio")
+          </p>
+        </div>
+      </div>
+
+      <!-- LOGO CLEARSPACE -->
+      <div class="section">
+        <div class="section-label">Logo Clearspace</div>
+
+        <div class="clearspace-wrap">
+          <div>
+            <div class="clearspace-zone">
+              <span class="cs-marker cs-top">X</span>
+              <span class="cs-marker cs-bottom">X</span>
+              <span class="cs-marker cs-left">X</span>
+              <span class="cs-marker cs-right">X</span>
+              <div class="clearspace-logo">
+                <svg width="20" height="20" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;flex-shrink:0;" fill="var(--accent)"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+                <span style="font-family:var(--d);font-size:22px;font-weight:500;letter-spacing:-0.03em;color:var(--fg);">Kairos</span>
+              </div>
+            </div>
+            <p class="cs-note">X = cap height de "K" — espacio mínimo en todos los lados</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;margin-top:12px;">
+          <div style="flex:1;padding:10px 12px;border:1px solid var(--border);background:rgba(0,0,0,0.2);">
+            <div style="font-family:var(--m);font-size:8px;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase;margin-bottom:4px;">Mínimo digital</div>
+            <div style="font-family:var(--m);font-size:10px;color:var(--fg);">120px ancho</div>
+          </div>
+          <div style="flex:1;padding:10px 12px;border:1px solid var(--border);background:rgba(0,0,0,0.2);">
+            <div style="font-family:var(--m);font-size:8px;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase;margin-bottom:4px;">Mínimo impreso</div>
+            <div style="font-family:var(--m);font-size:10px;color:var(--fg);">30mm ancho</div>
+          </div>
+          <div style="flex:1;padding:10px 12px;border:1px solid var(--border);background:rgba(0,0,0,0.2);">
+            <div style="font-family:var(--m);font-size:8px;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase;margin-bottom:4px;">Favicon</div>
+            <div style="font-family:var(--m);font-size:10px;color:var(--fg);">Monograma 16px+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYPOGRAPHY -->
+      <div class="section" style="border-bottom:none;">
+        <div class="section-label">Typography</div>
+
+        <!-- Neue Montreal -->
+        <div class="type-block">
+          <div class="type-ab" style="font-family:'Neue Montreal',sans-serif;font-weight:500;letter-spacing:-0.02em;">Ab</div>
+          <div class="type-info">
+            <div class="type-name">Neue Montreal</div>
+            <div class="type-weight">Display · 400 / 500 / 700</div>
+            <div class="type-alpha" style="font-family:'Neue Montreal',sans-serif;">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+              abcdefghijklmnopqrstuvwxyz<br/>
+              0123456789 !@#$&amp;→←
+            </div>
+            <div class="type-meta">api.fontshare.com · Headlines · Wordmark · Nav · tracking -0.04em</div>
+          </div>
+        </div>
+
+        <!-- Inter -->
+        <div class="type-block">
+          <div class="type-ab" style="font-family:'Inter',sans-serif;font-weight:400;">Ab</div>
+          <div class="type-info">
+            <div class="type-name">Inter</div>
+            <div class="type-weight">Body · Variable 300–700</div>
+            <div class="type-alpha" style="font-family:'Inter',sans-serif;">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+              abcdefghijklmnopqrstuvwxyz<br/>
+              0123456789 !@#$&amp;→←
+            </div>
+            <div class="type-meta">fonts.googleapis.com · Párrafos · UI · Botones · Descripciones</div>
+          </div>
+        </div>
+
+        <!-- JetBrains Mono -->
+        <div class="type-block" style="border-bottom:none;padding-bottom:0;">
+          <div class="type-ab" style="font-family:'JetBrains Mono',monospace;font-weight:400;font-size:68px;">Ab</div>
+          <div class="type-info">
+            <div class="type-name">JetBrains Mono</div>
+            <div class="type-weight">Mono · Variable 400–700</div>
+            <div class="type-alpha" style="font-family:'JetBrains Mono',monospace;">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+              abcdefghijklmnopqrstuvwxyz<br/>
+              0123456789 !@#$&amp;→←
+            </div>
+            <div class="type-meta">fonts.googleapis.com · Stats · Eyebrows · Labels · font-feature: "tnum","zero"</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /col-left -->
+
+    <!-- ── RIGHT COLUMN ────────────────────────────────────────────── -->
+    <div class="col-right">
+
+      <!-- LOGO VARIATIONS -->
+      <div class="section">
+        <div class="section-label">Logo Variations</div>
+        <div class="variations-grid">
+
+          <!-- Dark background (current) -->
+          <div class="variation" style="background:#0B0F1A;border:1px solid var(--border2);">
+            <div class="var-logo">
+              <svg width="16" height="16" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;" fill="#D97706"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+              <span style="font-family:var(--d);font-size:20px;font-weight:500;letter-spacing:-0.03em;color:#FAF3E7;">Kairos</span>
+            </div>
+            <span class="var-label" style="color:var(--muted);">Dark Background</span>
+          </div>
+
+          <!-- Light background (knockout) -->
+          <div class="variation" style="background:#FAF3E7;border:1px solid var(--border2);">
+            <div class="var-logo">
+              <svg width="16" height="16" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;" fill="#D97706"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+              <span style="font-family:var(--d);font-size:20px;font-weight:500;letter-spacing:-0.03em;color:#0B0F1A;">Kairos</span>
+            </div>
+            <span class="var-label" style="color:#6b7280;">Light Background</span>
+          </div>
+
+          <!-- Monochrome -->
+          <div class="variation" style="background:#1C1C1C;border:1px solid var(--border2);">
+            <div class="var-logo">
+              <svg width="16" height="16" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;" fill="#FAF3E7"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+              <span style="font-family:var(--d);font-size:20px;font-weight:500;letter-spacing:-0.03em;color:#FAF3E7;">Kairos</span>
+            </div>
+            <span class="var-label" style="color:var(--muted);">Monochrome</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BRAND PALETTE -->
+      <div class="section">
+        <div class="section-label">Brand Palette</div>
+        <div class="palette-grid">
+
+          <div class="swatch">
+            <div class="swatch-color" style="background:#0B0F1A;border-bottom:1px solid var(--border2);"></div>
+            <div class="swatch-info">
+              <div class="sw-token">bg-primary</div>
+              <div class="sw-hex">#0B0F1A</div>
+              <div class="sw-use">Navy profundo · Hero</div>
+            </div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch-color" style="background:#13213A;"></div>
+            <div class="swatch-info">
+              <div class="sw-token">bg-secondary</div>
+              <div class="sw-hex">#13213A</div>
+              <div class="sw-use">Navy medio · CTA</div>
+            </div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch-color" style="background:#1C1C1C;"></div>
+            <div class="swatch-info">
+              <div class="sw-token">bg-tertiary</div>
+              <div class="sw-hex">#1C1C1C</div>
+              <div class="sw-use">Charcoal · Cards</div>
+            </div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch-color" style="background:#FAF3E7;border-bottom:1px solid rgba(0,0,0,0.1);"></div>
+            <div class="swatch-info">
+              <div class="sw-token">fg-primary</div>
+              <div class="sw-hex">#FAF3E7</div>
+              <div class="sw-use">Cream · Todo el texto</div>
+            </div>
+          </div>
+
+          <div class="swatch">
+            <div class="swatch-color" style="background:#A8B0BD;"></div>
+            <div class="swatch-info">
+              <div class="sw-token">fg-muted</div>
+              <div class="sw-hex">#A8B0BD</div>
+              <div class="sw-use">Gris azulado · Muted</div>
+            </div>
+          </div>
+
+          <div class="swatch is-accent">
+            <div class="swatch-color" style="background:#D97706;"></div>
+            <div class="swatch-info">
+              <div class="sw-token">accent ★</div>
+              <div class="sw-hex">#D97706</div>
+              <div class="sw-use">Burnt orange · CTAs</div>
+            </div>
+          </div>
+
+          <div class="swatch" style="grid-column:1/-1;">
+            <div style="display:flex;height:52px;">
+              <div style="flex:1;background:#D97706;"></div>
+              <div style="flex:1;background:#F59E0B;"></div>
+            </div>
+            <div class="swatch-info" style="display:flex;justify-content:space-between;gap:16px;">
+              <div>
+                <div class="sw-token">accent</div>
+                <div class="sw-hex">#D97706 · Rest</div>
+              </div>
+              <div style="text-align:right;">
+                <div class="sw-token">accent-hover</div>
+                <div class="sw-hex">#F59E0B · Hover</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COMPONENTS -->
+      <div class="section">
+        <div class="section-label">Components</div>
+
+        <div class="comp-row">
+          <span class="comp-label">Primary</span>
+          <a class="btn">Diagnóstico gratis →</a>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Accent</span>
+          <a class="btn btn-accent">Contacto →</a>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Ghost</span>
+          <a class="btn btn-ghost">Ver proyectos</a>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Hairline</span>
+          <div class="hairline-demo"></div>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Eyebrow</span>
+          <div class="ticker-demo">
+            <span class="ticker-dot"></span>
+            Servicios
+          </div>
+        </div>
+        <div class="comp-row" style="border-bottom:none;">
+          <span class="comp-label">Selection</span>
+          <span style="font-size:12px;background:var(--accent);color:var(--bg);padding:2px 8px;font-family:var(--m);">texto seleccionado</span>
+        </div>
+      </div>
+
+      <!-- VOICE & TONE -->
+      <div class="section" style="border-bottom:none;">
+        <div class="section-label">Voz &amp; Tono</div>
+
+        <div class="voice-item">
+          <span class="vi-arrow">→</span>
+          <span><strong style="color:var(--fg);">Primera persona.</strong> "Automatizamos", "construimos" — no "nuestros clientes reciben".</span>
+        </div>
+        <div class="voice-item">
+          <span class="vi-arrow">→</span>
+          <span><strong style="color:var(--fg);">Concreto.</strong> "3 horas devueltas/semana" &gt; "más eficiencia".</span>
+        </div>
+        <div class="voice-item">
+          <span class="vi-arrow">→</span>
+          <span><strong style="color:var(--fg);">Sin jerga startup.</strong> No "disruptivo", "sinergias". Sí "proceso", "flujo", "automatización".</span>
+        </div>
+        <div class="voice-item">
+          <span class="vi-arrow">→</span>
+          <span><strong style="color:var(--fg);">Afirmaciones, no preguntas.</strong> "Automatización con IA." — punto, no "¿listo para…?"</span>
+        </div>
+      </div>
+
+    </div><!-- /col-right -->
+
+  </div><!-- /doc-body -->
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════════════════════ -->
+  <footer class="doc-footer">
+    <div class="footer-l">Kairos Studio — Brand Guidelines v1.0</div>
+    <div class="footer-version" id="doc-date">—</div>
+  </footer>
+
+</div><!-- /doc -->
+
+<script>
+  const d = new Date();
+  document.getElementById('doc-date').textContent =
+    'v1.0 · Logo pendiente Fase 3 · ' +
+    d.toLocaleDateString('es-CO', { year:'numeric', month:'long', day:'numeric' });
+</script>
+
+</body>
+</html>

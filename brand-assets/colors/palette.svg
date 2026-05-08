@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0B0F1A"/>
+
+  <!-- Header -->
+  <text x="60" y="68" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500"
+        fill="#D97706" letter-spacing="3" text-anchor="start">KAIROS</text>
+  <text x="60" y="100" font-family="'Neue Montreal', sans-serif" font-size="36" font-weight="500"
+        fill="#FAF3E7" letter-spacing="-1">Paleta de Color</text>
+  <text x="60" y="128" font-family="'JetBrains Mono', monospace" font-size="11"
+        fill="#A8B0BD" letter-spacing="0.5">Design tokens — src/app/globals.css</text>
+
+  <!-- Hairline -->
+  <line x1="60" y1="150" x2="1140" y2="150" stroke="rgba(250,243,231,0.08)" stroke-width="1"/>
+
+  <!-- ── ROW 1: Backgrounds ────────────────────────────────────────────── -->
+
+  <!-- bg-primary -->
+  <g transform="translate(60, 175)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="228" height="68" rx="3" fill="#0B0F1A"/>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--bg-primary</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">#0B0F1A</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">Hero · Secciones primarias</text>
+    <!-- "True black" label in corner -->
+    <text x="214" y="16" font-family="'JetBrains Mono', monospace" font-size="8" fill="#A8B0BD" text-anchor="end">navy</text>
+  </g>
+
+  <!-- bg-secondary -->
+  <g transform="translate(310, 175)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="228" height="68" rx="3" fill="#13213A"/>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--bg-secondary</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">#13213A</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">ProblemGrid · FinalCTA</text>
+  </g>
+
+  <!-- bg-tertiary -->
+  <g transform="translate(560, 175)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="228" height="68" rx="3" fill="#1C1C1C"/>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--bg-tertiary</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">#1C1C1C</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">Cards · Widgets</text>
+  </g>
+
+  <!-- fg-primary -->
+  <g transform="translate(810, 175)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="228" height="68" rx="3" fill="#FAF3E7"/>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--fg-primary</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">#FAF3E7</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">Cream cálido · Todo el texto</text>
+  </g>
+
+  <!-- ── ROW 2: Foregrounds + Accents ──────────────────────────────────── -->
+
+  <!-- fg-muted -->
+  <g transform="translate(60, 320)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="228" height="68" rx="3" fill="#A8B0BD"/>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--fg-muted</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">#A8B0BD</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">Subtítulos · Eyebrows · Labels</text>
+  </g>
+
+  <!-- accent -->
+  <g transform="translate(310, 320)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="#D97706" stroke-width="1"/>
+    <rect x="1" y="1" width="228" height="68" rx="3" fill="#D97706"/>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--accent</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">#D97706</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">CTAs · Hovers · Dots · Underlines</text>
+    <!-- Primary accent star marker -->
+    <circle cx="214" cy="12" r="4" fill="#0B0F1A" opacity="0.6"/>
+    <text x="214" y="16" font-family="'JetBrains Mono', monospace" font-size="9" fill="#0B0F1A" text-anchor="middle">★</text>
+  </g>
+
+  <!-- accent-hover -->
+  <g transform="translate(560, 320)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <rect x="1" y="1" width="228" height="68" rx="3" fill="#F59E0B"/>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--accent-hover</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">#F59E0B</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">Estado hover del acento</text>
+  </g>
+
+  <!-- border samples -->
+  <g transform="translate(810, 320)">
+    <rect width="230" height="120" rx="4" fill="#0B0F1A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <!-- border swatch -->
+    <rect x="16" y="12" width="95" height="48" rx="2" fill="transparent" stroke="rgba(250,243,231,0.08)" stroke-width="1"/>
+    <text x="64" y="42" font-family="'JetBrains Mono', monospace" font-size="8" fill="#A8B0BD" text-anchor="middle">--border</text>
+    <!-- border-strong swatch -->
+    <rect x="119" y="12" width="95" height="48" rx="2" fill="transparent" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <text x="167" y="42" font-family="'JetBrains Mono', monospace" font-size="8" fill="#A8B0BD" text-anchor="middle">--border-strong</text>
+    <text x="16" y="86" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD">Hairlines · Separadores</text>
+    <text x="16" y="104" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D97706" letter-spacing="1">--border*</text>
+    <text x="16" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF3E7" opacity="0.5">rgba(250,243,231,·)</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="60" y1="468" x2="1140" y2="468" stroke="rgba(250,243,231,0.08)" stroke-width="1"/>
+  <text x="60" y="492" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8B0BD">
+    Modo: dark-primary · Ninguna sección usa fondo blanco puro — siempre navy o charcoal
+  </text>
+  <text x="1140" y="492" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8B0BD" text-anchor="end">
+    kairos.studio
+  </text>
+</svg>

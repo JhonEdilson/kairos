@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kairos Studio — Brand Book</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin/>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,700&display=swap"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
+
+  <style>
+    /* ── Tokens ──────────────────────────────── */
+    :root {
+      --bg-primary:    #0B0F1A;
+      --bg-secondary:  #13213A;
+      --bg-tertiary:   #1C1C1C;
+      --fg-primary:    #FAF3E7;
+      --fg-muted:      #A8B0BD;
+      --accent:        #D97706;
+      --accent-hover:  #F59E0B;
+      --border:        rgba(250,243,231,0.08);
+      --border-strong: rgba(250,243,231,0.18);
+
+      --font-display: 'Neue Montreal', ui-sans-serif, sans-serif;
+      --font-body:    'Inter', ui-sans-serif, sans-serif;
+      --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+      --page-width: 900px;
+      --section-gap: 120px;
+    }
+
+    /* ── Reset ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background: var(--bg-primary);
+      color: var(--fg-primary);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    body {
+      background: var(--bg-primary);
+      min-height: 100vh;
+    }
+
+    /* ── Layout ──────────────────────────────── */
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .section {
+      padding-top: var(--section-gap);
+      padding-bottom: var(--section-gap);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    /* ── Typography helpers ───────────────────── */
+    .font-display { font-family: var(--font-display); }
+    .font-mono    { font-family: var(--font-mono); font-feature-settings: "tnum","zero"; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section-number {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 0.2em;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--fg-primary);
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--fg-primary);
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--fg-primary);
+    }
+
+    p {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--fg-muted);
+      line-height: 1.7;
+    }
+
+    strong { color: var(--fg-primary); font-weight: 500; }
+
+    /* ── Components ──────────────────────────── */
+    .hairline {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    .hairline-strong {
+      border: none;
+      border-top: 1px solid var(--border-strong);
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-strong);
+      color: var(--fg-muted);
+    }
+
+    .code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent);
+      background: rgba(217,119,6,0.08);
+      padding: 2px 6px;
+      border-radius: 2px;
+    }
+
+    /* ── Grid helpers ─────────────────────────── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stack  { display: flex; flex-direction: column; }
+
+    /* ── Cover ───────────────────────────────── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(19,33,58,0.9), transparent 70%),
+        radial-gradient(ellipse 40% 40% at 85% 30%, rgba(217,119,6,0.08), transparent 60%);
+      pointer-events: none;
+    }
+
+    .cover-wordmark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-wordmark-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: var(--fg-primary);
+    }
+
+    .cover-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cover-studio {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+
+    .cover-headline {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Color swatches ──────────────────────── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .swatch {
+      border: 1px solid var(--border-strong);
+      overflow: hidden;
+    }
+
+    .swatch-color {
+      height: 80px;
+    }
+
+    .swatch-info {
+      padding: 12px;
+      background: var(--bg-tertiary);
+    }
+
+    .swatch-token {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .swatch-hex {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--fg-primary);
+      margin-bottom: 4px;
+    }
+
+    .swatch-usage {
+      font-size: 11px;
+      color: var(--fg-muted);
+      line-height: 1.4;
+    }
+
+    /* ── Typography specimens ─────────────────── */
+    .type-specimen {
+      padding: 40px;
+      border: 1px solid var(--border);
+      background: var(--bg-tertiary);
+    }
+
+    .type-specimen-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .type-specimen-aa {
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .type-specimen-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      color: var(--fg-primary);
+      margin-bottom: 4px;
+    }
+
+    .type-specimen-meta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+    }
+
+    /* ── Component demos ──────────────────────── */
+    .component-demo {
+      padding: 32px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--fg-primary);
+      border: 1px solid var(--border-strong);
+      cursor: pointer;
+      background: transparent;
+      transition: border-color 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--fg-muted);
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-ghost:hover { color: var(--fg-primary); }
+
+    /* Cards */
+    .card-demo {
+      padding: 24px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-tertiary);
+      width: 280px;
+    }
+
+    .card-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--fg-primary);
+      margin-bottom: 8px;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--fg-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Motion reference ─────────────────────── */
+    .motion-spec {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0;
+    }
+
+    .motion-spec-name {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      padding: 12px 16px 12px 0;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .motion-spec-value {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      padding: 12px 0 12px 16px;
+      border-bottom: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    /* ── Do/Don't ─────────────────────────────── */
+    .do { border-left: 3px solid #22c55e; padding-left: 20px; }
+    .dont { border-left: 3px solid #ef4444; padding-left: 20px; }
+
+    .do-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #22c55e;
+      margin-bottom: 8px;
+    }
+
+    .dont-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #ef4444;
+      margin-bottom: 8px;
+    }
+
+    /* ── Logo placeholder ─────────────────────── */
+    .logo-placeholder {
+      border: 1px dashed var(--border-strong);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      text-align: center;
+      background: rgba(217,119,6,0.03);
+    }
+
+    .logo-placeholder-icon {
+      font-family: var(--font-mono);
+      font-size: 48px;
+      color: var(--border-strong);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    /* ── TOC ─────────────────────────────────── */
+    .toc-item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+    }
+
+    .toc-item:last-child { border-bottom: none; }
+
+    .toc-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      letter-spacing: 0.1em;
+      min-width: 32px;
+    }
+
+    .toc-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--fg-primary);
+      letter-spacing: -0.02em;
+      transition: color 0.2s;
+    }
+
+    .toc-item:hover .toc-title { color: var(--accent); }
+
+    .toc-dots {
+      flex: 1;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+
+    /* ── Utilities ───────────────────────────── */
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .mt-32 { margin-top: 32px; }
+    .mt-48 { margin-top: 48px; }
+    .mt-64 { margin-top: 64px; }
+    .mb-8  { margin-bottom: 8px; }
+    .mb-16 { margin-bottom: 16px; }
+    .mb-24 { margin-bottom: 24px; }
+    .mb-32 { margin-bottom: 32px; }
+    .mb-48 { margin-bottom: 48px; }
+
+    /* ── Print ───────────────────────────────── */
+    @media print {
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-tertiary: #f1f3f5;
+        --fg-primary: #111827;
+        --fg-muted: #6b7280;
+        --accent: #b45309;
+        --border: rgba(0,0,0,0.08);
+        --border-strong: rgba(0,0,0,0.18);
+      }
+
+      html, body { background: white; color: #111827; }
+
+      .cover::before { display: none; }
+
+      .cover {
+        min-height: auto;
+        page-break-after: always;
+      }
+
+      .section { page-break-inside: avoid; }
+
+      a { text-decoration: none; color: inherit; }
+
+      @page {
+        margin: 20mm 25mm;
+        size: A4;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ COVER -->
+<div class="page-wrapper">
+  <div class="cover">
+
+    <div class="cover-wordmark">
+      <svg width="28" height="28" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;margin-right:8px;" fill="#D97706"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+      <span class="cover-wordmark-text">Kairos</span>
+    </div>
+
+    <div class="cover-headline">
+      <div class="eyebrow mb-24">Brand Guidelines</div>
+      <h1>Identidad<br/>de Marca</h1>
+      <p class="mt-32" style="max-width: 520px; font-size: 18px; color: var(--fg-muted);">
+        Este documento define cómo se ve, habla y se comporta
+        <strong>Kairos Studio</strong> — consultoría de automatización con IA
+        para equipos operativos.
+      </p>
+    </div>
+
+    <div class="cover-footer">
+      <div>
+        <div class="section-number">Versión 1.0</div>
+        <div class="section-number" id="cover-date">—</div>
+      </div>
+      <div class="stack" style="align-items: flex-end; gap: 4px;">
+        <div class="section-number">Jhon Escobar</div>
+        <div class="section-number">kairos.studio</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ TOC -->
+<div class="page-wrapper">
+  <div class="section">
+
+    <div class="eyebrow mb-24">Índice</div>
+
+    <a href="#identidad" class="toc-item">
+      <span class="toc-num">01</span>
+      <span class="toc-title">Identidad</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#logo" class="toc-item">
+      <span class="toc-num">02</span>
+      <span class="toc-title">Logo</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#paleta" class="toc-item">
+      <span class="toc-num">03</span>
+      <span class="toc-title">Paleta de Color</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#tipografia" class="toc-item">
+      <span class="toc-num">04</span>
+      <span class="toc-title">Tipografía</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#componentes" class="toc-item">
+      <span class="toc-num">05</span>
+      <span class="toc-title">Componentes UI</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#motion" class="toc-item">
+      <span class="toc-num">06</span>
+      <span class="toc-title">Motion &amp; Animación</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#voz" class="toc-item">
+      <span class="toc-num">07</span>
+      <span class="toc-title">Voz &amp; Tono</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#aplicaciones" class="toc-item">
+      <span class="toc-num">08</span>
+      <span class="toc-title">Aplicaciones</span>
+      <span class="toc-dots"></span>
+    </a>
+    <a href="#donts" class="toc-item">
+      <span class="toc-num">09</span>
+      <span class="toc-title">Do's &amp; Don'ts</span>
+      <span class="toc-dots"></span>
+    </a>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 01 IDENTIDAD -->
+<div class="page-wrapper">
+  <div class="section" id="identidad">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Identidad</div>
+      <div class="section-number">01 / 09</div>
+    </div>
+
+    <h2>El nombre importa.</h2>
+
+    <div class="grid-2 mt-48">
+      <div>
+        <div class="eyebrow mb-16">Etimología</div>
+        <p style="font-size: 48px; font-family: var(--font-display); font-weight: 500; letter-spacing: -0.03em; color: var(--fg-primary); line-height: 1; margin-bottom: 16px;">
+          καιρός
+        </p>
+        <p class="mt-16">
+          Del griego antiguo: <strong>el momento oportuno</strong>.
+          No el tiempo cronológico (<em>chronos</em>), sino
+          el instante preciso en que actuar produce el máximo efecto.
+        </p>
+      </div>
+      <div>
+        <div class="eyebrow mb-16">Propuesta de valor</div>
+        <p class="mt-16">
+          Kairos Studio libera tiempo operativo — las horas que se pierden en tareas repetitivas,
+          en coordinación manual, en procesos que deberían ser automáticos.
+        </p>
+        <p class="mt-16">
+          El nombre no es decorativo. Es la promesa:
+          <strong>identificar el kairos de cada operación y automatizarlo.</strong>
+        </p>
+        <div class="mt-32" style="padding: 20px 24px; border-left: 2px solid var(--accent); background: rgba(217,119,6,0.05);">
+          <p style="font-family: var(--font-display); font-size: 16px; font-weight: 500; color: var(--fg-primary);">
+            "El momento en que la automatización cambia todo
+            — no tarde, no temprano. Exacto."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hairline mt-64"/>
+
+    <div class="grid-3 mt-48">
+      <div>
+        <div class="eyebrow mb-16">Personalidad</div>
+        <p>Técnico pero accesible.<br/>Preciso pero no frío.<br/>Confiante sin arrogancia.</p>
+      </div>
+      <div>
+        <div class="eyebrow mb-16">Público objetivo</div>
+        <p>Equipos operativos B2B que procesan tareas manualmente y saben que hay una forma mejor.</p>
+      </div>
+      <div>
+        <div class="eyebrow mb-16">Diferenciador</div>
+        <p>No vendemos software. Vendemos tiempo devuelto — medido, garantizado, con ROI claro.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 02 LOGO -->
+<div class="page-wrapper">
+  <div class="section" id="logo">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Logo</div>
+      <div class="section-number">02 / 09</div>
+    </div>
+
+    <h2>Wordmark &amp; Símbolo</h2>
+
+    <!-- Galería de variantes -->
+    <div class="mt-48">
+      <div class="eyebrow mb-24">Sistema de logo — variantes aprobadas</div>
+      <div class="grid-2" style="gap: 16px;">
+        <!-- 1. Horizontal master — fondo claro (texto navy del SVG necesita bg claro) -->
+        <div style="padding: 56px 32px; background: var(--fg-primary); border: 1px solid var(--border-strong); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" style="height: 48px; max-width: 80%;" role="img" aria-label="Kairos horizontal">
+            <svg x="0" y="0" width="160" height="160" viewBox="0 0 600 600">
+              <g transform="translate(0,600) scale(0.1,-0.1)" fill="#D97706" stroke="none">
+                <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+                <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+              </g>
+            </svg>
+            <text x="182" y="114" font-family="'Neue Montreal', system-ui, sans-serif" font-weight="700" font-size="92" fill="#0B0F1A" letter-spacing="-2.5">Kairos</text>
+          </svg>
+          <span class="font-mono" style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-primary);">Horizontal — master</span>
+        </div>
+        <!-- 2. Monograma — fondo navy, K naranja -->
+        <div style="padding: 56px 32px; background: var(--bg-primary); border: 1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style="height: 64px;" role="img" aria-label="K monograma">
+            <g transform="translate(0,600) scale(0.1,-0.1)" fill="#D97706" stroke="none">
+              <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+              <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+            </g>
+          </svg>
+          <span class="font-mono" style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted);">Monograma — símbolo</span>
+        </div>
+        <!-- 3. Monocromático — fondo charcoal, K cream -->
+        <div style="padding: 56px 32px; background: var(--bg-tertiary); border: 1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style="height: 64px;" role="img" aria-label="Monocromático">
+            <g transform="translate(0,600) scale(0.1,-0.1)" fill="#FAF3E7" stroke="none">
+              <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+              <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+            </g>
+          </svg>
+          <span class="font-mono" style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted);">Monocromático</span>
+        </div>
+        <!-- 4. Knockout — fondo claro, K navy -->
+        <div style="padding: 56px 32px; background: var(--fg-primary); border: 1px solid var(--border-strong); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style="height: 64px;" role="img" aria-label="Knockout">
+            <g transform="translate(0,600) scale(0.1,-0.1)" fill="#0B0F1A" stroke="none">
+              <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+              <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+            </g>
+          </svg>
+          <span class="font-mono" style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-primary);">Knockout — fondo claro</span>
+        </div>
+      </div>
+      <p class="mt-16">
+        K monogram geométrico + <span class="code">Neue Montreal 700</span>.
+        Logo aprobado. Variantes en <span class="code">brand-assets/logo/</span>:
+        <span class="code">kairos-logo.svg</span>, <span class="code">kairos-logo-horizontal.svg</span>,
+        <span class="code">kairos-logo-stacked.svg</span>, <span class="code">kairos-monogram.svg</span>,
+        <span class="code">kairos-monogram-knockout.svg</span>, <span class="code">kairos-logo-mono.svg</span>.
+        Componente React inline: <span class="code">src/components/layout/KairosLogo.tsx</span>.
+      </p>
+    </div>
+
+    <hr class="hairline mt-64"/>
+
+    <div class="grid-2 mt-48">
+      <div>
+        <div class="eyebrow mb-16">Principios de logo</div>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
+          <li style="display: flex; gap: 12px; font-size: 14px;">
+            <span style="color: var(--accent); font-family: var(--font-mono);">→</span>
+            <span>Legible a 16px (favicon/app icon)</span>
+          </li>
+          <li style="display: flex; gap: 12px; font-size: 14px;">
+            <span style="color: var(--accent); font-family: var(--font-mono);">→</span>
+            <span>Funciona en versión monocromática</span>
+          </li>
+          <li style="display: flex; gap: 12px; font-size: 14px;">
+            <span style="color: var(--accent); font-family: var(--font-mono);">→</span>
+            <span>Un símbolo aislado (monogram) para formatos pequeños</span>
+          </li>
+          <li style="display: flex; gap: 12px; font-size: 14px;">
+            <span style="color: var(--accent); font-family: var(--font-mono);">→</span>
+            <span>Compatible con fondo navy Y fondo blanco</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow mb-16">Variantes entregadas</div>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+          <div class="tag" style="color: #22c55e; border-color: rgba(34,197,94,0.3);">✓ Horizontal (master)</div>
+          <div class="tag" style="color: #22c55e; border-color: rgba(34,197,94,0.3);">✓ Stacked</div>
+          <div class="tag" style="color: #22c55e; border-color: rgba(34,197,94,0.3);">✓ Monograma / Símbolo</div>
+          <div class="tag" style="color: #22c55e; border-color: rgba(34,197,94,0.3);">✓ Monocromático</div>
+          <div class="tag" style="color: #22c55e; border-color: rgba(34,197,94,0.3);">✓ Knockout (sobre fondos claros)</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hairline mt-64"/>
+
+    <div class="mt-48">
+      <div class="eyebrow mb-24">Icono / Favicon</div>
+      <div class="grid-3" style="gap: 16px;">
+        <div style="padding: 32px; background: var(--bg-secondary); border: 1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="width: 64px; height: 64px;" role="img" aria-label="Favicon 64px">
+            <rect width="32" height="32" fill="#0B0F1A"/>
+            <svg x="2" y="2" width="28" height="28" viewBox="0 0 600 600">
+              <g transform="translate(0,600) scale(0.1,-0.1)" fill="#D97706" stroke="none">
+                <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+                <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+              </g>
+            </svg>
+          </svg>
+          <span class="font-mono" style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted);">64 px</span>
+        </div>
+        <div style="padding: 32px; background: var(--bg-secondary); border: 1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="width: 32px; height: 32px;" role="img" aria-label="Favicon 32px">
+            <rect width="32" height="32" fill="#0B0F1A"/>
+            <svg x="2" y="2" width="28" height="28" viewBox="0 0 600 600">
+              <g transform="translate(0,600) scale(0.1,-0.1)" fill="#D97706" stroke="none">
+                <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+                <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+              </g>
+            </svg>
+          </svg>
+          <span class="font-mono" style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted);">32 px</span>
+        </div>
+        <div style="padding: 32px; background: var(--bg-secondary); border: 1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="width: 16px; height: 16px;" role="img" aria-label="Favicon 16px">
+            <rect width="32" height="32" fill="#0B0F1A"/>
+            <svg x="2" y="2" width="28" height="28" viewBox="0 0 600 600">
+              <g transform="translate(0,600) scale(0.1,-0.1)" fill="#D97706" stroke="none">
+                <path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/>
+                <path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/>
+              </g>
+            </svg>
+          </svg>
+          <span class="font-mono" style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted);">16 px (tab)</span>
+        </div>
+      </div>
+      <p class="mt-16">
+        Monograma K naranja (<span class="code">#D97706</span>) sobre cuadro navy
+        (<span class="code">#0B0F1A</span>). SVG escalable.
+        Servido desde <span class="code">public/favicon.svg</span> vía Next.js metadata.
+        Archivo de marca: <span class="code">brand-assets/icons/favicon.svg</span>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 03 PALETA -->
+<div class="page-wrapper">
+  <div class="section" id="paleta">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Paleta de Color</div>
+      <div class="section-number">03 / 09</div>
+    </div>
+
+    <h2>Dark-primary.<br/>Un solo acento.</h2>
+
+    <p class="mt-24" style="max-width: 580px;">
+      Modo oscuro por defecto. Ninguna sección usa fondo blanco puro — siempre navy o charcoal.
+      Un solo color de acento (burnt orange <span class="code">#D97706</span>) crea todos los
+      momentos de energía: CTAs, hovers, dots, underlines.
+    </p>
+
+    <!-- Swatches: Fondos -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">Fondos</div>
+      <div class="grid-3">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #0B0F1A;"></div>
+          <div class="swatch-info">
+            <div class="swatch-token">--bg-primary</div>
+            <div class="swatch-hex">#0B0F1A</div>
+            <div class="swatch-usage">Navy profundo · Hero, secciones primarias</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #13213A;"></div>
+          <div class="swatch-info">
+            <div class="swatch-token">--bg-secondary</div>
+            <div class="swatch-hex">#13213A</div>
+            <div class="swatch-usage">Navy medio · ProblemGrid, FinalCTA</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #1C1C1C;"></div>
+          <div class="swatch-info">
+            <div class="swatch-token">--bg-tertiary</div>
+            <div class="swatch-hex">#1C1C1C</div>
+            <div class="swatch-usage">Charcoal · Cards, widgets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swatches: Texto -->
+    <div class="mt-48">
+      <div class="eyebrow mb-24">Tipografía</div>
+      <div class="grid-2">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #FAF3E7; border-bottom: 1px solid rgba(0,0,0,0.1);"></div>
+          <div class="swatch-info">
+            <div class="swatch-token">--fg-primary</div>
+            <div class="swatch-hex">#FAF3E7</div>
+            <div class="swatch-usage">Cream cálido · Todos los textos principales</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #A8B0BD;"></div>
+          <div class="swatch-info">
+            <div class="swatch-token">--fg-muted</div>
+            <div class="swatch-hex">#A8B0BD</div>
+            <div class="swatch-usage">Gris azulado · Subtítulos, eyebrows, labels</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swatches: Acento -->
+    <div class="mt-48">
+      <div class="eyebrow mb-24">Acento</div>
+      <div class="grid-2">
+        <div class="swatch" style="border-color: var(--accent);">
+          <div class="swatch-color" style="background: #D97706;"></div>
+          <div class="swatch-info">
+            <div class="swatch-token">--accent ★ primario</div>
+            <div class="swatch-hex">#D97706</div>
+            <div class="swatch-usage">Burnt orange · CTAs, hovers, dots, underlines</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #F59E0B;"></div>
+          <div class="swatch-info">
+            <div class="swatch-token">--accent-hover</div>
+            <div class="swatch-hex">#F59E0B</div>
+            <div class="swatch-usage">Orange claro · Estado hover del acento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Border specimens -->
+    <div class="mt-48">
+      <div class="eyebrow mb-24">Hairlines (borders)</div>
+      <div class="grid-2">
+        <div style="padding: 24px; border: 1px solid rgba(250,243,231,0.08); background: var(--bg-tertiary);">
+          <div class="swatch-token">--border</div>
+          <p style="font-size: 12px; margin-top: 8px;">rgba(250,243,231,0.08) · Separadores sutiles</p>
+        </div>
+        <div style="padding: 24px; border: 1px solid rgba(250,243,231,0.18); background: var(--bg-tertiary);">
+          <div class="swatch-token">--border-strong</div>
+          <p style="font-size: 12px; margin-top: 8px;">rgba(250,243,231,0.18) · Cards, botones</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 04 TIPOGRAFÍA -->
+<div class="page-wrapper">
+  <div class="section" id="tipografia">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Tipografía</div>
+      <div class="section-number">04 / 09</div>
+    </div>
+
+    <h2>Tres fuentes.<br/>Tres roles distintos.</h2>
+
+    <!-- Specimens -->
+    <div class="grid-3 mt-64">
+
+      <!-- Display -->
+      <div class="type-specimen">
+        <div class="type-specimen-label">Display</div>
+        <div class="type-specimen-aa" style="font-family: var(--font-display); font-size: 64px; font-weight: 700; color: var(--fg-primary); letter-spacing: -0.03em;">Aa</div>
+        <div class="type-specimen-name">PP Neue Montreal</div>
+        <div class="type-specimen-meta">Fontshare · 400 / 500 / 700</div>
+        <hr class="hairline" style="margin: 16px 0;"/>
+        <p style="font-size: 12px;">Headlines · Wordmark · Nav · Showcase titles</p>
+        <p style="font-size: 11px; margin-top: 8px; font-family: var(--font-mono); color: var(--accent);">tracking: -0.04em</p>
+      </div>
+
+      <!-- Body -->
+      <div class="type-specimen">
+        <div class="type-specimen-label">Body</div>
+        <div class="type-specimen-aa" style="font-family: var(--font-body); font-size: 64px; font-weight: 700; color: var(--fg-primary);">Aa</div>
+        <div class="type-specimen-name">Inter Variable</div>
+        <div class="type-specimen-meta">Google Fonts · Variable weight</div>
+        <hr class="hairline" style="margin: 16px 0;"/>
+        <p style="font-size: 12px;">Párrafos · Descripciones · UI texto · Botones</p>
+        <p style="font-size: 11px; margin-top: 8px; font-family: var(--font-mono); color: var(--accent);">neutral — no compite con Display</p>
+      </div>
+
+      <!-- Mono -->
+      <div class="type-specimen">
+        <div class="type-specimen-label">Mono</div>
+        <div class="type-specimen-aa" style="font-family: var(--font-mono); font-size: 64px; color: var(--fg-primary);">Aa</div>
+        <div class="type-specimen-name">JetBrains Mono</div>
+        <div class="type-specimen-meta">Google Fonts · Variable weight</div>
+        <hr class="hairline" style="margin: 16px 0;"/>
+        <p style="font-size: 12px;">Stats · Eyebrows · Counters · Labels · Tokens</p>
+        <p style="font-size: 11px; margin-top: 8px; font-family: var(--font-mono); color: var(--accent);">"tnum", "zero"</p>
+      </div>
+
+    </div>
+
+    <!-- Type scale -->
+    <div class="mt-64">
+      <div class="eyebrow mb-32">Escala tipográfica</div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); min-width: 180px;">Hero headline</span>
+          <span style="font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1; color: var(--fg-primary);">Kairos</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); min-width: 180px;">Section heading</span>
+          <span style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 500; letter-spacing: -0.025em; color: var(--fg-primary);">Automatización con IA</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); min-width: 180px;">Card title</span>
+          <span style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; color: var(--fg-primary);">Conserje 24/7</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); min-width: 180px;">Body text</span>
+          <span style="font-family: var(--font-body); font-size: 15px; color: var(--fg-muted);">Kairos Studio automatiza los procesos operativos que hoy te roban tiempo y talento.</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); min-width: 180px;">Eyebrow</span>
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--fg-muted);">Servicios</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0;">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); min-width: 180px;">Stats / numbers</span>
+          <span style="font-family: var(--font-mono); font-size: 2rem; font-weight: 500; color: var(--fg-primary);">47+</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 05 COMPONENTES -->
+<div class="page-wrapper">
+  <div class="section" id="componentes">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Componentes UI</div>
+      <div class="section-number">05 / 09</div>
+    </div>
+
+    <h2>Los bloques<br/>del sistema.</h2>
+
+    <!-- Buttons -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">Botones</div>
+      <div class="component-demo" style="gap: 24px; flex-wrap: wrap;">
+        <a href="#" class="btn-primary">Diagnóstico gratis →</a>
+        <a href="#" class="btn-primary">Contacto →</a>
+        <a href="#" class="btn-ghost">Ver proyectos</a>
+      </div>
+      <div class="grid-2 mt-24">
+        <div>
+          <p style="font-size: 12px; font-family: var(--font-mono); color: var(--accent); margin-bottom: 8px;">PRIMARY BUTTON</p>
+          <p style="font-size: 13px;">Border <span class="code">--border-strong</span> → hover <span class="code">--accent</span>. Sin background fill — el acento solo aparece en hover, no en rest.</p>
+        </div>
+        <div>
+          <p style="font-size: 12px; font-family: var(--font-mono); color: var(--accent); margin-bottom: 8px;">GHOST BUTTON</p>
+          <p style="font-size: 13px;">Sin border. Color <span class="code">--fg-muted</span> → hover <span class="code">--fg-primary</span>. Para acciones secundarias.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">Cards</div>
+      <div class="component-demo">
+        <div class="card-demo">
+          <div class="card-eyebrow">Automatización</div>
+          <div class="card-title">Conserje 24/7</div>
+          <div class="card-body">Atención a residentes via WhatsApp con IA. 80% de consultas resueltas automáticamente.</div>
+        </div>
+      </div>
+      <p class="mt-24" style="font-size: 13px;">Background <span class="code">--bg-tertiary</span>. Border <span class="code">--border-strong</span>. Eyebrow en mono uppercase. Título en Display 500. Body en Inter muted.</p>
+    </div>
+
+    <!-- Hairlines & dividers -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">Hairlines</div>
+      <div style="padding: 32px; background: var(--bg-secondary); display: flex; flex-direction: column; gap: 24px;">
+        <div>
+          <p style="font-size: 11px; font-family: var(--font-mono); color: var(--fg-muted); margin-bottom: 12px;">--border (0.08 opacity)</p>
+          <hr class="hairline"/>
+        </div>
+        <div>
+          <p style="font-size: 11px; font-family: var(--font-mono); color: var(--fg-muted); margin-bottom: 12px;">--border-strong (0.18 opacity)</p>
+          <hr class="hairline-strong"/>
+        </div>
+      </div>
+      <p class="mt-16" style="font-size: 13px;">El detalle que separa el género cinematic del "dark tech genérico". Usar siempre hairlines, nunca líneas sólidas.</p>
+    </div>
+
+    <!-- Ticker dot -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">Ticker dot</div>
+      <div class="component-demo">
+        <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted);">
+          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 999px; background: var(--accent); animation: blink 2s ease-in-out infinite;"></span>
+          Servicios
+        </div>
+        <style>@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }</style>
+      </div>
+      <p class="mt-16" style="font-size: 13px;">Eyebrow pulsante — símbolo vivo. 6px círculo burnt orange, animación <span class="code">ticker-blink</span> 2s infinite. Precede todos los eyebrows de sección.</p>
+    </div>
+
+    <!-- Selection color -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">::selection</div>
+      <div class="component-demo">
+        <p style="font-family: var(--font-display); font-size: 24px; color: var(--fg-primary);">
+          Selecciona <span style="background: var(--accent); color: var(--bg-primary);">este texto</span> para ver el color de selección
+        </p>
+      </div>
+      <p class="mt-16" style="font-size: 13px;">Background <span class="code">--accent</span>, color <span class="code">--bg-primary</span>. La selección también es un momento de marca.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 06 MOTION -->
+<div class="page-wrapper">
+  <div class="section" id="motion">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Motion &amp; Animación</div>
+      <div class="section-number">06 / 09</div>
+    </div>
+
+    <h2>Cinematico,<br/>no nervioso.</h2>
+
+    <p class="mt-24" style="max-width: 560px;">
+      Las animaciones crean profundidad sin assets. El principio: cada transición tiene propósito.
+      Nada parpadea sin razón. El timing es editorial, no UI genérico.
+    </p>
+
+    <!-- Motion specs table -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">Especificaciones implementadas</div>
+      <div class="motion-spec">
+        <div class="motion-spec-name">Reveal headline</div>
+        <div class="motion-spec-value">clip-path inset · 1.1s · cubic-bezier(0.65, 0, 0.35, 1) · stagger 0.2s/0.5s/0.8s</div>
+        <div class="motion-spec-name">Fade-up CTA</div>
+        <div class="motion-spec-value">opacity + translateY(16px) · 0.9s · cubic-bezier(0.22, 1, 0.36, 1)</div>
+        <div class="motion-spec-name">Ticker dot</div>
+        <div class="motion-spec-value">opacity 1→0.3→1 · 2s · ease-in-out · infinite</div>
+        <div class="motion-spec-name">Marquee</div>
+        <div class="motion-spec-value">translateX(-100%) · 40s linear infinite</div>
+        <div class="motion-spec-name">Hover transición</div>
+        <div class="motion-spec-value">color/border-color · 0.2s–0.3s · ease</div>
+        <div class="motion-spec-name">Nav underline</div>
+        <div class="motion-spec-value">width 0→100% · 0.5s · ease</div>
+      </div>
+    </div>
+
+    <!-- Pendiente -->
+    <div class="mt-48">
+      <div class="eyebrow mb-24">En construcción / pendiente</div>
+      <div class="grid-2">
+        <div style="padding: 20px; border: 1px solid var(--border); background: var(--bg-tertiary);">
+          <p style="font-family: var(--font-mono); font-size: 10px; color: var(--accent); margin-bottom: 8px;">EN CONSTRUCCIÓN</p>
+          <p style="font-size: 13px;">IntroLoader: Video Veo 3.1 → fade-out → reveal</p>
+          <p style="font-size: 13px; margin-top: 4px;">ScrollShowcase: GSAP ScrollTrigger pin + snap 4 paneles</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid var(--border); background: var(--bg-tertiary);">
+          <p style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); margin-bottom: 8px;">PENDIENTE</p>
+          <p style="font-size: 13px;">Framer Motion scroll-triggered reveals</p>
+          <p style="font-size: 13px; margin-top: 4px;">GSAP case studies</p>
+          <p style="font-size: 13px; margin-top: 4px;">Parallax sutil en showcase</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 07 VOZ -->
+<div class="page-wrapper">
+  <div class="section" id="voz">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Voz &amp; Tono</div>
+      <div class="section-number">07 / 09</div>
+    </div>
+
+    <h2>Técnico,<br/>pero humano.</h2>
+
+    <div class="grid-2 mt-64">
+
+      <div class="stack" style="gap: 32px;">
+
+        <div>
+          <div class="eyebrow mb-16">Principios de escritura</div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; gap: 12px; font-size: 14px; align-items: flex-start;">
+              <span style="color: var(--accent); font-family: var(--font-mono); margin-top: 2px;">→</span>
+              <span><strong>Primera persona del plural.</strong> "Automatizamos", "construimos", "medimos" — no "nuestros clientes reciben".</span>
+            </li>
+            <li style="display: flex; gap: 12px; font-size: 14px; align-items: flex-start;">
+              <span style="color: var(--accent); font-family: var(--font-mono); margin-top: 2px;">→</span>
+              <span><strong>Concreto sobre abstracto.</strong> "3 horas devueltas por semana" > "más eficiencia".</span>
+            </li>
+            <li style="display: flex; gap: 12px; font-size: 14px; align-items: flex-start;">
+              <span style="color: var(--accent); font-family: var(--font-mono); margin-top: 2px;">→</span>
+              <span><strong>Sin jerga de startup.</strong> No "disruptivo", "sinergias", "pivot". Sí "automatización", "flujo de trabajo", "proceso".</span>
+            </li>
+            <li style="display: flex; gap: 12px; font-size: 14px; align-items: flex-start;">
+              <span style="color: var(--accent); font-family: var(--font-mono); margin-top: 2px;">→</span>
+              <span><strong>Español por defecto.</strong> El sitio es bilingüe pero el tono natural es español colombiano — no traducción literal.</span>
+            </li>
+            <li style="display: flex; gap: 12px; font-size: 14px; align-items: flex-start;">
+              <span style="color: var(--accent); font-family: var(--font-mono); margin-top: 2px;">→</span>
+              <span><strong>Titulares tipo afirmación.</strong> "Automatización con IA para equipos operativos." — punto, no pregunta.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="stack" style="gap: 24px;">
+        <div class="eyebrow mb-8">Ejemplos</div>
+
+        <div>
+          <div class="do">
+            <div class="do-label">Sí</div>
+            <p style="font-size: 14px;">"Kairos automatiza lo que hoy te roba 3 horas al día. Garantizado o no cobras."</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="dont">
+            <div class="dont-label">No</div>
+            <p style="font-size: 14px;">"Somos una plataforma de soluciones innovadoras de automatización inteligente para negocios."</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="do">
+            <div class="do-label">Sí</div>
+            <p style="font-size: 14px;">"Auditoría gratuita. Encuentro los procesos que se pueden automatizar en 20 minutos."</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="dont">
+            <div class="dont-label">No</div>
+            <p style="font-size: 14px;">"¿Listo para transformar tu empresa con la última tecnología en IA y automatización?"</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 08 APLICACIONES -->
+<div class="page-wrapper">
+  <div class="section" id="aplicaciones">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Aplicaciones</div>
+      <div class="section-number">08 / 09</div>
+    </div>
+
+    <h2>Dónde vive<br/>la marca.</h2>
+
+    <div class="grid-2 mt-64">
+
+      <!-- Web -->
+      <div>
+        <div class="eyebrow mb-24">Web — kairos.studio</div>
+        <div style="padding: 24px; border: 1px solid var(--border-strong); background: var(--bg-secondary);">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+            <svg width="16" height="16" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;flex-shrink:0;" fill="#D97706"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+            <span style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--fg-primary);">Kairos</span>
+          </div>
+          <div style="height: 80px; background: linear-gradient(180deg, rgba(19,33,58,0.5) 0%, transparent 100%); display: flex; align-items: center; padding-left: 16px;">
+            <span style="font-family: var(--font-display); font-size: 22px; font-weight: 500; letter-spacing: -0.03em; color: var(--fg-primary);">Automatización<br/>con IA.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OG Image -->
+      <div>
+        <div class="eyebrow mb-24">Open Graph (1200×630)</div>
+        <div style="padding: 24px; border: 1px solid var(--border-strong); background: var(--bg-primary); aspect-ratio: 1200/630; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="font-family: var(--font-body); font-size: 11px; color: var(--accent);">Kairos Studio</div>
+          <div style="font-family: var(--font-display); font-size: 18px; font-weight: 700; letter-spacing: -0.04em; color: var(--fg-primary); line-height: 1.1;">
+            Automatización con IA<br/>para equipos operativos.
+          </div>
+          <div style="font-family: var(--font-body); font-size: 11px; color: var(--fg-muted);">kairos.studio · Jhon Escobar</div>
+        </div>
+        <p class="mt-16" style="font-size: 12px; font-family: var(--font-mono); color: var(--fg-muted);">src/app/opengraph-image.tsx — tokens corregidos ✓</p>
+      </div>
+
+    </div>
+
+    <!-- Assets checklist -->
+    <div class="mt-64">
+      <div class="eyebrow mb-24">Assets web pendientes</div>
+      <div style="display: flex; flex-direction: column; gap: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--fg-primary);">public/loader.mp4</span>
+          <span style="font-family: var(--font-mono); font-size: 9px; color: #22c55e; letter-spacing: 0.1em;">✓ LISTO</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--fg-primary);">public/favicon.svg</span>
+          <span style="font-family: var(--font-mono); font-size: 9px; color: #22c55e; letter-spacing: 0.1em;">✓ LISTO</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--fg-primary);">brand-assets/social-kit/linkedin-banner.svg</span>
+          <span style="font-family: var(--font-mono); font-size: 9px; color: #22c55e; letter-spacing: 0.1em;">✓ LISTO</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted);">public/nagi-avatar.mp4</span>
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--accent); letter-spacing: 0.1em;">PENDIENTE</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted);">public/projects/*.jpg</span>
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--accent); letter-spacing: 0.1em;">PENDIENTE (4 imágenes)</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted);">apple-touch-icon, icons 192/512</span>
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--accent); letter-spacing: 0.1em;">PENDIENTE</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 09 DO'S & DON'TS -->
+<div class="page-wrapper">
+  <div class="section" id="donts" style="margin-bottom: 120px;">
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px;">
+      <div class="eyebrow">Do's &amp; Don'ts</div>
+      <div class="section-number">09 / 09</div>
+    </div>
+
+    <h2>Las reglas<br/>que protegen la marca.</h2>
+
+    <div class="grid-2 mt-64">
+
+      <div class="stack" style="gap: 24px;">
+        <div class="eyebrow" style="color: #22c55e;">Lo que sí</div>
+
+        <div class="do">
+          <div class="do-label">Color</div>
+          <p style="font-size: 14px;">Siempre usar el burnt orange <span class="code">#D97706</span> como único acento. Nunca mezclarlo con otros acentos.</p>
+        </div>
+
+        <div class="do">
+          <div class="do-label">Fondos</div>
+          <p style="font-size: 14px;">Navy <span class="code">#0B0F1A</span> para secciones primarias. Charcoal <span class="code">#1C1C1C</span> para cards. Navy medio <span class="code">#13213A</span> para secciones de corte.</p>
+        </div>
+
+        <div class="do">
+          <div class="do-label">Tipografía</div>
+          <p style="font-size: 14px;">Neue Montreal para headlines con tracking negativo. Inter para cuerpo. Mono para labels técnicos.</p>
+        </div>
+
+        <div class="do">
+          <div class="do-label">Logo — clear space</div>
+          <p style="font-size: 14px;">Espacio mínimo alrededor del logo: 1× la altura de la "K" en todos los lados.</p>
+        </div>
+
+        <div class="do">
+          <div class="do-label">Texto</div>
+          <p style="font-size: 14px;">Primera persona, afirmaciones directas, sin jerga de startup. Español Colombia como idioma base.</p>
+        </div>
+      </div>
+
+      <div class="stack" style="gap: 24px;">
+        <div class="eyebrow" style="color: #ef4444;">Lo que no</div>
+
+        <div class="dont">
+          <div class="dont-label">Fondos claros</div>
+          <p style="font-size: 14px;">Nunca usar fondo blanco puro. Si se necesita contraste, usar <span class="code">--fg-primary</span> (#FAF3E7) como fondo invertido.</p>
+        </div>
+
+        <div class="dont">
+          <div class="dont-label">Colores extra</div>
+          <p style="font-size: 14px;">Nunca añadir un segundo color de acento. Sin verde, azul eléctrico, morado. Solo el burnt orange.</p>
+        </div>
+
+        <div class="dont">
+          <div class="dont-label">Fonts genéricas</div>
+          <p style="font-size: 14px;">Nunca usar Inter como display font. Nunca usar Arial, Roboto, o system fonts en headlines.</p>
+        </div>
+
+        <div class="dont">
+          <div class="dont-label">Logo sobre fondo saturado</div>
+          <p style="font-size: 14px;">El logo no va sobre fotografías coloridas sin overlay navy. Siempre necesita un fondo de la paleta.</p>
+        </div>
+
+        <div class="dont">
+          <div class="dont-label">Logo estirado</div>
+          <p style="font-size: 14px;">Nunca distorsionar las proporciones del logo. Escalar siempre manteniendo aspect ratio.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer del brand book -->
+    <div class="mt-64" style="padding-top: 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <div class="cover-wordmark" style="margin-bottom: 8px;">
+          <svg width="18" height="18" viewBox="0 0 600 600" style="display:inline-block;vertical-align:middle;margin-right:6px;" fill="#D97706"><g transform="translate(0,600) scale(0.1,-0.1)"><path d="M1600 3055 l0 -1745 340 0 340 0 2 746 3 746 154 -181 c85 -100 157 -180 162 -179 4 2 103 127 220 278 117 151 289 374 383 495 93 121 238 308 321 415 148 191 716 924 843 1088 l64 82 -470 0 -469 0 -168 -222 c-93 -123 -243 -322 -335 -443 -91 -121 -280 -371 -419 -555 -139 -184 -262 -344 -272 -355 -19 -19 -19 -4 -19 778 l0 797 -340 0 -340 0 0 -1745z"/><path d="M2928 2588 l-217 -282 19 -25 c10 -14 78 -96 151 -181 73 -85 253 -298 401 -472 l270 -318 449 0 c247 0 449 3 449 6 0 3 -92 114 -204 247 -198 236 -555 659 -647 768 -25 30 -135 160 -244 289 -108 129 -200 238 -204 242 -4 4 -104 -119 -223 -274z"/></g></svg>
+          <span class="cover-wordmark-text" style="font-size: 1.2rem;">Kairos</span>
+        </div>
+        <p style="font-size: 12px;">kairos.studio</p>
+      </div>
+      <div style="text-align: right;">
+        <p style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted);">Versión 1.1 — Logo aprobado · Fase 3 completa</p>
+        <p style="font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted);" id="footer-date">—</p>
+        <p class="mt-8" style="font-family: var(--font-mono); font-size: 10px; color: var(--border-strong);">Para imprimir a PDF: Ctrl+P → Guardar como PDF</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const now = new Date();
+  const formatted = now.toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
+  document.getElementById('cover-date').textContent = formatted;
+  document.getElementById('footer-date').textContent = formatted;
+</script>
+
+</body>
+</html>

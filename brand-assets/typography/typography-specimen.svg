@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560">
+  <defs>
+    <style>
+      @import url('https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="560" fill="#0B0F1A"/>
+
+  <!-- Header -->
+  <text x="60" y="56" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500"
+        fill="#D97706" letter-spacing="3">KAIROS</text>
+  <text x="60" y="88" font-family="'Neue Montreal', sans-serif" font-size="36" font-weight="500"
+        fill="#FAF3E7" letter-spacing="-1">Sistema Tipográfico</text>
+
+  <!-- Hairline -->
+  <line x1="60" y1="110" x2="1140" y2="110" stroke="rgba(250,243,231,0.08)" stroke-width="1"/>
+
+  <!-- Column dividers -->
+  <line x1="440" y1="125" x2="440" y2="480" stroke="rgba(250,243,231,0.08)" stroke-width="1"/>
+  <line x1="820" y1="125" x2="820" y2="480" stroke="rgba(250,243,231,0.08)" stroke-width="1"/>
+
+  <!-- ── FONT 1: PP Neue Montreal ──────────────────────────────────────── -->
+  <g transform="translate(60, 130)">
+    <!-- Role badge -->
+    <rect width="80" height="20" rx="10" fill="#D97706" opacity="0.15"/>
+    <text x="10" y="14" font-family="'JetBrains Mono', monospace" font-size="9" fill="#D97706" letter-spacing="1">DISPLAY</text>
+
+    <!-- Specimen large -->
+    <text x="0" y="100" font-family="'Neue Montreal', sans-serif" font-size="72" font-weight="700"
+          fill="#FAF3E7" letter-spacing="-3">Aa</text>
+
+    <!-- Full alphabet -->
+    <text x="0" y="140" font-family="'Neue Montreal', sans-serif" font-size="13" font-weight="400"
+          fill="#A8B0BD" letter-spacing="-0.2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</text>
+    <text x="0" y="158" font-family="'Neue Montreal', sans-serif" font-size="13" font-weight="400"
+          fill="#A8B0BD" letter-spacing="-0.2">abcdefghijklmnopqrstuvwxyz 0123456789</text>
+
+    <!-- Font name -->
+    <text x="0" y="200" font-family="'Neue Montreal', sans-serif" font-size="18" font-weight="500"
+          fill="#FAF3E7" letter-spacing="-0.5">PP Neue Montreal</text>
+    <text x="0" y="222" font-family="'JetBrains Mono', monospace" font-size="10"
+          fill="#A8B0BD">Fontshare CDN · 400 / 500 / 700</text>
+
+    <!-- Usage context -->
+    <text x="0" y="260" font-family="'JetBrains Mono', monospace" font-size="9"
+          fill="#D97706" letter-spacing="2">USO</text>
+    <text x="0" y="278" font-family="'Neue Montreal', sans-serif" font-size="12"
+          fill="#A8B0BD">Headlines · Wordmark · Nav</text>
+    <text x="0" y="294" font-family="'Neue Montreal', sans-serif" font-size="12"
+          fill="#A8B0BD">Secciones · Showcase titles</text>
+
+    <!-- Tracking note -->
+    <text x="0" y="335" font-family="'JetBrains Mono', monospace" font-size="9"
+          fill="#A8B0BD">tracking: -0.04em (headlines gigantes)</text>
+
+    <!-- Usage example -->
+    <text x="0" y="370" font-family="'Neue Montreal', sans-serif" font-size="22" font-weight="500"
+          fill="#FAF3E7" letter-spacing="-1">Automatización</text>
+    <text x="0" y="395" font-family="'Neue Montreal', sans-serif" font-size="22" font-weight="500"
+          fill="#D97706" letter-spacing="-1">con IA.</text>
+  </g>
+
+  <!-- ── FONT 2: Inter ─────────────────────────────────────────────────── -->
+  <g transform="translate(460, 130)">
+    <!-- Role badge -->
+    <rect width="60" height="20" rx="10" fill="#A8B0BD" opacity="0.15"/>
+    <text x="10" y="14" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8B0BD" letter-spacing="1">BODY</text>
+
+    <!-- Specimen -->
+    <text x="0" y="100" font-family="'Inter', sans-serif" font-size="72" font-weight="700"
+          fill="#FAF3E7" letter-spacing="-3">Aa</text>
+
+    <!-- Alphabet -->
+    <text x="0" y="140" font-family="'Inter', sans-serif" font-size="13" font-weight="400"
+          fill="#A8B0BD">ABCDEFGHIJKLMNOPQRSTUVWXYZ</text>
+    <text x="0" y="158" font-family="'Inter', sans-serif" font-size="13" font-weight="400"
+          fill="#A8B0BD">abcdefghijklmnopqrstuvwxyz 0123456789</text>
+
+    <!-- Font name -->
+    <text x="0" y="200" font-family="'Inter', sans-serif" font-size="18" font-weight="500"
+          fill="#FAF3E7">Inter Variable</text>
+    <text x="0" y="222" font-family="'JetBrains Mono', monospace" font-size="10"
+          fill="#A8B0BD">Google Fonts · Variable weight</text>
+
+    <!-- Usage -->
+    <text x="0" y="260" font-family="'JetBrains Mono', monospace" font-size="9"
+          fill="#D97706" letter-spacing="2">USO</text>
+    <text x="0" y="278" font-family="'Inter', sans-serif" font-size="12"
+          fill="#A8B0BD">Párrafos · Descripciones</text>
+    <text x="0" y="294" font-family="'Inter', sans-serif" font-size="12"
+          fill="#A8B0BD">UI texto · Botones · Links</text>
+
+    <!-- Note -->
+    <text x="0" y="335" font-family="'JetBrains Mono', monospace" font-size="9"
+          fill="#A8B0BD">Sistema, neutral — no compite con Display</text>
+
+    <!-- Body text example -->
+    <text x="0" y="370" font-family="'Inter', sans-serif" font-size="14" font-weight="400"
+          fill="#A8B0BD">Kairos Studio automatiza los procesos</text>
+    <text x="0" y="390" font-family="'Inter', sans-serif" font-size="14" font-weight="400"
+          fill="#A8B0BD">operativos que hoy te roban tiempo.</text>
+  </g>
+
+  <!-- ── FONT 3: JetBrains Mono ────────────────────────────────────────── -->
+  <g transform="translate(840, 130)">
+    <!-- Role badge -->
+    <rect width="56" height="20" rx="10" fill="#13213A" stroke="rgba(250,243,231,0.18)" stroke-width="1"/>
+    <text x="8" y="14" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FAF3E7" letter-spacing="1">MONO</text>
+
+    <!-- Specimen -->
+    <text x="0" y="100" font-family="'JetBrains Mono', monospace" font-size="72" font-weight="400"
+          fill="#FAF3E7" letter-spacing="-1">Aa</text>
+
+    <!-- Alphabet -->
+    <text x="0" y="140" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#A8B0BD">ABCDEFGHIJKLMNOPQRST</text>
+    <text x="0" y="158" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#A8B0BD">0123456789 !@#$%^&amp;*()</text>
+
+    <!-- Font name -->
+    <text x="0" y="200" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="500"
+          fill="#FAF3E7">JetBrains Mono</text>
+    <text x="0" y="222" font-family="'JetBrains Mono', monospace" font-size="10"
+          fill="#A8B0BD">Google Fonts · Variable weight</text>
+
+    <!-- Usage -->
+    <text x="0" y="260" font-family="'JetBrains Mono', monospace" font-size="9"
+          fill="#D97706" letter-spacing="2">USO</text>
+    <text x="0" y="278" font-family="'JetBrains Mono', monospace" font-size="12"
+          fill="#A8B0BD">Stats · Eyebrows · Counters</text>
+    <text x="0" y="294" font-family="'JetBrains Mono', monospace" font-size="12"
+          fill="#A8B0BD">Labels · Tokens · Código</text>
+
+    <!-- Feature settings note -->
+    <text x="0" y="335" font-family="'JetBrains Mono', monospace" font-size="9"
+          fill="#A8B0BD">"tnum", "zero" — numerales tabulares</text>
+
+    <!-- Mono example: stats -->
+    <text x="0" y="372" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="500"
+          fill="#FAF3E7">47+</text>
+    <text x="0" y="396" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#A8B0BD">PROYECTOS AUTOMATIZADOS</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="60" y1="488" x2="1140" y2="488" stroke="rgba(250,243,231,0.08)" stroke-width="1"/>
+  <text x="60" y="512" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8B0BD">
+    Escala hero: clamp(2.8rem, 9vw, 9rem) · Secciones: text-3xl md:text-4xl lg:text-5xl · Eyebrows: 11px uppercase tracking-[0.25em]
+  </text>
+  <text x="1140" y="512" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8B0BD" text-anchor="end">
+    kairos.studio
+  </text>
+</svg>
