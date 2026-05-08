@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import { KairosLogo } from "./KairosLogo";
 
 // Footer rediseñado.
 // Problema anterior: sin bg propio, heredaba el fondo de la sección de arriba
@@ -21,12 +22,9 @@ export function Footer() {
           <div className="md:col-span-4 space-y-4">
             {/* Wordmark */}
             <div className="flex items-center gap-2">
+              <KairosLogo className="h-6 w-6 text-[color:var(--accent)]" />
               <span className="font-display text-xl font-medium tracking-tight text-[color:var(--fg-primary)]">
                 Kairos
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--accent)]" />
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[color:var(--fg-muted)]">
-                studio
               </span>
             </div>
 
