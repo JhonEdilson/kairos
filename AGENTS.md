@@ -18,3 +18,13 @@ pnpm dev
 ```
 
 Documentación completa: [`docs/troubleshooting/turbopack-nul-file.md`](docs/troubleshooting/turbopack-nul-file.md)
+
+## Brand Identity
+
+Antes de tocar UI, consultar `brand-assets/brand-book/brand-book.html` (abrir en Chrome).
+
+Tokens canónicos viven en `src/app/globals.css:4-13`. **Nunca hardcodear hex** — siempre `var(--token)`.
+Acento único: `--accent: #D97706` (burnt orange). Segundo color de acento = violación de marca.
+
+Logo en construcción (Fase 3). El wordmark actual es tipográfico en `Nav.tsx`.
+Favicon pendiente hasta que el logo esté aprobado.
