@@ -4,6 +4,7 @@ import { LocaleToggle } from "./LocaleToggle";
 import { NavScrollIsland } from "./NavScrollIsland";
 import { LogoLink } from "./LogoLink";
 import { MobileMenu } from "./MobileMenu";
+import { KairosLogo } from "./KairosLogo";
 
 // Nav fija con backdrop blur que se activa al scrollear.
 // El "K" wordmark reemplaza el logo completo — patron de Linear/Vercel/basement.
@@ -14,14 +15,10 @@ export async function Nav() {
   return (
     <NavScrollIsland>
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-16 flex items-center justify-between">
-        {/* Wordmark — K con acento. Simple, memorable, 0 horas de diseño. */}
         <LogoLink>
-          <span className="font-display text-2xl font-medium tracking-tight text-[color:var(--fg-primary)]">
+          <KairosLogo className="h-6 w-6 text-[color:var(--accent)]" />
+          <span className="font-display text-xl font-medium tracking-tight text-[color:var(--fg-primary)]">
             Kairos
-          </span>
-          <span className="w-1 h-1 rounded-full bg-[color:var(--accent)] group-hover:scale-150 transition-transform" />
-          <span className="hidden sm:inline text-xs font-mono uppercase tracking-[0.2em] text-[color:var(--fg-muted)]">
-            studio
           </span>
         </LogoLink>
 

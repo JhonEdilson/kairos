@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
+  icons: { icon: "/favicon.svg" },
 };
 
 // Next.js 16 exige <html> y <body> en el root layout.

@@ -16,12 +16,12 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background: "#0A0A0A",
-          color: "#EAEAEA",
+          background: "#0B0F1A",
+          color: "#FAF3E7",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ fontSize: 36, color: "#10B981", letterSpacing: "-0.02em" }}>
+        <div style={{ fontSize: 36, color: "#D97706", letterSpacing: "-0.02em" }}>
           Kairos Studio
         </div>
         <div
@@ -30,14 +30,14 @@ export default function OpengraphImage() {
             fontWeight: 700,
             lineHeight: 1.1,
             letterSpacing: "-0.04em",
-            color: "#EAEAEA",
+            color: "#FAF3E7",
           }}
         >
           Automatización con IA
           <br />
           para equipos operativos.
         </div>
-        <div style={{ fontSize: 28, color: "#A3A3A3" }}>
+        <div style={{ fontSize: 28, color: "#A8B0BD" }}>
           kairos.studio · Jhon Escobar
         </div>
       </div>
