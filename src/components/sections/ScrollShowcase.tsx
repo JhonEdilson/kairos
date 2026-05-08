@@ -3,10 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Gradientes de fondo por proyecto — paleta dentro del design system.
 const PROJECT_COLORS = [
@@ -41,47 +37,58 @@ export function ScrollShowcase() {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const st = ScrollTrigger.create({
-      trigger: wrapper,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: 0.5,
-      snap: {
-        snapTo: 1 / (PROJECT_KEYS.length - 1),
-        duration: { min: 0.3, max: 0.6 },
-        ease: "power2.inOut",
-        delay: 0.1,
-      },
-      onEnter: () => setActiveIndex(0),
-      onLeaveBack: () => setActiveIndex(0),
-      onUpdate: (self) => {
-        const idx = Math.round(self.progress * (PROJECT_KEYS.length - 1));
-        setActiveIndex(idx);
-      },
+    // Referencias al cleanup — se populan cuando los imports dinámicos resuelven
+    let st: { kill: () => void } | undefined;
+    let rafId: number | undefined;
+    const listeners: Array<{ event: string; fn: EventListener }> = [];
+
+    // GSAP y ScrollTrigger se cargan dinámicamente — no entran al bundle inicial.
+    // El ticker de Lenis ya los registra en desktop; en mobile esto es un no-op
+    // porque LenisProvider saltó la inicialización en touch devices.
+    Promise.all([
+      import("gsap").then((m) => m.gsap),
+      import("gsap/ScrollTrigger").then((m) => m.default),
+    ]).then(([gsap, ScrollTrigger]) => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      st = ScrollTrigger.create({
+        trigger: wrapper,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.5,
+        snap: {
+          snapTo: 1 / (PROJECT_KEYS.length - 1),
+          duration: { min: 0.3, max: 0.6 },
+          ease: "power2.inOut",
+          delay: 0.1,
+        },
+        onEnter: () => setActiveIndex(0),
+        onLeaveBack: () => setActiveIndex(0),
+        onUpdate: (self: { progress: number }) => {
+          const idx = Math.round(self.progress * (PROJECT_KEYS.length - 1));
+          setActiveIndex(idx);
+        },
+      });
+
+      // Re-medir cuando el layout se estabiliza (fonts, intro loader, etc.)
+      const refresh: EventListener = () => ScrollTrigger.refresh();
+      rafId = requestAnimationFrame(() => { requestAnimationFrame(() => ScrollTrigger.refresh()); });
+
+      if (document.fonts?.ready) {
+        document.fonts.ready.then(() => ScrollTrigger.refresh()).catch(() => {});
+      }
+      window.addEventListener("load", refresh);
+      window.addEventListener("intro:complete", refresh);
+      listeners.push(
+        { event: "load", fn: refresh },
+        { event: "intro:complete", fn: refresh },
+      );
     });
-
-    // Re-medir cuando el layout se estabiliza. En carga fresca, ScrollTrigger
-    // mide con fonts a medio cargar y con el IntroLoader bloqueando el body
-    // (overflow:hidden). Cuando el loader termina y el overflow se libera,
-    // el documento se re-flowea y las mediciones iniciales quedan stale.
-    // Al navegar via SPA esto no ocurre porque el layout ya está estable.
-    const refresh = () => ScrollTrigger.refresh();
-
-    const rafId = requestAnimationFrame(() => {
-      requestAnimationFrame(refresh);
-    });
-
-    if (document.fonts?.ready) {
-      document.fonts.ready.then(refresh).catch(() => {});
-    }
-    window.addEventListener("load", refresh);
-    window.addEventListener("intro:complete", refresh);
 
     return () => {
-      st.kill();
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("load", refresh);
-      window.removeEventListener("intro:complete", refresh);
+      st?.kill();
+      if (rafId !== undefined) cancelAnimationFrame(rafId);
+      listeners.forEach(({ event, fn }) => window.removeEventListener(event, fn));
     };
   }, []);
 

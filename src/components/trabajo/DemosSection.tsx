@@ -28,7 +28,7 @@ export function DemosSection({ demos, calendlyUrl }: Props) {
   return (
     <>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-[color:var(--border)]">
-        {demos.map(({ key, videoUrl, showDrawer }) => (
+        {demos.map(({ key, showDrawer }) => (
           <div
             key={key}
             className="p-8 md:p-10 flex flex-col justify-between min-h-[420px] bg-[color:var(--bg-secondary)]"

@@ -9,9 +9,13 @@ export function LoaderWrapper() {
   const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
+    // Skip on touch/mobile — intro video no añade valor en pantallas pequeñas
+    // y bloquea el LCP ~3s en mobile Lighthouse.
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     try {
       const played = sessionStorage.getItem(STORAGE_KEY);
       if (!played) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setShowLoader(true);
         document.body.style.overflow = "hidden";
       }
