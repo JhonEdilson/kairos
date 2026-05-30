@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 // Fonts definidos en root — son globales y no dependen del locale.
 // Las variables CSS se consumen en globals.css y [locale]/layout.tsx ya no las repite.
+const neueMontreal = localFont({
+  src: "../fonts/PlusJakartaSans-VariableFont_wght.ttf",
+  variable: "--font-neue-montreal",
+  display: "swap",
+  weight: "100 800",
+});
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -57,17 +65,10 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${neueMontreal.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,700&display=swap"
-        />
-      </head>
+      <head />
       <body className="grain antialiased">{children}</body>
     </html>
   );
