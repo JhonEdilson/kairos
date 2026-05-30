@@ -61,15 +61,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
-          rel="preconnect"
-          href="https://api.fontshare.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://cdn.fontshare.com"
-          crossOrigin="anonymous"
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,700&display=swap"
         />
       </head>
       <body className="grain antialiased">{children}</body>

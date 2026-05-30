@@ -78,10 +78,8 @@ export function ScrollShowcase() {
         document.fonts.ready.then(() => ScrollTrigger.refresh()).catch(() => {});
       }
       window.addEventListener("load", refresh);
-      window.addEventListener("intro:complete", refresh);
       listeners.push(
         { event: "load", fn: refresh },
-        { event: "intro:complete", fn: refresh },
       );
     });
 

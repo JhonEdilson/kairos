@@ -1,9 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { NagiChat } from "./NagiChat";
+
+const NagiChat = dynamic(() => import("./NagiChat").then((m) => m.NagiChat), {
+  ssr: false,
+});
 
 // NagiWidget — FAB flotante de Nagi.
 // Cuando /public/nagi-avatar.mp4 esté disponible:

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,7 +9,6 @@ import { HtmlLangUpdater } from "@/components/layout/HtmlLangUpdater";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { NagiWidget } from "@/components/chat/NagiWidget";
-import { LoaderWrapper } from "@/components/layout/LoaderWrapper";
 import { CursorGlow } from "@/components/ui/CursorGlow";
 
 // Pre-genera las rutas estaticas para cada locale soportado.
@@ -58,17 +58,16 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider>
-      <LenisProvider>
-        <HtmlLangUpdater locale={locale} />
-        {/* LoaderWrapper gestiona el IntroLoader client-side con sessionStorage
-            para que el loader solo aparezca en la primera visita por sesion */}
-        <LoaderWrapper />
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <NagiWidget />
-        <CursorGlow />
-      </LenisProvider>
+      <Suspense fallback={null}>
+        <LenisProvider>
+          <HtmlLangUpdater locale={locale} />
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+          <NagiWidget />
+          <CursorGlow />
+        </LenisProvider>
+      </Suspense>
     </NextIntlClientProvider>
   );
 }
