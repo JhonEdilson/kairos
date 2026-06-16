@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/cn";
+import { useFocusTrap } from "@/lib/useFocusTrap";
 
 export type TierData = {
   num: string;
@@ -46,6 +47,8 @@ const Check = () => (
 
 export function TierDrawer({ tier, calendlyUrl, labels, onClose }: Props) {
   const open = tier !== null;
+  const panelRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(panelRef, open);
 
   useEffect(() => {
     if (!open) return;
@@ -86,6 +89,7 @@ export function TierDrawer({ tier, calendlyUrl, labels, onClose }: Props) {
             ? "translate-y-0 md:translate-x-0"
             : "translate-y-full md:translate-x-full md:translate-y-0"
         )}
+        ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-label={tier?.name ?? ""}

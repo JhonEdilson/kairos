@@ -1,14 +1,15 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 type Props = {
   words: string[];
 };
 
-// Cicla entre palabras con fade-slide. Arranca 3s después del mount
-// para dejar que las animaciones de reveal del headline terminen primero.
+// Cicla entre palabras con un fade-slide en CSS (sin framer-motion, para no
+// arrastrar la librería al bundle inicial del Hero, que es el LCP).
+// Arranca 3s después del mount para dejar terminar el reveal del headline.
+// key={index} remonta el <span> en cada cambio, replayando la animación CSS.
 export function CyclingWord({ words }: Props) {
   const [index, setIndex] = useState(0);
 
@@ -28,17 +29,8 @@ export function CyclingWord({ words }: Props) {
   }, [words.length]);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -16 }}
-        transition={{ duration: 0.34, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="inline-block"
-      >
-        {words[index]}
-      </motion.span>
-    </AnimatePresence>
+    <span key={index} className="cycling-word">
+      {words[index]}
+    </span>
   );
 }

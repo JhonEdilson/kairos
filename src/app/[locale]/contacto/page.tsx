@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates, pageOpenGraph } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Section";
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
@@ -10,7 +11,14 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contacto" });
-  return { title: t("meta.title"), description: t("meta.description") };
+  const title = t("meta.title");
+  const description = t("meta.description");
+  return {
+    title,
+    description,
+    alternates: localeAlternates(locale, "/contacto"),
+    ...pageOpenGraph(locale, title, description),
+  };
 }
 
 // Contacto — dos CTA: Calendly embed (fase 2 del build) y chatbot Nagi.

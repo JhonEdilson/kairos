@@ -116,6 +116,17 @@ html.lenis, html.lenis body { height: auto; }
 .fade-up-2 { animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.4s both; }
 .fade-up-3 { animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.6s both; }
 
+/* CyclingWord — fade-slide en cada cambio de palabra (reemplaza framer-motion).
+   key={index} en el <span> fuerza el remount y el replay de la animación. */
+@keyframes cycling-word-in {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.cycling-word {
+  display: inline-block;
+  animation: cycling-word-in 0.34s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 /* Ticker — subtle rotating eyebrow */
 @keyframes ticker-blink {
   0%, 100% { opacity: 1; }

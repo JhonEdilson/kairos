@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -14,28 +13,6 @@ import { CursorGlow } from "@/components/ui/CursorGlow";
 // Pre-genera las rutas estaticas para cada locale soportado.
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : undefined;
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000";
-  return {
-    alternates: {
-      canonical: `${base}/${locale}`,
-      languages: {
-        es: `${base}/es`,
-        en: `${base}/en`,
-        "x-default": `${base}/es`,
-      },
-    },
-  };
 }
 
 type Props = {

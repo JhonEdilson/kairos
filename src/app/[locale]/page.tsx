@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates, pageOpenGraph } from "@/lib/metadata";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemGrid } from "@/components/sections/ProblemGrid";
 import { ScrollShowcase } from "@/components/sections/ScrollShowcase";
@@ -15,7 +16,14 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "hero" });
-  return { title: t("meta.title"), description: t("meta.description") };
+  const title = t("meta.title");
+  const description = t("meta.description");
+  return {
+    title,
+    description,
+    alternates: localeAlternates(locale, ""),
+    ...pageOpenGraph(locale, title, description),
+  };
 }
 
 // Hero y ScrollShowcase quedan sin wrapper — tienen sus propias animaciones de entrada.

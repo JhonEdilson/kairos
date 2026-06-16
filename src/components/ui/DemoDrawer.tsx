@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/cn";
+import { useFocusTrap } from "@/lib/useFocusTrap";
 
 const Check = () => (
   <svg
@@ -50,6 +51,9 @@ export function DemoDrawer({
   calendlyUrl,
   labels,
 }: Props) {
+  const panelRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(panelRef, open);
+
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -91,6 +95,7 @@ export function DemoDrawer({
             ? "translate-y-0 md:translate-x-0"
             : "translate-y-full md:translate-x-full md:translate-y-0"
         )}
+        ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-label={title}

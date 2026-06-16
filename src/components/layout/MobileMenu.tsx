@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "@/i18n/navigation";
+import { useFocusTrap } from "@/lib/useFocusTrap";
 
 type Labels = {
   work: string;
@@ -15,6 +16,8 @@ export function MobileMenu({ labels }: { labels: Labels }) {
   const [open, setOpen] = useState(false);
 
   const close = useCallback(() => setOpen(false), []);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(dialogRef, open);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
@@ -38,7 +41,7 @@ export function MobileMenu({ labels }: { labels: Labels }) {
     <>
       {/* Hamburger toggle — only on mobile */}
       <button
-        className="md:hidden flex items-center justify-center w-10 h-10 text-[color:var(--fg-primary)]"
+        className="md:hidden flex items-center justify-center w-11 h-11 text-[color:var(--fg-primary)]"
         onClick={() => setOpen((prev) => !prev)}
         aria-label={open ? "Cerrar menú" : "Abrir menú"}
         aria-expanded={open}
@@ -66,8 +69,10 @@ export function MobileMenu({ labels }: { labels: Labels }) {
       {/* Full-screen overlay */}
       <div
         id="mobile-nav"
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
+        inert={!open}
         className={`fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col
           bg-[color:var(--bg-primary)] border-t border-[color:var(--border)]
           transition-[opacity,transform] duration-300 ease-out

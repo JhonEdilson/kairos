@@ -15,7 +15,7 @@ export default async function DiagnosticoPage() {
   const t = await getTranslations("diagnostico");
 
   return (
-    <main className="min-h-screen bg-[color:var(--bg-primary)] pt-32 pb-24 px-6 md:px-10">
+    <div className="min-h-screen bg-[color:var(--bg-primary)] pt-32 pb-24 px-6 md:px-10">
       {/* Page header */}
       <div className="max-w-3xl mx-auto mb-16">
         <p className="text-xs font-mono uppercase tracking-widest text-[color:var(--accent)] mb-4">
@@ -43,6 +43,6 @@ export default async function DiagnosticoPage() {
 
       {/* Form */}
       <DiagnosticoForm />
-    </main>
+    </div>
   );
 }

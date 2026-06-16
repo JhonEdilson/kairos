@@ -12,7 +12,12 @@ export function CursorGlow() {
   const glowPos   = useRef({ x: -300, y: -300 });
   const history   = useRef(Array.from({ length: TRAIL }, () => ({ x: -300, y: -300 })));
 
+  // Solo en dispositivos con puntero fino (mouse). En touch no hay cursor que
+  // seguir: salir temprano evita un rAF infinito y trabajo inútil en móvil.
+  // Los elementos arrancan fuera de pantalla (transform inicial abajo), así que
+  // sin este efecto no se ve ningún artefacto. Mismo patrón que LenisProvider.
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
     };
@@ -79,6 +84,7 @@ export function CursorGlow() {
           borderRadius: "50%",
           background:
             "radial-gradient(circle at center, rgba(20,184,166,0.28) 0%, rgba(20,184,166,0.14) 25%, rgba(20,184,166,0.03) 55%, transparent 70%)",
+          transform: "translate(-9999px, -9999px)",
           willChange: "transform",
         }}
       />
@@ -93,6 +99,7 @@ export function CursorGlow() {
             width: 3.5,
             height: 3.5,
             backgroundColor: "#14B8A6",
+            transform: "translate(-9999px, -9999px)",
             willChange: "transform, opacity, width, height",
           }}
         />
@@ -109,6 +116,7 @@ export function CursorGlow() {
           marginTop: -2,
           backgroundColor: "#14B8A6",
           boxShadow: "0 0 6px #14B8A6, 0 0 14px rgba(20,184,166,0.7), 0 0 24px rgba(20,184,166,0.3)",
+          transform: "translate(-9999px, -9999px)",
           willChange: "transform",
         }}
       />

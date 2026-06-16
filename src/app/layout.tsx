@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -52,6 +52,13 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.svg" },
+};
+
+// Viewport explícito: aunque Next 16 inyecta un default, declararlo blinda
+// contra regresiones (ej. alguien añadiendo maximum-scale, que rompe a11y).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 // Next.js 16 exige <html> y <body> en el root layout.

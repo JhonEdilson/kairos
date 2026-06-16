@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates, pageOpenGraph } from "@/lib/metadata";
 import { Section, Eyebrow, Heading } from "@/components/ui/Section";
 import { PartnerCTAButton } from "@/components/ui/PartnerCTAButton";
 import { TierSection } from "@/components/sections/TierSection";
@@ -29,7 +30,14 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services" });
-  return { title: t("meta.title"), description: t("meta.description") };
+  const title = t("meta.title");
+  const description = t("meta.description");
+  return {
+    title,
+    description,
+    alternates: localeAlternates(locale, "/servicios"),
+    ...pageOpenGraph(locale, title, description),
+  };
 }
 
 export default async function ServiciosPage({ params }: Props) {

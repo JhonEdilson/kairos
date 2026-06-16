@@ -2,12 +2,18 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const NagiChat = dynamic(() => import("./NagiChat").then((m) => m.NagiChat), {
   ssr: false,
 });
+
+// AnimatePresence cargado lazy: así el FAB (siempre montado) no arrastra
+// framer-motion al bundle inicial. Solo entra cuando este chunk + NagiChat cargan.
+const AnimatePresence = dynamic(
+  () => import("framer-motion").then((m) => m.AnimatePresence),
+  { ssr: false }
+);
 
 // NagiWidget — FAB flotante de Nagi.
 // Cuando /public/nagi-avatar.mp4 esté disponible:

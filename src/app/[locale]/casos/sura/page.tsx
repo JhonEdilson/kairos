@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates, pageOpenGraph } from "@/lib/metadata";
 import { Section, Eyebrow, Heading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ChallengeCard } from "@/components/ui/ChallengeCard";
@@ -11,7 +12,14 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "sura" });
-  return { title: t("meta.title"), description: t("meta.description") };
+  const title = t("meta.title");
+  const description = t("meta.description");
+  return {
+    title,
+    description,
+    alternates: localeAlternates(locale, "/casos/sura"),
+    ...pageOpenGraph(locale, title, description),
+  };
 }
 
 // Case study CRM SURA — Agencia de Seguros.

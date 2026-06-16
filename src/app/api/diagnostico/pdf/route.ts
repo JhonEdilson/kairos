@@ -44,11 +44,20 @@ export async function POST(req: NextRequest) {
 
     const buffer = await ReactPDF.renderToBuffer(element);
 
+    // Sanitiza el nombre antes de meterlo en el header: solo [a-z0-9-].
+    // Evita inyección de comillas/CRLF/control chars en Content-Disposition.
+    const safeName =
+      company_name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 60) || "empresa";
+
     return new NextResponse(new Uint8Array(buffer), {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="diagnostico-kairos-${company_name.toLowerCase().replace(/\s+/g, "-")}.pdf"`,
+        "Content-Disposition": `attachment; filename="diagnostico-kairos-${safeName}.pdf"`,
         "Cache-Control": "no-store",
       },
     });

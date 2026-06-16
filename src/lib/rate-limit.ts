@@ -6,6 +6,16 @@ const hasUpstash = Boolean(
   process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
 );
 
+// Fail-open con aviso: si en producción faltan las env de Upstash, el rate
+// limiting queda desactivado en TODAS las rutas. Sin este warning el deploy
+// quedaría expuesto a abuso de costo (OpenAI/n8n) en silencio.
+if (!hasUpstash && process.env.NODE_ENV === "production") {
+  console.warn(
+    "[rate-limit] Upstash no configurado (UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN ausentes). " +
+      "Las rutas /api/chat y /api/diagnostico/* quedan SIN rate limiting."
+  );
+}
+
 const redis = hasUpstash ? Redis.fromEnv() : null;
 
 export const chatLimiter = redis
@@ -42,10 +52,13 @@ export async function limitDiagnostic(identifier: string) {
 }
 
 export function clientIp(req: Request): string {
+  // x-real-ip lo fija el edge de Vercel con la IP real del cliente y NO es
+  // falsificable por el cliente. x-forwarded-for SÍ puede venir manipulado
+  // (el cliente prepende su propio valor), así que queda solo como fallback.
+  const real = req.headers.get("x-real-ip");
+  if (real) return real.trim();
   const xff = req.headers.get("x-forwarded-for");
   if (xff) return xff.split(",")[0]!.trim();
-  const real = req.headers.get("x-real-ip");
-  if (real) return real;
   return "anon";
 }
 
