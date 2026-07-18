@@ -311,31 +311,6 @@
         }
       }
     },
-    "industries": {
-      "eyebrow": "Referencias del sector",
-      "heading": "Lo que es posible en tu sector",
-      "sub": "Puntos de referencia de la industria — no resultados propios ni casos de estudio garantizados.",
-      "items": [
-        {
-          "niche": "Salud",
-          "desc": "Clínicas que automatizan la confirmación de citas por WhatsApp reportan bajar su tasa de no-show desde ~25% hasta menos del 8%.",
-          "stat": "<8%",
-          "statLabel": "no-show con confirmación automática (vs. ~25% típico)"
-        },
-        {
-          "niche": "Inmobiliarias",
-          "desc": "Responder en el primer minuto multiplica la probabilidad de conectar con el lead frente a dejarlo esperando horas — la mayoría de compradores avanza con la primera inmobiliaria que responde.",
-          "stat": "98%",
-          "statLabel": "de leads respondidos en menos de 60 segundos"
-        },
-        {
-          "niche": "Academias",
-          "desc": "Con confirmación automática de entrevistas y clases de prueba, ningún cupo se pierde por falta de seguimiento del equipo de admisiones.",
-          "stat": "0",
-          "statLabel": "entrevistas o clases de prueba perdidas por falta de confirmación"
-        }
-      ]
-    },
     "consulting": {
       "eyebrow": "Consultoría",
       "badge": "Diagnóstico gratuito",

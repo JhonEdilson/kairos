@@ -50,12 +50,6 @@ export default async function ServiciosPage({ params }: Props) {
   const tier3Features = t.raw("agents.tiers.3.features") as string[];
   const consultingFeatures = t.raw("consulting.features") as string[];
   const partnerBenefits = t.raw("partner.benefits") as string[];
-  const industryItems = t.raw("industries.items") as {
-    niche: string;
-    desc: string;
-    stat: string;
-    statLabel: string;
-  }[];
   const progressExamples = t.raw("guarantee.progress.examples") as string[];
 
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL ?? "#";
@@ -150,50 +144,6 @@ export default async function ServiciosPage({ params }: Props) {
             drawerWhy: t("agents.drawerWhy"),
           }}
         />
-      </Section>
-
-      {/* ── RESULTADOS POR INDUSTRIA ── */}
-      <Section className="hairline-t">
-        <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <span className="ticker-dot" />
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)]">
-              {t("industries.eyebrow")}
-            </span>
-          </div>
-          <Heading className="mx-auto text-center">
-            {t("industries.heading")}
-          </Heading>
-          <p className="text-[color:var(--fg-muted)] text-base mt-5 max-w-sm mx-auto leading-relaxed">
-            {t("industries.sub")}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {industryItems.map((item, i) => (
-            <div
-              key={i}
-              className="flex flex-col rounded-2xl border border-[color:var(--border)] p-8 bg-[color:var(--bg-secondary)]
-                         hover:border-[color:var(--border-strong)] transition-colors duration-500"
-            >
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)] mb-4">
-                {item.niche}
-              </p>
-              <p className="text-sm leading-relaxed text-[color:var(--fg-muted)] text-pretty flex-1">
-                {item.desc}
-              </p>
-
-              <div className="h-px bg-[color:var(--border)] my-7" />
-
-              <p className="font-display font-medium text-4xl tracking-[-0.03em] text-[color:var(--accent)] mb-2">
-                {item.stat}
-              </p>
-              <p className="text-xs leading-snug text-[color:var(--fg-muted)]">
-                {item.statLabel}
-              </p>
-            </div>
-          ))}
-        </div>
       </Section>
 
       {/* ── CONSULTORÍA ── */}

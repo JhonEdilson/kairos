@@ -246,31 +246,6 @@
         }
       }
     },
-    "industries": {
-      "eyebrow": "Industry benchmarks",
-      "heading": "What's possible in your sector",
-      "sub": "Industry reference points — not proprietary results or guaranteed case studies.",
-      "items": [
-        {
-          "niche": "Healthcare",
-          "desc": "Clinics that automate WhatsApp appointment confirmations report cutting no-shows from ~25% down to under 8%.",
-          "stat": "<8%",
-          "statLabel": "no-show rate with automated confirmation (vs. ~25% typical)"
-        },
-        {
-          "niche": "Real Estate",
-          "desc": "Responding within the first minute sharply raises the odds of connecting with a lead versus leaving them waiting for hours — most buyers go with whichever agency answers first.",
-          "stat": "98%",
-          "statLabel": "of leads answered in under 60 seconds"
-        },
-        {
-          "niche": "Academies",
-          "desc": "With automatic confirmation, no slot is lost to a missed follow-up from the admissions team.",
-          "stat": "0",
-          "statLabel": "lost interviews or trial classes from missed confirmations"
-        }
-      ]
-    },
     "consulting": {
       "eyebrow": "Consulting",
       "badge": "Free diagnosis",

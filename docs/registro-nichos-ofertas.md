@@ -96,6 +96,6 @@ necesitaba, te devuelvo el 100% del piloto." (Reflejada en `/servicios` como ban
 | Back-Office | Medio | Medio | Alto | Alto | Alto |
 | Retainer | Alto | Alto | Alto | Alto | Alto |
 
-Los headlines por nicho de Salud/Inmobiliarias/Academias que viven en `/servicios` (bloque
-`industries`) vienen de esta matriz — Anti-No-Show y Captación 24/7 son ancla en los 3 nichos
-activos.
+Anti-No-Show y Captación 24/7 son ancla en los 3 nichos activos. Un bloque de resultados por
+industria para `/servicios` se evaluó y se retiró (2026-07-18) por falta de caso de estudio propio
+que respalde las cifras — retomar si aparece un caso validado.
