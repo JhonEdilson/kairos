@@ -311,6 +311,28 @@
         }
       }
     },
+    "industries": {
+      "eyebrow": "Resultados por industria",
+      "heading": "Lo que ya funciona en tu sector",
+      "sub": "Ángulos validados por nicho, no promesas genéricas",
+      "items": [
+        {
+          "niche": "Salud",
+          "headline": "Ayudo a clínicas y consultorios a bajar su tasa de no-show de ~25% a menos del 8%, confirmando citas automáticamente por WhatsApp.",
+          "stat": "no-show 25% → <8%"
+        },
+        {
+          "niche": "Inmobiliarias",
+          "headline": "Ayudo a inmobiliarias a responder el 98% de los leads de portales y anuncios en menos de 60 segundos, calificados por presupuesto y urgencia antes de llegar al asesor.",
+          "stat": "98% en <60s"
+        },
+        {
+          "niche": "Academias",
+          "headline": "Ayudo a academias e institutos a que ninguna entrevista de nivelación o clase de prueba se pierda por falta de confirmación, sin que admisiones tenga que llamar uno por uno.",
+          "stat": "0 entrevistas perdidas"
+        }
+      ]
+    },
     "consulting": {
       "eyebrow": "Consultoría",
       "badge": "Diagnóstico gratuito",
@@ -326,6 +348,23 @@
       ],
       "cta": "Agendar diagnóstico gratuito",
       "ctaAi": "Diagnóstico con IA"
+    },
+    "guarantee": {
+      "eyebrow": "Garantías",
+      "heading": "Cómo protejo tu inversión",
+      "delivery": {
+        "title": "Garantía de Entrega — 100%",
+        "desc": "Construyo el sistema completo según lo acordado. Si no cumple lo prometido, o no era lo que tu negocio necesitaba, te devuelvo el 100% del piloto."
+      },
+      "progress": {
+        "title": "Garantía de Progreso Medido",
+        "desc": "En proyectos de piloto medimos tu línea base 2–4 semanas antes de encender el sistema, y reportamos el avance real contra esa línea base.",
+        "examples": [
+          "No-show baja ≥30% relativo",
+          "98% de leads respondidos en <60s",
+          "≥70% del volumen documental automatizado"
+        ]
+      }
     },
     "partner": {
       "eyebrow": "Plan Partner",

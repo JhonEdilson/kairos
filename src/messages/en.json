@@ -246,6 +246,28 @@
         }
       }
     },
+    "industries": {
+      "eyebrow": "Results by industry",
+      "heading": "What's already working in your sector",
+      "sub": "Validated angles per niche, not generic promises",
+      "items": [
+        {
+          "niche": "Healthcare",
+          "headline": "I help clinics and practices cut their no-show rate from ~25% to under 8%, confirming appointments automatically over WhatsApp.",
+          "stat": "no-shows 25% → <8%"
+        },
+        {
+          "niche": "Real Estate",
+          "headline": "I help real estate agencies respond to 98% of leads from listings and ads in under 60 seconds, qualified by budget and urgency before they reach an agent.",
+          "stat": "98% in <60s"
+        },
+        {
+          "niche": "Academies",
+          "headline": "I help academies and training institutes make sure no placement interview or trial class is ever lost to a missed confirmation — without admissions calling everyone one by one.",
+          "stat": "0 lost interviews"
+        }
+      ]
+    },
     "consulting": {
       "eyebrow": "Consulting",
       "badge": "Free diagnosis",
@@ -261,6 +283,23 @@
       ],
       "cta": "Book free diagnosis",
       "ctaAi": "AI Diagnosis"
+    },
+    "guarantee": {
+      "eyebrow": "Guarantees",
+      "heading": "How your investment is protected",
+      "delivery": {
+        "title": "Delivery Guarantee — 100%",
+        "desc": "I build the full system as agreed. If it doesn't deliver what was promised, or it wasn't what your business needed, you get 100% of the pilot back."
+      },
+      "progress": {
+        "title": "Measured Progress Guarantee",
+        "desc": "On pilot projects we measure your baseline 2–4 weeks before turning the system on, and report real progress against that baseline.",
+        "examples": [
+          "No-shows drop ≥30% relative",
+          "98% of leads answered in <60s",
+          "≥70% of document volume automated"
+        ]
+      }
     },
     "partner": {
       "eyebrow": "Partner Plan",

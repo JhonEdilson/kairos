@@ -50,6 +50,12 @@ export default async function ServiciosPage({ params }: Props) {
   const tier3Features = t.raw("agents.tiers.3.features") as string[];
   const consultingFeatures = t.raw("consulting.features") as string[];
   const partnerBenefits = t.raw("partner.benefits") as string[];
+  const industryItems = t.raw("industries.items") as {
+    niche: string;
+    headline: string;
+    stat: string;
+  }[];
+  const progressExamples = t.raw("guarantee.progress.examples") as string[];
 
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL ?? "#";
 
@@ -145,6 +151,44 @@ export default async function ServiciosPage({ params }: Props) {
         />
       </Section>
 
+      {/* ── RESULTADOS POR INDUSTRIA ── */}
+      <Section className="hairline-t">
+        <div className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <span className="ticker-dot" />
+            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)]">
+              {t("industries.eyebrow")}
+            </span>
+          </div>
+          <Heading className="mx-auto text-center">
+            {t("industries.heading")}
+          </Heading>
+          <p className="text-[color:var(--fg-muted)] text-base mt-5 max-w-sm mx-auto leading-relaxed">
+            {t("industries.sub")}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {industryItems.map((item, i) => (
+            <div
+              key={i}
+              className="rounded-2xl border border-[color:var(--border)] p-8 bg-[color:var(--bg-secondary)]
+                         hover:border-[color:var(--border-strong)] transition-colors duration-500"
+            >
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)] mb-4">
+                {item.niche}
+              </p>
+              <p className="font-display font-medium text-3xl tracking-[-0.03em] text-[color:var(--accent)] mb-5">
+                {item.stat}
+              </p>
+              <p className="text-sm leading-relaxed text-[color:var(--fg-muted)] text-pretty">
+                {item.headline}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* ── CONSULTORÍA ── */}
       <Section className="hairline-t">
         {/* Section header */}
@@ -209,6 +253,54 @@ export default async function ServiciosPage({ params }: Props) {
                   <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── GARANTÍAS ── */}
+      <Section className="hairline-t">
+        <div className="mb-12">
+          <Eyebrow>{t("guarantee.eyebrow")}</Eyebrow>
+          <Heading>{t("guarantee.heading")}</Heading>
+        </div>
+
+        <div className="rounded-2xl border border-[color:var(--border)] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* Left — Entrega 100% */}
+            <div className="p-10 md:p-14 bg-[color:var(--bg-secondary)]">
+              <span className="inline-block mb-8 px-3 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-emerald-900/30 text-emerald-400 border border-emerald-800/40">
+                100%
+              </span>
+              <h3 className="font-display font-medium text-2xl tracking-[-0.02em] mb-4">
+                {t("guarantee.delivery.title")}
+              </h3>
+              <p className="text-[color:var(--fg-muted)] leading-relaxed text-pretty">
+                {t("guarantee.delivery.desc")}
+              </p>
+            </div>
+
+            {/* Right — Progreso Medido */}
+            <div className="p-10 md:p-14 bg-[color:var(--bg-primary)] border-t md:border-t-0 md:border-l border-[color:var(--border)]">
+              <h3 className="font-display font-medium text-2xl tracking-[-0.02em] mb-4">
+                {t("guarantee.progress.title")}
+              </h3>
+              <p className="text-[color:var(--fg-muted)] leading-relaxed text-pretty mb-7">
+                {t("guarantee.progress.desc")}
+              </p>
+              <ul className="space-y-4">
+                {progressExamples.map((example, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-sm leading-snug text-[color:var(--fg-muted)]"
+                  >
+                    <span className="text-[color:var(--accent)]">
+                      <Check />
+                    </span>
+                    {example}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
