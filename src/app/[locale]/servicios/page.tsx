@@ -52,8 +52,9 @@ export default async function ServiciosPage({ params }: Props) {
   const partnerBenefits = t.raw("partner.benefits") as string[];
   const industryItems = t.raw("industries.items") as {
     niche: string;
-    headline: string;
+    desc: string;
     stat: string;
+    statLabel: string;
   }[];
   const progressExamples = t.raw("guarantee.progress.examples") as string[];
 
@@ -172,17 +173,23 @@ export default async function ServiciosPage({ params }: Props) {
           {industryItems.map((item, i) => (
             <div
               key={i}
-              className="rounded-2xl border border-[color:var(--border)] p-8 bg-[color:var(--bg-secondary)]
+              className="flex flex-col rounded-2xl border border-[color:var(--border)] p-8 bg-[color:var(--bg-secondary)]
                          hover:border-[color:var(--border-strong)] transition-colors duration-500"
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--fg-muted)] mb-4">
                 {item.niche}
               </p>
-              <p className="font-display font-medium text-3xl tracking-[-0.03em] text-[color:var(--accent)] mb-5">
+              <p className="text-sm leading-relaxed text-[color:var(--fg-muted)] text-pretty flex-1">
+                {item.desc}
+              </p>
+
+              <div className="h-px bg-[color:var(--border)] my-7" />
+
+              <p className="font-display font-medium text-4xl tracking-[-0.03em] text-[color:var(--accent)] mb-2">
                 {item.stat}
               </p>
-              <p className="text-sm leading-relaxed text-[color:var(--fg-muted)] text-pretty">
-                {item.headline}
+              <p className="text-xs leading-snug text-[color:var(--fg-muted)]">
+                {item.statLabel}
               </p>
             </div>
           ))}
@@ -269,9 +276,9 @@ export default async function ServiciosPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left — Entrega 100% */}
             <div className="p-10 md:p-14 bg-[color:var(--bg-secondary)]">
-              <span className="inline-block mb-8 px-3 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-emerald-900/30 text-emerald-400 border border-emerald-800/40">
+              <p className="font-display font-medium text-6xl md:text-7xl tracking-[-0.03em] text-[color:var(--accent)] mb-6">
                 100%
-              </span>
+              </p>
               <h3 className="font-display font-medium text-2xl tracking-[-0.02em] mb-4">
                 {t("guarantee.delivery.title")}
               </h3>

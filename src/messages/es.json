@@ -312,24 +312,27 @@
       }
     },
     "industries": {
-      "eyebrow": "Resultados por industria",
-      "heading": "Lo que ya funciona en tu sector",
-      "sub": "Ángulos validados por nicho, no promesas genéricas",
+      "eyebrow": "Referencias del sector",
+      "heading": "Lo que es posible en tu sector",
+      "sub": "Puntos de referencia de la industria — no resultados propios ni casos de estudio garantizados.",
       "items": [
         {
           "niche": "Salud",
-          "headline": "Ayudo a clínicas y consultorios a bajar su tasa de no-show de ~25% a menos del 8%, confirmando citas automáticamente por WhatsApp.",
-          "stat": "no-show 25% → <8%"
+          "desc": "Clínicas que automatizan la confirmación de citas por WhatsApp reportan bajar su tasa de no-show desde ~25% hasta menos del 8%.",
+          "stat": "<8%",
+          "statLabel": "no-show con confirmación automática (vs. ~25% típico)"
         },
         {
           "niche": "Inmobiliarias",
-          "headline": "Ayudo a inmobiliarias a responder el 98% de los leads de portales y anuncios en menos de 60 segundos, calificados por presupuesto y urgencia antes de llegar al asesor.",
-          "stat": "98% en <60s"
+          "desc": "Responder en el primer minuto multiplica la probabilidad de conectar con el lead frente a dejarlo esperando horas — la mayoría de compradores avanza con la primera inmobiliaria que responde.",
+          "stat": "98%",
+          "statLabel": "de leads respondidos en menos de 60 segundos"
         },
         {
           "niche": "Academias",
-          "headline": "Ayudo a academias e institutos a que ninguna entrevista de nivelación o clase de prueba se pierda por falta de confirmación, sin que admisiones tenga que llamar uno por uno.",
-          "stat": "0 entrevistas perdidas"
+          "desc": "Con confirmación automática de entrevistas y clases de prueba, ningún cupo se pierde por falta de seguimiento del equipo de admisiones.",
+          "stat": "0",
+          "statLabel": "entrevistas o clases de prueba perdidas por falta de confirmación"
         }
       ]
     },
@@ -353,7 +356,7 @@
       "eyebrow": "Garantías",
       "heading": "Cómo protejo tu inversión",
       "delivery": {
-        "title": "Garantía de Entrega — 100%",
+        "title": "Garantía de Entrega",
         "desc": "Construyo el sistema completo según lo acordado. Si no cumple lo prometido, o no era lo que tu negocio necesitaba, te devuelvo el 100% del piloto."
       },
       "progress": {

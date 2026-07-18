@@ -247,24 +247,27 @@
       }
     },
     "industries": {
-      "eyebrow": "Results by industry",
-      "heading": "What's already working in your sector",
-      "sub": "Validated angles per niche, not generic promises",
+      "eyebrow": "Industry benchmarks",
+      "heading": "What's possible in your sector",
+      "sub": "Industry reference points — not proprietary results or guaranteed case studies.",
       "items": [
         {
           "niche": "Healthcare",
-          "headline": "I help clinics and practices cut their no-show rate from ~25% to under 8%, confirming appointments automatically over WhatsApp.",
-          "stat": "no-shows 25% → <8%"
+          "desc": "Clinics that automate WhatsApp appointment confirmations report cutting no-shows from ~25% down to under 8%.",
+          "stat": "<8%",
+          "statLabel": "no-show rate with automated confirmation (vs. ~25% typical)"
         },
         {
           "niche": "Real Estate",
-          "headline": "I help real estate agencies respond to 98% of leads from listings and ads in under 60 seconds, qualified by budget and urgency before they reach an agent.",
-          "stat": "98% in <60s"
+          "desc": "Responding within the first minute sharply raises the odds of connecting with a lead versus leaving them waiting for hours — most buyers go with whichever agency answers first.",
+          "stat": "98%",
+          "statLabel": "of leads answered in under 60 seconds"
         },
         {
           "niche": "Academies",
-          "headline": "I help academies and training institutes make sure no placement interview or trial class is ever lost to a missed confirmation — without admissions calling everyone one by one.",
-          "stat": "0 lost interviews"
+          "desc": "With automatic confirmation, no slot is lost to a missed follow-up from the admissions team.",
+          "stat": "0",
+          "statLabel": "lost interviews or trial classes from missed confirmations"
         }
       ]
     },
@@ -288,7 +291,7 @@
       "eyebrow": "Guarantees",
       "heading": "How your investment is protected",
       "delivery": {
-        "title": "Delivery Guarantee — 100%",
+        "title": "Delivery Guarantee",
         "desc": "I build the full system as agreed. If it doesn't deliver what was promised, or it wasn't what your business needed, you get 100% of the pilot back."
       },
       "progress": {
